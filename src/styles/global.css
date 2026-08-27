@@ -1,22 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #115db7;
-  --color-secondary: #115db7;
-  --color-brand-blue: #2485c8;
-  --color-brand-cyan: #33a0cc;
-  --color-accent: #47c4d4;
-  --color-background: #f4f1eb;
-  --color-surface: #ffffff;
-  --color-aqua-soft: #ebf6fa;
-  --color-aqua-pale: #def4f7;
-  --color-foreground: #0f172a;
-  --color-muted: #475569;
-  --color-line: #d8dde3;
-  --color-placeholder: #98a2b3;
-  --color-midnight: #115db7;
+  /* Capital Oral Surgery brand palette — August 2026. */
+  --color-slate-ink: #1b2733;
+  --color-linen-white: #f4f4f4;
+  --color-pale-sky: #eaf5fa;
+  --color-midnight-blue: #0e3e73;
+  --color-capital-blue: #2c5cb1;
+  --color-coastal-teal: #6dc4d5;
+  --color-warm-taupe: #6f6357;
 
-  --font-heading: Georgia, Cambria, "Times New Roman", serif;
+  /* Semantic aliases keep the palette consistent across every route. */
+  --color-primary: #0e3e73;
+  --color-secondary: #2c5cb1;
+  --color-brand-blue: #2c5cb1;
+  --color-brand-cyan: #6dc4d5;
+  --color-accent: #6dc4d5;
+  --color-background: #f4f4f4;
+  --color-surface: #f4f4f4;
+  --color-aqua-soft: #eaf5fa;
+  --color-aqua-pale: #eaf5fa;
+  --color-foreground: #1b2733;
+  --color-muted: #6f6357;
+  --color-line: #90877e;
+  --color-placeholder: #6f6357;
+  --color-midnight: #0e3e73;
+
+  --font-heading: Fraunces, Georgia, Cambria, "Times New Roman", serif;
   --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: 0.5rem;
@@ -28,6 +38,8 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-background);
   color: var(--color-foreground);
+  font-weight: 400;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -46,22 +58,33 @@ html {
   right: 0;
   bottom: -1px;
   left: 0;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--color-primary),
-    var(--color-brand-blue) 34%,
-    var(--color-brand-cyan) 68%,
-    var(--color-accent)
-  );
+  height: 2px;
+  background: var(--color-coastal-teal);
   content: "";
   pointer-events: none;
+}
+
+/* Reserve quiet space around the wordmark in every shared placement. */
+.brand-logo-frame {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.625rem;
+}
+
+::selection {
+  background: var(--color-coastal-teal);
+  color: var(--color-slate-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-capital-blue);
+  outline-offset: 3px;
 }
 
 /* Keep type and actions distinct on the deep-blue brand panels. */
 .bg-midnight .text-secondary,
 .bg-midnight .text-accent {
-  color: var(--color-aqua-pale);
+  color: var(--color-coastal-teal);
 }
 
 .bg-midnight .border-secondary {
@@ -71,17 +94,17 @@ html {
 .bg-midnight .text-surface\/75,
 .bg-midnight .text-surface\/70,
 .bg-midnight .text-surface\/55 {
-  color: rgb(255 255 255 / 0.85);
+  color: color-mix(in srgb, var(--color-linen-white) 85%, transparent);
 }
 
 .bg-midnight .border-surface\/40,
 .bg-midnight .border-surface\/35 {
-  border-color: rgb(255 255 255 / 0.6);
+  border-color: color-mix(in srgb, var(--color-linen-white) 60%, transparent);
 }
 
 .bg-midnight .bg-secondary {
-  background-color: var(--color-surface);
-  color: var(--color-primary);
+  background-color: var(--color-linen-white);
+  color: var(--color-midnight-blue);
 }
 
 .bg-midnight .bg-surface {
@@ -94,7 +117,7 @@ html {
 }
 
 .bg-midnight .bg-surface .bg-secondary {
-  background-color: var(--color-primary);
+  background-color: var(--color-capital-blue);
   color: var(--color-surface);
 }
 
@@ -102,31 +125,35 @@ html {
   border-color: var(--color-primary);
 }
 
-/* Cyan is the recurring brand surface; blue remains the action color. */
+/* Pale Sky carries larger surfaces; Coastal Teal stays a quiet accent. */
 .brand-cyan-band {
-  background-color: var(--color-accent);
-  color: var(--color-surface);
+  background-color: var(--color-pale-sky);
+  color: var(--color-slate-ink);
+  border-block: 1px solid color-mix(in srgb, var(--color-coastal-teal) 42%, transparent);
 }
 
 .brand-cyan-band .text-secondary,
 .brand-cyan-band .text-accent,
 .brand-cyan-band .text-foreground,
+.brand-cyan-band .text-surface {
+  color: var(--color-midnight-blue);
+}
+
 .brand-cyan-band .text-muted,
-.brand-cyan-band .text-surface,
 .brand-cyan-band .text-surface\/75 {
-  color: var(--color-surface);
+  color: var(--color-warm-taupe);
 }
 
 .brand-cyan-band .border-surface\/40 {
-  border-color: rgb(255 255 255 / 0.65);
+  border-color: color-mix(in srgb, var(--color-capital-blue) 45%, transparent);
 }
 
 .brand-cyan-band .border-secondary {
-  border-color: rgb(255 255 255 / 0.65);
+  border-color: var(--color-capital-blue);
 }
 
 .brand-cyan-band .bg-secondary {
-  background-color: var(--color-primary);
+  background-color: var(--color-capital-blue);
   color: var(--color-surface);
 }
 
@@ -135,15 +162,15 @@ html {
 }
 
 .brand-cyan-band .hover\:bg-surface\/10:hover {
-  background-color: rgb(255 255 255 / 0.12);
+  background-color: color-mix(in srgb, var(--color-coastal-teal) 18%, transparent);
 }
 
 .brand-cyan-band .hover\:bg-surface:hover {
-  background-color: rgb(255 255 255 / 0.12);
+  background-color: color-mix(in srgb, var(--color-coastal-teal) 18%, transparent);
 }
 
 .brand-cyan-band .hover\:text-foreground:hover {
-  color: var(--color-surface);
+  color: var(--color-midnight-blue);
 }
 
 /* White cards and forms nested in cyan bands keep their normal dark copy. */
@@ -165,7 +192,7 @@ html {
 }
 
 .brand-cyan-band .bg-surface .bg-secondary {
-  background-color: var(--color-primary);
+  background-color: var(--color-capital-blue);
   color: var(--color-surface);
 }
 
@@ -174,46 +201,92 @@ html {
 }
 
 .service-cyan-cta {
-  background-color: var(--color-accent);
-  color: var(--color-surface);
+  background-color: var(--color-pale-sky);
+  color: var(--color-slate-ink);
+  border-top: 4px solid var(--color-coastal-teal);
 }
 
 .service-cyan-cta .text-secondary,
 .service-cyan-cta .text-accent,
 .service-cyan-cta .text-foreground,
+.service-cyan-cta .text-surface {
+  color: var(--color-midnight-blue);
+}
+
 .service-cyan-cta .text-muted,
-.service-cyan-cta .text-surface,
 .service-cyan-cta .text-surface\/75 {
-  color: var(--color-surface);
+  color: var(--color-warm-taupe);
 }
 
 .service-cyan-cta .bg-secondary {
-  background-color: var(--color-primary);
+  background-color: var(--color-capital-blue);
   color: var(--color-surface);
 }
 
 .service-cyan-cta .border-surface\/40 {
-  border-color: rgb(255 255 255 / 0.65);
+  border-color: color-mix(in srgb, var(--color-capital-blue) 45%, transparent);
 }
 
 .service-cyan-cta .hover\:bg-surface\/10:hover {
-  background-color: rgb(255 255 255 / 0.12);
+  background-color: color-mix(in srgb, var(--color-coastal-teal) 18%, transparent);
 }
 
 .service-cyan-cta .hover\:text-foreground:hover {
-  color: var(--color-surface);
+  color: var(--color-midnight-blue);
 }
 
 .serif {
   font-family: var(--font-heading);
+  font-optical-sizing: auto;
+  font-weight: 400;
 }
 
 h1,
 h2,
-h3,
+h3 {
+  font-family: var(--font-heading);
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
 p[class*="tracking-"],
 figcaption[class*="tracking-"] {
-  text-transform: capitalize;
+  text-transform: uppercase;
+}
+
+/* Coastal Teal is decorative on light surfaces; text uses accessible Capital Blue. */
+.text-accent,
+.text-brand-cyan {
+  color: var(--color-capital-blue);
+}
+
+.bg-midnight .text-accent,
+.bg-midnight .text-brand-cyan {
+  color: var(--color-coastal-teal);
+}
+
+.bg-accent.text-surface,
+.bg-brand-cyan.text-surface,
+.bg-accent .text-surface,
+.bg-brand-cyan .text-surface {
+  color: var(--color-slate-ink);
+}
+
+/* The usage guide specifies pill-shaped primary actions. */
+:is(a, button)[class~="bg-secondary"],
+:is(a, button)[class~="bg-surface"] {
+  border-radius: 9999px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+:is(a, button)[class~="bg-secondary"]:hover {
+  box-shadow: 0 10px 24px rgb(14 62 115 / 0.18);
+  transform: translateY(-1px);
 }
 
 html.reveal-ready [data-reveal] {
