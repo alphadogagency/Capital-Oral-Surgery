@@ -273,8 +273,9 @@ figcaption[class*="tracking-"] {
 }
 
 /* The usage guide specifies pill-shaped primary actions. */
-:is(a, button)[class~="bg-secondary"],
-:is(a, button)[class~="bg-surface"] {
+button[class~="bg-secondary"],
+a.inline-flex[class~="bg-secondary"],
+a.inline-flex[class~="bg-surface"] {
   border-radius: 9999px;
   transition:
     transform 180ms ease,
@@ -284,7 +285,8 @@ figcaption[class*="tracking-"] {
     background-color 180ms ease;
 }
 
-:is(a, button)[class~="bg-secondary"]:hover {
+button[class~="bg-secondary"]:hover,
+a.inline-flex[class~="bg-secondary"]:hover {
   box-shadow: 0 10px 24px rgb(14 62 115 / 0.18);
   transform: translateY(-1px);
 }
