@@ -4,21 +4,20 @@ import { OFFICE_PHONE } from "../lib/site";
 
 <section
   id="appointment"
-  class="bg-aqua-soft px-5 py-20 text-foreground md:py-24"
+  class="home-appointment home-section"
   aria-labelledby="appointment-heading"
 >
   <div
-    class="mx-auto grid max-w-[1160px] gap-14 lg:grid-cols-[minmax(0,540px)_548px] lg:gap-16"
+    class="home-shell home-appointment-grid"
   >
-    <div class="lg:pt-1" data-reveal>
-      <p class="text-xs font-bold tracking-[.34em] text-secondary">
+    <div class="home-section-copy" data-reveal>
+      <p class="home-eyebrow">
         Request appointment
       </p>
       <h2
         id="appointment-heading"
-        class="serif mt-4 max-w-[520px] text-4xl leading-tight text-foreground sm:text-5xl"
       >
-        Let's get you scheduled.
+        Let's get you<br /><span>scheduled.</span>
       </h2>
       <p class="mt-6 max-w-[540px] text-base leading-7 text-muted">
         Send us a note and our team will reach out within one business day to confirm
@@ -42,7 +41,7 @@ import { OFFICE_PHONE } from "../lib/site";
     </div>
 
     <form
-      class="rounded-lg bg-surface p-8 shadow-sm"
+      class="home-appointment-form"
       action="#"
       method="post"
       data-reveal

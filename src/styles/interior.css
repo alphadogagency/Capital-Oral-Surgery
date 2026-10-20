@@ -1,0 +1,217 @@
+/* Interior pages extend the approved homepage with the same type, palette and rhythm.
+   Content and form controls stay in their original page components. */
+.interior-main {
+  --interior-header-height: 110px;
+  padding-top: var(--interior-header-height);
+}
+.interior-main :is(section[id], form[id], h2[id]) { scroll-margin-top: calc(var(--interior-header-height) + 28px); }
+/* Fade anchored content without shifting its scroll destination after navigation. */
+html.reveal-ready .interior-main [data-reveal] { transform: none; transition-property: opacity; }
+.interior-main :is(.grid, .flex) > * { min-width: 0; }
+.interior-main h2 { font-size: clamp(34px, 3.5vw, 50px); font-weight: 300; line-height: 1.15; }
+.interior-main h3 { font-size: clamp(25px, 2.3vw, 32px); font-weight: 400; line-height: 1.2; }
+.interior-main p[class*="tracking-"] { font-size: 14px; font-weight: 500; letter-spacing: 0; text-transform: none; }
+.interior-main :is(article, section, div, form, a).rounded-lg {
+  border-radius: 0;
+  border-color: var(--home-border);
+  box-shadow: none;
+}
+.interior-main a.inline-flex.h-14,
+.interior-main button[type="submit"] {
+  min-height: 56px;
+  height: auto;
+  padding: 14px 25px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+}
+.interior-main a.inline-flex.h-14:hover,
+.interior-main button[type="submit"]:hover { box-shadow: none; transform: none; }
+
+/* The reference's pale, full-width split hero, using Capital's own photography. */
+.interior-main .interior-hero {
+  padding: 0;
+  background: var(--color-pale-sky);
+  color: var(--color-slate-ink);
+}
+.interior-hero .interior-hero-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+.interior-hero .interior-hero-copy {
+  align-self: center;
+  padding: clamp(54px, 5.4vw, 84px) var(--home-gutter);
+}
+.interior-hero .interior-hero-copy > a { font-size: 14px; font-weight: 500; color: var(--color-capital-blue); }
+.interior-hero .interior-hero-copy > a:hover { color: var(--color-midnight-blue); text-decoration: underline; }
+.interior-hero .interior-hero-copy > p[class*="tracking-"] { color: var(--color-capital-blue); }
+.interior-hero .interior-hero-copy > a + p { margin-top: 34px; }
+.interior-main .interior-hero h1 {
+  max-width: 780px;
+  margin-top: 20px;
+  font-size: clamp(44px, 5.2vw, 78px);
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -.05em;
+  color: var(--color-midnight-blue);
+  overflow-wrap: break-word;
+}
+.interior-hero .interior-hero-copy > p:not([class*="tracking-"]) {
+  max-width: 650px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-warm-taupe);
+}
+.interior-hero .interior-hero-copy > div.flex { flex-wrap: wrap; gap: 12px; }
+.interior-hero .interior-hero-copy a.h-14 { min-width: 0; }
+.interior-hero .interior-hero-copy a.bg-secondary { background: var(--color-capital-blue); color: var(--color-linen-white); }
+.interior-hero .interior-hero-copy a.border { border-color: var(--color-capital-blue); color: var(--color-midnight-blue); }
+.interior-hero .interior-hero-copy a.h-14:hover { background: var(--color-midnight-blue); color: var(--color-linen-white); opacity: 1; }
+.interior-hero .interior-hero-media {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  max-width: none;
+  min-height: 580px;
+  margin: 0;
+}
+.interior-hero-media > [aria-hidden="true"] { display: none; }
+.interior-hero-media > div[class*="aspect-"] {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+.interior-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 46% center; }
+.interior-hero .interior-hero-solo { width: min(100%, 1300px); max-width: none; margin-inline: auto; }
+.interior-doctor .interior-hero-media { min-height: 620px; padding: 48px var(--home-gutter) 48px 0; }
+.interior-doctor .interior-hero-media > div[class*="aspect-"] { position: relative; max-width: 460px; min-height: 520px; }
+.interior-doctor .interior-hero-copy p.text-sm { margin-top: 24px; }
+.interior-contact .interior-hero-media > .bg-surface {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  margin: 0;
+  padding: 22px 32px;
+  background: var(--color-midnight-blue);
+  color: var(--color-linen-white);
+}
+.interior-contact .interior-hero-media > .bg-surface p:first-child { color: var(--color-coastal-teal); }
+.interior-contact .interior-hero-media > .bg-surface p:last-child { margin-top: 5px; color: var(--color-linen-white); }
+
+/* Roomy sections and quiet, square panels keep longer clinical copy readable. */
+.interior-main > section:not(.interior-hero) { padding: clamp(64px, 6.5vw, 96px) 0; }
+.interior-main > section:not(.interior-hero) > div {
+  width: min(calc(100% - var(--home-gutter) * 2), 1300px);
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+.interior-resource > section:not(.interior-hero) > div[class*="max-w-[920px]"] { max-width: 940px; }
+.interior-main .brand-cyan-band { border: 0; }
+.interior-main .service-cyan-cta { border: 0; background: var(--color-coastal-teal); color: var(--color-midnight-blue); }
+.interior-main .service-cyan-cta :is(.text-muted, .text-surface\/75) { color: var(--color-midnight-blue); }
+.interior-main .service-cyan-cta a.bg-secondary { background: var(--color-midnight-blue); color: var(--color-linen-white); }
+.interior-main .service-cyan-cta a.border { border-color: var(--color-midnight-blue); }
+.interior-main .service-cyan-cta a:hover { background: var(--color-linen-white); color: var(--color-midnight-blue); }
+.interior-main :is(article, aside) > .flex > span.rounded-full { border-radius: 0; background: transparent; color: var(--color-capital-blue); }
+
+/* Service navigation sits alongside one reading column, without an empty third column. */
+.interior-service .interior-service-shell {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 900px);
+  justify-content: center;
+  align-items: start;
+  gap: clamp(36px, 5vw, 80px);
+}
+.interior-service-content { grid-column: 2; gap: 80px; }
+.interior-service-shell > aside { position: sticky; top: 138px; display: block; width: 100%; justify-self: stretch; }
+.interior-service-shell > aside > div {
+  max-height: calc(100dvh - 164px);
+  overflow-y: auto;
+  padding: 22px 0 0;
+  border: 0;
+  border-top: 1px solid var(--color-coastal-teal);
+  background: transparent;
+}
+.interior-service-shell > aside > div > p { padding-inline: 12px; }
+.interior-service-shell > aside a { border-radius: 0; }
+.interior-service-content > .grid.bg-aqua-soft { padding: clamp(28px, 3vw, 44px); gap: 32px; }
+.interior-service-content > .grid.bg-aqua-soft h2 { font-size: clamp(30px, 3vw, 42px); }
+.interior-service-content article { padding: 30px; }
+.interior-service-content article h3 { font-size: 28px; }
+.interior-main article h2 { font-size: clamp(28px, 2.6vw, 36px); }
+.interior-main article > div.rounded-full { width: auto; height: auto; justify-content: flex-start; border-radius: 0; background: transparent; color: var(--color-capital-blue); font-weight: 500; }
+.interior-service-content > .grid.bg-aqua-soft p.rounded-md { border-radius: 0; }
+.interior-contact > section:nth-child(2) h2 { font-size: clamp(25px, 2.4vw, 34px); font-weight: 400; }
+.interior-contact > section:nth-child(2) a { padding: 32px; background: var(--color-pale-sky); }
+.interior-contact > section:nth-child(2) a:hover { transform: none; border-color: var(--color-capital-blue); }
+
+/* Preserve the existing selected states and tooth shapes in the referral form. */
+.interior-main form :is(input, select, textarea):not([type="checkbox"]):not([type="radio"]):not([type="hidden"]) {
+  border-radius: 0;
+  font-size: 15px;
+  background: var(--color-linen-white);
+}
+.interior-main form :is(input, select):not(.sr-only):not([type="checkbox"]):not([type="radio"]):not([type="hidden"]) { min-height: 52px; }
+.interior-main form :is(fieldset, label) { min-width: 0; }
+.interior-main input.peer:checked + span { color: var(--color-linen-white); }
+.interior-referral-form > section:not(.interior-hero) > div { max-width: 1160px; }
+.interior-referral-form form > section + section { border-color: var(--home-border); }
+.interior-referral-form form h3 { font-size: 26px; }
+.interior-contact form { padding: 38px; }
+
+@media (min-width: 1024px) {
+  .interior-contact > .brand-cyan-band > div { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+}
+@media (max-width: 1199px) {
+  .interior-service-content > .grid.bg-aqua-soft { grid-template-columns: 1fr; }
+}
+@media (max-width: 1100px) {
+  .interior-main { --interior-header-height: 94px; }
+  .interior-service .interior-service-shell { display: block; max-width: 920px; }
+  .interior-service-shell > aside { display: none; }
+  .interior-service-content { grid-column: auto; }
+}
+@media (max-width: 899px) {
+  .interior-hero .interior-hero-grid { grid-template-columns: 1fr; }
+  .interior-hero .interior-hero-copy { padding-block: 56px; }
+  .interior-main .interior-hero h1 { max-width: 720px; font-size: clamp(44px, 7.5vw, 66px); }
+  .interior-hero .interior-hero-copy > p { max-width: 680px; }
+  .interior-hero .interior-hero-media { min-height: 0; height: 400px; }
+  .interior-doctor .interior-hero-media { height: 500px; padding: 0 var(--home-gutter) 48px; }
+  .interior-doctor .interior-hero-media > div[class*="aspect-"] { width: 100%; max-width: 440px; min-height: 0; }
+  .interior-contact .interior-hero-media { height: 450px; }
+  .interior-service-content { gap: 64px; }
+  .interior-service-content > .grid.bg-aqua-soft { grid-template-columns: minmax(0, 1fr) minmax(160px, .7fr); }
+}
+@media (max-width: 599px) {
+  .interior-main { --interior-header-height: 84px; }
+  .interior-hero .interior-hero-copy { padding-block: 44px 48px; }
+  .interior-hero .interior-hero-copy > a + p { margin-top: 28px; }
+  .interior-main .interior-hero h1 { font-size: clamp(39px, 10.4vw, 54px); }
+  .interior-hero .interior-hero-copy > p:not([class*="tracking-"]) { font-size: 16px; line-height: 1.75; }
+  .interior-hero .interior-hero-copy > div.flex { margin-top: 28px; }
+  .interior-hero .interior-hero-media { height: 280px; }
+  .interior-doctor .interior-hero-media { height: auto; padding-bottom: 40px; }
+  .interior-doctor .interior-hero-media > div[class*="aspect-"] { height: auto; aspect-ratio: 4 / 5; }
+  .interior-contact .interior-hero-media { height: 380px; }
+  .interior-main h2 { font-size: 34px; }
+  .interior-main h3 { font-size: 26px; }
+  .interior-main .service-cyan-cta { padding: 32px 26px; }
+  .interior-service-content article { padding: 26px; }
+  .interior-service-content > .grid.bg-aqua-soft { grid-template-columns: 1fr; padding: 28px; }
+  .interior-main a.inline-flex.h-14 { width: 100%; }
+  .interior-contact form { padding: 24px; }
+  .interior-contact > section:nth-child(2) a { padding: 26px; }
+}

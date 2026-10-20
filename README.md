@@ -1,22 +1,20 @@
 # Capital Oral Surgery
 
-Astro homepage for Capital Oral Surgery & Dental Implants.
+Astro website for Capital Oral Surgery & Dental Implants in Topeka, Kansas.
 
-## Design Source Of Truth
+## Design source of truth
 
-The approved current design is documented in:
+Bryan approved the CIDWP-inspired homepage and its extension to the remaining pages on October 20, 2026. Keep Capital's existing copy, logo, photographs, and brand palette. The reference provides the layout and typography, not the content or branding.
 
-- `BLUEPRINT.md`
-- `BUILD_PROMPT.md`
-- `src/lib/theme.config.ts`
-- `src/styles/global.css`
-- the live homepage components in `src/components/`
+- `BLUEPRINT.md`: approved layout and responsive patterns.
+- `BUILD_PROMPT.md`: guidance for future edits.
+- `src/lib/theme.config.ts` and `src/styles/global.css`: canonical brand tokens.
+- `src/styles/site.css`: shared typography, navigation, footer, and homepage sections.
+- `src/styles/interior.css`: interior heroes, content, service navigation, and forms.
 
-Use the current homepage style for future pages and edits: calm surgical editorial layout, client-cyan feature bands with deep-blue heroes and actions, serif headings, stable image aspect-ratio placeholders, restrained cards, and simple full-width section bands.
+## Local development
 
-Avoid reviving the older generated concept with glassmorphism, gradient hero overlays, overlapping info cards, or the old patient-confidence/CTA blocks.
-
-## Local Development
+Use Node 22.12 or newer.
 
 ```sh
 npm install
@@ -27,7 +25,9 @@ npm run dev
 
 ```sh
 npx astro check
-npx astro build
+npm run build
 ```
 
-Use browser checks at desktop and mobile widths after layout changes.
+Inspect desktop and mobile layouts after visual changes. Keep the existing text, metadata, routes, form fields, and image descriptions intact unless the requested change includes them.
+
+The homepage and contact forms retain their existing static `action="#"`. The referral form retains `/api/referral`, currently a stub. Styling work does not connect these forms to a production delivery service.

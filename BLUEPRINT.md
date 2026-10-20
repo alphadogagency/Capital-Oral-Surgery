@@ -1,159 +1,65 @@
-# Capital Oral Surgery - Current Design Blueprint
+# Capital Oral Surgery — Current Design Blueprint
 
-This file is the design source of truth for future homepage edits and new pages. The current direction is the calm, editorial oral-surgery layout now implemented in `src/pages/index.astro`. Do not return to the older generated concept with glass panels, gradient image overlays, overlapping info cards, or the old "Patient Confidence" section.
+## Approved design
 
-## Overall Direction
+On October 20, 2026, Bryan approved the CIDWP-inspired homepage and asked to carry the design across all remaining pages. Reference: https://cidwp-new.pages.dev/. Capital's current copy, logo, photography, and brand colors remain unchanged.
 
-The site should feel specialized, steady, and clinically polished. Use generous whitespace, restrained borders, serif editorial headlines, and calm blue/cyan color blocking. Pages should look like they belong to a focused surgical practice, not a marketing landing page.
+## Shared system
 
-Use the live homepage as the primary visual reference:
+- Use `Layout`, `Header`, and `Footer` on every content page.
+- `site.css` supplies locally hosted Work Sans, spacious sections, pill actions, and the shared header/footer. The typeface files and license live in `public/fonts/`.
+- The fixed header overlays the homepage hero, then becomes Midnight Blue when scrolled. Interior pages start with a solid Midnight Blue header to support Capital's unchanged white wordmark.
+- Desktop navigation begins at 1280px. Below that, use the existing disclosure menu, with scrollable content, Escape dismissal, and automatic closing after choosing a link.
+- Interior content clears the header: 110px desktop, 94px tablet, 84px phone.
+- Keep a keyboard skip link, visible focus states, anchor offsets, and reduced-motion support.
+- Use Work Sans light headings and regular body copy, sentence-case labels, and restrained letter spacing. Existing wording and capitalization in source content remain authoritative.
+- Use square photographs and subtle bordered panels. Buttons are pills; form fields are square. Do not alter the referral tooth shapes or selected control states.
 
-- Deep-blue header and hero
-- Large serif headlines with cyan emphasis
-- Approved hero photography with remaining future image placeholders preserving their aspect ratios
-- Thin cyan offset borders around image frames
-- White and pale-aqua section bands
-- Minimal cards, subtle shadows, and consistent rounded corners
-- Full-width client-cyan testimonial band with white text
-- Pale-aqua appointment form section
+## Brand palette
 
-## Canonical Sections
+The values in `src/lib/theme.config.ts` and `src/styles/global.css` are authoritative:
 
-### Header
+- Slate Ink: `#1b2733`
+- Linen White: `#f4f4f4`
+- Pale Sky: `#eaf5fa`
+- Midnight Blue: `#0e3e73`
+- Capital Blue: `#2c5cb1`
+- Coastal Teal: `#6dc4d5`
+- Warm Taupe: `#6f6357`
 
-Use `src/components/Header.astro`.
+Use the existing semantic tokens. Keep readable dark text on pale and cyan surfaces, and light text on deep blue. Preserve `/images/logo-header.png` and the existing footer logo.
 
-- Background: `bg-midnight`
-- Logo left, desktop nav centered/right, and the appointment CTA on the far right
-- Main nav labels: `Our Practice`, `Procedures`, `Doctors`, `Patient Resources`, and `Contact`
-- Nav anchors: `#about`, `#procedures`, `#team`, `#appointment`
-- Show `Patient Resources` as a desktop and mobile dropdown with `Refer a Patient` linking to `/refer-a-patient/`, `Payment Plans` linking to `/payment-plans/`, `Surgical Instructions` linking to `/surgical-instructions/`, `First Visit` linking to `/first-visit/`, `Dental Anxiety & Phobia` linking to `/dental-anxiety-and-phobia/`, and `Why Choose Our Practice` linking to `/why-choose-our-practice/`
-- The referral landing page links to the internal form at `/refer-a-patient/form/`; its POST stub is `/api/referral`
-- Mobile/tablet uses the existing `details` menu until the `lg` breakpoint; the opened menu is a full-height panel below the 76px header using `100dvh`
-- CTA: solid `Request Appointment` button to `#appointment`
+## Homepage
 
-### Hero
+Order: Header, Hero, MeetTeam, SpecializedCare, Procedures, Testimonial, CallToAction, Footer.
 
-Use `src/components/Hero.astro`.
+- Full-width office-photo hero with a restrained dark overlay, large headline, and pill actions.
+- Navy band for the existing statistics and review.
+- Pale team section with paired portraits and introductory heading.
+- Full-width split photograph and care introduction.
+- Square, numbered procedure tiles.
+- Coastal Teal testimonial band.
+- Pale appointment section with the existing form.
 
-- Background: `bg-midnight`
-- Minimum height: `calc(100dvh - 76px)` so the hero fills the visible screen below the header before the next section appears
-- The hero section vertically centers the content grid inside that height
-- Two-column layout on desktop
-- Left column: small uppercase location eyebrow, large serif headline, supporting copy, stats, CTAs
-- Right column: approved office photo at `/images/hero.jpg` inside an `aspect-[4/5]` frame, rounded corners, and a thin cyan border frame
-- Floating review card overlaps the image area on desktop
-- Primary copy:
-  - "Surgical expertise, delivered with calm."
-  - "From wisdom teeth to dental implants and corrective jaw surgery, our two specialists guide you through every step with clarity and care."
+Preserve anchors `about`, `team`, `procedures`, `testimonial`, and `appointment`.
 
-### Specialized Care
+## Interior pages
 
-Use `src/components/SpecializedCare.astro`.
+`interior.css` extends the shared design without replacing the page content.
 
-- Section id: `about`
-- White background
-- Two-column desktop layout
-- Left image uses `/images/specialized-care.jpg` and keeps `aspect-[4/3]`
-- Cyan offset border behind the image area
-- Right text column uses eyebrow, serif heading, paragraphs, and compact check-list rows
+- Pale Sky split hero: readable copy on the left and Capital's clinical photograph on the right. Stack copy before the photograph below 900px.
+- Service pages use one reading column and a sticky category sidebar above 1100px. The sidebar clears the fixed header. On narrower screens, the shared navigation remains available.
+- Treatment details use roomy sections, simple numbered panels, pale information bands, and cyan consultation calls to action.
+- Doctor profiles preserve the supplied portraits, credentials, biographies, affiliations, and recognitions.
+- Patient-resource pages preserve all preparation and surgical instructions. Long sections remain readable and reveal when they enter the viewport.
+- Contact retains its address, office hours, directions/map, and request form.
+- Referrals retain every field, radio group, tooth selector, attachment toggle, and existing endpoint.
+- Payment Plans retains the Cherry embed and existing practice configuration, styled with Capital's palette and Work Sans.
 
-### Meet The Team
+Static office photographs use Astro's responsive WebP output. Keep image descriptions and supplied assets intact.
 
-Use `src/components/MeetTeam.astro`.
+## Verification and scope
 
-- Section id: `team`
-- White background
-- Centered eyebrow and serif heading
-- Two doctor portrait blocks in a desktop grid
-- Portrait frames keep `aspect-[20/19]`
-- Dr. Patrick Lucaci uses `/images/doctor-patrick-lucaci.jpg`
-- Dr. Owen Lonergan uses `/images/doctor-owen-lonergan.jpg`
-- Use initials placeholders only for doctors whose final headshots have not been supplied
+Run `npx astro check` and `npm run build`. Inspect representative service, doctor, resource, contact, referral, and financing pages at desktop and phone widths. Check all routes for overflow, internal links, and missing assets. For design-only changes, compare rendered copy and form fields with a saved baseline.
 
-### Procedures
-
-Use `src/components/Procedures.astro`.
-
-- Section id: `procedures`
-- Background: `bg-aqua-soft`
-- Centered eyebrow and heading
-- Six white cards in a 3x2 desktop grid
-- Cards use numbered pale-aqua circular badges
-- Desktop card size should stay close to 413px wide by 180px tall at the 1900px reference viewport
-
-### Testimonial
-
-Use `src/components/Testimonial.astro`.
-
-- Full-width `bg-secondary` band
-- No card or container outline
-- Centered quote mark, serif testimonial, and small uppercase attribution
-- Keep content compact and horizontally centered
-
-### Appointment Form
-
-Use `src/components/CallToAction.astro`.
-
-- Section id: `appointment`
-- Background: `bg-aqua-soft`
-- Two-column desktop layout
-- Left column has request eyebrow, serif heading, short body copy, and address/phone/hours details
-- Right column has a white form panel with first/last name, email, phone, reason select, message, and a full-width deep-blue submit button
-- The form is currently static with `action="#"`; wire it to a backend endpoint only when one is provided
-
-### Footer
-
-Use `src/components/Footer.astro`.
-
-- Background: `bg-midnight`
-- Keep simple: logo, short tagline, office details, and phone
-- Current phone number: sourced from `src/lib/site.ts`
-
-## Design Tokens
-
-Tokens live in `src/lib/theme.config.ts` and are mirrored in `src/styles/global.css` through Tailwind v4's `@theme` block. Components should use semantic Tailwind classes instead of raw hex values.
-
-Key colors:
-
-- `midnight`: legacy semantic name for the client-approved deep-blue header/hero/footer background
-- `secondary`: accessible deep blue for buttons and labels on light surfaces
-- `accent`: client cyan (`#47c4d4`), used as the dominant color for testimonials, consultation bands, and repeated highlights with white text
-- `brand-blue` and `brand-cyan`: supporting shades in the client-approved blue-to-cyan range
-- `surface`: white panels and cards
-- `aqua-soft`: pale blue section background
-- `aqua-pale`: pale numbered-badge background
-- `foreground`: main text
-- `muted`: supporting text
-- `line`: form input borders
-- `placeholder`: form placeholder text
-
-## Typography
-
-- Body font: Inter
-- Heading font: Georgia/Cambria/Times New Roman via the `.serif` utility
-- Use serif for major headings, doctor names, procedure card titles, and testimonial copy
-- Eyebrows are small, uppercase, bold, and widely tracked, usually `tracking-[.34em]`
-- Do not use negative letter spacing or viewport-width font sizing
-
-## Layout Rules
-
-- Default horizontal padding: `px-5`
-- Main desktop content width: `max-w-7xl` or the explicit width already used by the section
-- Cards, buttons, inputs, panels, and image frames should use rounded corners with `rounded-md` or `rounded-lg` and subtle shadows where appropriate
-- Do not nest cards inside cards
-- Do not use decorative gradient blobs, bokeh, glassmorphism, or large marketing hero cards
-- Keep fixed-format visual areas stable with `aspect-*` classes until real images are added
-- Preserve a responsive mobile stack for every section
-- Use the global `data-reveal` in-view animation for section content and repeated cards; keep it subtle and respect `prefers-reduced-motion`
-
-## When Adding Future Pages
-
-Start with the existing `Layout`, `Header`, and `Footer`. Reuse the same colors, type scale, spacing, and section patterns from the homepage. New pages should feel like continuations of this calm surgical website, not separate templates.
-
-Before shipping future visual changes, run:
-
-- `npx astro check`
-- `npx astro build`
-
-Also inspect desktop and mobile views in the browser when the change affects layout.
+Preview locally unless publishing is requested. The homepage/contact forms are static and the referral endpoint is a stub; preserve this behavior until a production integration is explicitly requested.

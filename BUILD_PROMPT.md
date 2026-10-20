@@ -1,61 +1,15 @@
-# Capital Oral Surgery - Future Build Prompt
+# Capital Oral Surgery — Future Build Prompt
 
-You are working in the Astro project for Capital Oral Surgery. The current homepage design has been rebuilt from approved screenshots and is the visual source of truth for future pages and edits.
+Work in this existing Astro project. Bryan approved the CIDWP-inspired design across the whole site on October 20, 2026. Preserve Capital's existing copy, brand colors, logo, and photographs.
 
-## Read First
+Read `BLUEPRINT.md`, `src/lib/theme.config.ts`, `src/styles/site.css`, and `src/styles/interior.css` before changing layouts. `src/styles/global.css` mirrors the canonical palette into Tailwind v4.
 
-Before making design or page changes, read:
+Reuse the shared Layout, Header, and Footer. The design uses local Work Sans, spacious full-width bands, pale split interior heroes, square photographs and panels, and pill actions. Extend the existing semantic classes instead of creating another visual system. Source wording is authoritative; do not rewrite patient information as part of a styling change.
 
-- `BLUEPRINT.md` - current design direction and section patterns
-- `src/lib/theme.config.ts` - canonical theme tokens
-- `src/styles/global.css` - Tailwind v4 token mirror and global utilities
-- Existing components in `src/components/` - especially `Header`, `Hero`, `SpecializedCare`, `MeetTeam`, `Procedures`, `Testimonial`, `CallToAction`, and `Footer`
+The homepage uses `<Layout homepage>` and `<Header homepage>`. Interior pages use the default layout/header and an `interior-main` main region with `id="main-content"`. Preserve keyboard navigation, heading hierarchy, image descriptions, form labels, selected states, and mobile scrolling within tooth charts.
 
-Do not use `design/index.html` as an old generated mockup. It is only a compact current-design reference now.
+Keep the homepage anchors and all existing page URLs. Procedure category links must resolve to existing pages or `/#procedures`. Contact details come from `src/lib/site.ts` where available.
 
-## Design Rules
+Preserve the Cherry financing integration and current form behavior. Homepage/contact forms are static; referral submission uses the existing stub endpoint. Do not imply styling changes establish production delivery.
 
-- Keep the calm, specialized oral-surgery aesthetic from the current homepage.
-- Use semantic token classes such as `bg-midnight`, `bg-secondary`, `bg-aqua-soft`, `text-foreground`, `text-muted`, `border-line`, and `placeholder:text-placeholder`.
-- Do not add raw hex colors inside components. Add a token first if a new reusable color is truly needed.
-- Use `.serif` for major editorial headings and patient-facing quote text.
-- Use small uppercase, widely tracked eyebrows for section labels.
-- Preserve stable image aspect ratios with `aspect-*` placeholders until final images are provided.
-- Prefer simple full-width bands, two-column sections, and restrained cards. Avoid glassmorphism, gradient overlays, overlapping info-card blocks, decorative blobs, or heavy marketing-style layouts.
-- Make every new section responsive from mobile through desktop.
-
-## Current Homepage Order
-
-The homepage is:
-
-1. `Header`
-2. `Hero`
-3. `SpecializedCare`
-4. `MeetTeam`
-5. `Procedures`
-6. `Testimonial`
-7. `CallToAction`
-8. `Footer`
-
-New pages should reuse `Layout`, `Header`, and `Footer`, then build content with the same typography, color palette, spacing, and section rhythm.
-
-## Anchors
-
-The main homepage anchors are:
-
-- `#about`
-- `#team`
-- `#procedures`
-- `#testimonial`
-- `#appointment`
-
-Header navigation and appointment CTAs should keep pointing to these unless the site gets dedicated pages later.
-
-## Verification
-
-After code changes, run:
-
-- `npx astro check`
-- `npx astro build`
-
-For layout changes, inspect desktop and mobile browser views before handing work back.
+Run `npx astro check` and `npm run build`, then verify desktop and mobile layouts and relevant controls. For a design-only update, compare the rendered copy, metadata, and form fields with the previous version. Use a local preview unless the user asks to publish.

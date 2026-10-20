@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import interiorHeroImage from "../../public/images/specialized-care.jpg";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -39,12 +41,12 @@ const practiceBenefits = [
 
 <Layout title={title} description={description} ogImage="/og.png">
   <Header />
-  <main>
-    <section class="bg-midnight text-surface" aria-labelledby="why-choose-heading">
+  <main id="main-content" tabindex="-1" class="interior-main interior-resource">
+    <section class="interior-hero bg-midnight text-surface" aria-labelledby="why-choose-heading">
       <div
-        class="mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-10 px-5 py-14 lg:gap-14 xl:grid-cols-[minmax(0,610px)_minmax(360px,500px)] xl:justify-between xl:px-0"
+        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-10 px-5 py-14 lg:gap-14 xl:grid-cols-[minmax(0,610px)_minmax(360px,500px)] xl:justify-between xl:px-0"
       >
-        <div data-reveal>
+        <div class="interior-hero-copy" data-reveal>
           <a
             href="/"
             class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
@@ -66,7 +68,7 @@ const practiceBenefits = [
         </div>
 
         <div
-          class="relative mx-auto w-full max-w-[500px] lg:mx-0"
+          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
           data-reveal
           style="--reveal-delay: 120ms"
         >
@@ -76,8 +78,11 @@ const practiceBenefits = [
           >
           </div>
           <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
-            <img
-              src="/images/specialized-care.jpg"
+            <Image
+              src={interiorHeroImage}
+              widths={[600, 900, 1400]}
+              sizes="(min-width: 900px) 46vw, 100vw"
+              format="webp"
               alt="Dental imaging equipment at Capital Oral Surgery"
               class="h-full w-full object-cover object-center"
               width="5184"

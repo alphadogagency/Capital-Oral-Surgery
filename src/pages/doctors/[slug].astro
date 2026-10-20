@@ -29,12 +29,12 @@ const sectionBands = [
 
 <Layout title={title} description={description} ogImage={doctor.image}>
   <Header />
-  <main>
-    <section class="bg-midnight text-surface" aria-labelledby="doctor-heading">
+  <main id="main-content" tabindex="-1" class="interior-main interior-doctor">
+    <section class="interior-hero bg-midnight text-surface" aria-labelledby="doctor-heading">
       <div
-        class="mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-14 px-5 py-14 lg:grid-cols-[minmax(0,610px)_minmax(380px,500px)] lg:px-0"
+        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-14 px-5 py-14 lg:grid-cols-[minmax(0,610px)_minmax(380px,500px)] lg:px-0"
       >
-        <div data-reveal>
+        <div class="interior-hero-copy" data-reveal>
           <a
             href="/#team"
             class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
@@ -76,7 +76,7 @@ const sectionBands = [
         </div>
 
         <div
-          class="relative mx-auto w-full max-w-[500px] lg:mx-0"
+          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
           data-reveal
           style="--reveal-delay: 120ms"
         >

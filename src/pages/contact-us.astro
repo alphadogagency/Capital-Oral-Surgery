@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import interiorHeroImage from "../../public/images/hero.jpg";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -42,12 +44,12 @@ const visitReasons = [
 
 <Layout title={title} description={description} ogImage="/og.png">
   <Header />
-  <main>
-    <section class="relative overflow-hidden bg-midnight text-surface" aria-labelledby="contact-heading">
+  <main id="main-content" tabindex="-1" class="interior-main interior-contact">
+    <section class="interior-hero relative overflow-hidden bg-midnight text-surface" aria-labelledby="contact-heading">
       <div
-        class="mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[minmax(0,610px)_minmax(380px,500px)] lg:py-16"
+        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[minmax(0,610px)_minmax(380px,500px)] lg:py-16"
       >
-        <div class="relative z-10" data-reveal>
+        <div class="interior-hero-copy relative z-10" data-reveal>
           <p class="text-xs font-bold tracking-[.34em] text-secondary">
             Contact Capital Oral Surgery
           </p>
@@ -79,7 +81,7 @@ const visitReasons = [
         </div>
 
         <div
-          class="relative mx-auto w-full max-w-[500px] lg:mx-0"
+          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
           data-reveal
           style="--reveal-delay: 120ms"
         >
@@ -89,8 +91,11 @@ const visitReasons = [
           >
           </div>
           <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
-            <img
-              src="/images/hero.jpg"
+            <Image
+              src={interiorHeroImage}
+              widths={[600, 900, 1400]}
+              sizes="(min-width: 900px) 46vw, 100vw"
+              format="webp"
               alt="Capital Oral Surgery consultation room"
               class="h-full w-full object-cover object-[33%_50%]"
               width="5184"

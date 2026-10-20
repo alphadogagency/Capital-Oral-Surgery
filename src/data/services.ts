@@ -1,7 +1,7 @@
 export const serviceGroups = [
   {
     label: "Dental Implants",
-    href: "/services/dental-implants/",
+    href: "/services/replacing-missing-teeth/",
     items: [
       { label: "Replacing Missing Teeth", href: "/services/replacing-missing-teeth/" },
       { label: "Single Tooth Implant", href: "/services/single-tooth-implant/" },
@@ -23,7 +23,7 @@ export const serviceGroups = [
   },
   {
     label: "Wisdom Teeth",
-    href: "/services/wisdom-teeth/",
+    href: "/services/wisdom-teeth-removal/",
     items: [
       { label: "Wisdom Teeth Removal", href: "/services/wisdom-teeth-removal/" },
       { label: "Impacted Wisdom Teeth", href: "/services/impacted-wisdom-teeth/" },
@@ -35,7 +35,7 @@ export const serviceGroups = [
   },
   {
     label: "Procedures",
-    href: "/services/procedures/",
+    href: "/#procedures",
     items: [
       {
         label: "Bone Grafting",

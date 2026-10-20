@@ -23,8 +23,8 @@ export const theme = {
     midnight: "#0e3e73",
   },
   fonts: {
-    heading: "Fraunces, Georgia, Cambria, 'Times New Roman', serif",
-    body: "Inter, ui-sans-serif, system-ui, sans-serif",
+    heading: "'Capital Work Sans', ui-sans-serif, system-ui, sans-serif",
+    body: "'Capital Work Sans', ui-sans-serif, system-ui, sans-serif",
   },
   radius: {
     sm: "0.25rem",

@@ -22,7 +22,7 @@ const columnStyle = `grid-template-columns: repeat(${upper.length}, minmax(2.25r
         <div class="grid gap-1.5" style={columnStyle}>
           {
             upper.map((tooth) => (
-              <label class="cursor-pointer" title={`${title}: tooth ${tooth}`}>
+              <label class="relative cursor-pointer" title={`${title}: tooth ${tooth}`}>
                 <input
                   class="peer sr-only"
                   type="checkbox"
@@ -40,7 +40,7 @@ const columnStyle = `grid-template-columns: repeat(${upper.length}, minmax(2.25r
         <div class="grid gap-1.5" style={columnStyle}>
           {
             lower.map((tooth) => (
-              <label class="cursor-pointer" title={`${title}: tooth ${tooth}`}>
+              <label class="relative cursor-pointer" title={`${title}: tooth ${tooth}`}>
                 <input
                   class="peer sr-only"
                   type="checkbox"

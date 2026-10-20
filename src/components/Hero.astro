@@ -1,94 +1,37 @@
 ---
+import { Image } from "astro:assets";
+import heroPhoto from "../../public/images/hero.jpg";
 import { OFFICE_PHONE } from "../lib/site";
 ---
 
-<section class="flex min-h-[calc(100dvh-76px)] items-center bg-midnight text-surface">
-  <div
-    class="mx-auto grid max-w-7xl gap-14 px-5 py-12 lg:grid-cols-[minmax(0,640px)_minmax(420px,468px)] lg:justify-between lg:px-0 lg:py-12"
-  >
-    <div class="lg:pt-8" data-reveal>
-      <p class="text-xs font-bold tracking-[.34em] text-secondary">
-        Topeka • Oral & maxillofacial surgery
-      </p>
-      <h1
-        class="serif mt-6 max-w-[700px] text-5xl leading-[0.94] text-surface sm:text-6xl lg:mt-5 lg:text-[76px]"
-      >
-        Surgical expertise,<br />
-        <span class="text-secondary">delivered with<br />calm.</span>
-      </h1>
-      <p class="mt-6 max-w-[590px] text-lg leading-8 text-surface/75 sm:text-xl">
+<section class="home-hero" aria-labelledby="hero-heading">
+  <div class="home-hero-media">
+    <Image src={heroPhoto} alt="Capital Oral Surgery consultation room" widths={[750, 1200, 1800, 2400]} sizes="100vw" loading="eager" fetchpriority="high" />
+  </div>
+  <div class="home-hero-shade" aria-hidden="true"></div>
+  <div class="home-shell home-hero-content">
+    <div class="home-hero-copy">
+      <p class="home-hero-location">Topeka • Oral &amp; maxillofacial surgery</p>
+      <h1 id="hero-heading">Surgical expertise,<br /><strong>delivered with calm.</strong></h1>
+      <p class="home-hero-description">
         From wisdom teeth to dental implants and corrective jaw surgery, our
         two specialists guide you through every step with clarity and care.
       </p>
-
-      <div class="mt-8 flex flex-col gap-6 sm:flex-row sm:gap-16">
-        <div class="border-l-2 border-secondary pl-5">
-          <p class="serif text-3xl font-bold leading-none">2</p>
-          <p class="mt-2 text-xs font-bold tracking-[.28em] text-surface/55">
-            Board-certified surgeons
-          </p>
-        </div>
-        <div class="sm:pl-1">
-          <p class="serif text-3xl font-bold leading-none">20+</p>
-          <p class="mt-2 text-xs font-bold tracking-[.28em] text-surface/55">
-            Years serving Topeka
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a
-          href="#appointment"
-          class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90 sm:min-w-[223px]"
-        >
-          Request Appointment
-        </a>
-        <a
-          href={OFFICE_PHONE.href}
-          class="inline-flex h-14 items-center justify-center rounded-md border border-surface/40 px-7 font-bold text-surface transition-colors hover:bg-surface/10 sm:min-w-[216px]"
-        >
-          Call {OFFICE_PHONE.display}
-        </a>
-      </div>
     </div>
-
-    <div
-      class="relative mx-auto w-full max-w-[468px] self-start lg:mx-0 lg:pt-5"
-      data-reveal
-      style="--reveal-delay: 120ms"
-    >
-      <div class="absolute inset-x-0 top-0 bottom-0 rounded-lg border border-accent/80">
-      </div>
-      <div
-        class="relative mx-2 aspect-[4/5] overflow-hidden rounded-lg bg-surface/5"
-      >
-        <img
-          src="/images/hero.jpg"
-          alt="Capital Oral Surgery consultation room"
-          class="h-full w-full object-cover object-[55%_50%]"
-          width="5184"
-          height="3456"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
-      </div>
-      <figure
-        class="relative z-10 mt-5 rounded-lg bg-surface p-5 text-foreground shadow-xl sm:w-[235px] lg:absolute lg:-left-8 lg:bottom-[-3.25rem] lg:mt-0"
-      >
-        <div class="text-lg leading-none text-amber-400" aria-label="5 star review">
-          ★★★★★
-        </div>
-        <blockquote class="mt-3 text-sm leading-5">
-          “Calm, clear, and genuinely kind from start to finish.”
-        </blockquote>
-        <figcaption
-          class="mt-3 text-xs font-bold tracking-[.26em] text-muted/70"
-        >
-          Topeka patient<br />
-          Google review
-        </figcaption>
-      </figure>
+    <div class="home-actions">
+      <a href="#appointment" class="home-button home-button-cyan">Request Appointment <span aria-hidden="true">→</span></a>
+      <a href={OFFICE_PHONE.href} class="home-button home-button-light-outline">Call {OFFICE_PHONE.display} <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 </section>
+<div class="home-trust-band">
+  <div class="home-shell home-trust-grid">
+    <div class="home-stat"><strong>2</strong><p>Board-certified surgeons</p></div>
+    <div class="home-stat"><strong>20+</strong><p>Years serving Topeka</p></div>
+    <figure class="home-review-note">
+      <span class="home-stars" aria-label="5 star review">★★★★★</span>
+      <blockquote>“Calm, clear, and genuinely kind from start to finish.”</blockquote>
+      <figcaption>Topeka patient <span aria-hidden="true">·</span> Google review</figcaption>
+    </figure>
+  </div>
+</div>

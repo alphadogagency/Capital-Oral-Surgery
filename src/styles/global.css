@@ -26,8 +26,8 @@
   --color-placeholder: #6f6357;
   --color-midnight: #0e3e73;
 
-  --font-heading: Fraunces, Georgia, Cambria, "Times New Roman", serif;
-  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Capital Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Capital Work Sans", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;

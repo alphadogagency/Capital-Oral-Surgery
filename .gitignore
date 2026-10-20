@@ -2,6 +2,9 @@
 dist/
 # generated types
 .astro/
+# local design previews and verification output
+/artifacts/homepage-preview/
+/artifacts/interior-preview/
 # wrangler local cache
 .wrangler/
 

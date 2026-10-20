@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import carePhoto from "../../public/images/specialized-care.jpg";
 const checklist = [
   "Two board-trained surgeons under one roof",
   "Sedation options for anxious patients",
@@ -6,71 +8,25 @@ const checklist = [
 ];
 ---
 
-<section
-  id="about"
-  class="bg-surface text-foreground"
-  aria-labelledby="specialized-care-heading"
->
-  <div
-    class="mx-auto grid max-w-7xl gap-14 px-5 py-20 md:py-28 lg:grid-cols-[minmax(0,620px)_minmax(0,585px)] lg:items-start lg:gap-16 lg:px-0"
-  >
-    <div class="relative mx-auto w-full max-w-[620px] lg:mx-0" data-reveal>
-      <div
-        class="absolute -bottom-3 left-3 right-[-12px] top-3 rounded-lg border border-accent"
-        aria-hidden="true"
-      >
-      </div>
-      <div
-        class="relative aspect-[4/3] overflow-hidden rounded-lg bg-midnight/5"
-      >
-        <img
-          src="/images/specialized-care.jpg"
-          alt="3D dental imaging equipment at Capital Oral Surgery"
-          class="h-full w-full object-cover object-center"
-          width="5184"
-          height="3456"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-    </div>
-
-    <div class="lg:pt-1" data-reveal style="--reveal-delay: 120ms">
-      <p class="text-xs font-bold tracking-[.34em] text-secondary">
-        A specialist practice
-      </p>
-      <h2
-        id="specialized-care-heading"
-        class="serif mt-5 max-w-[585px] text-4xl leading-[1.04] text-foreground sm:text-5xl lg:text-[48px]"
-      >
-        Specialized care for your most important procedures.
-      </h2>
-
-      <div class="mt-7 max-w-[600px] space-y-6 text-base leading-7 text-muted">
-        <p>
-          At Capital Oral Surgery, we focus exclusively on oral and maxillofacial surgery
-          — so every patient receives the depth of training and chairside calm that
-          complex procedures deserve.
-        </p>
-        <p>
-          Whether you've been referred by your dentist or you're researching options
-          yourself, we make sure you feel informed, comfortable, and confident before,
-          during, and after care.
-        </p>
-      </div>
-
-      <ul class="mt-9 space-y-4 text-base text-foreground">
-        {
-          checklist.map((item) => (
-            <li class="flex gap-4">
-              <span class="text-secondary" aria-hidden="true">
-                ✓
-              </span>
-              <span>{item}</span>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+<section id="about" class="home-care" aria-labelledby="specialized-care-heading">
+  <div class="home-care-photo">
+    <Image src={carePhoto} alt="3D dental imaging equipment at Capital Oral Surgery" widths={[600, 900, 1400]} sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" />
+  </div>
+  <div class="home-section-copy home-care-copy" data-reveal>
+    <p class="home-eyebrow">A specialist practice</p>
+    <h2 id="specialized-care-heading"><span>Specialized care</span> for your most important procedures.</h2>
+    <p>
+      At Capital Oral Surgery, we focus exclusively on oral and maxillofacial surgery
+      — so every patient receives the depth of training and chairside calm that
+      complex procedures deserve.
+    </p>
+    <p>
+      Whether you've been referred by your dentist or you're researching options
+      yourself, we make sure you feel informed, comfortable, and confident before,
+      during, and after care.
+    </p>
+    <ul class="home-checklist">
+      {checklist.map((item) => (<li><span aria-hidden="true">✓</span>{item}</li>))}
+    </ul>
   </div>
 </section>

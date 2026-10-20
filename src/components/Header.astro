@@ -2,6 +2,11 @@
 import { doctors } from "../data/doctors";
 import { serviceGroups } from "../data/services";
 
+interface Props {
+  homepage?: boolean;
+}
+const { homepage = false } = Astro.props;
+
 const navLinks = [
   { label: "Our Practice", href: "/#about" },
   { label: "Procedures", href: "/#procedures" },
@@ -31,7 +36,7 @@ const patientResourceLinks = [
 ];
 ---
 
-<header class="brand-header z-40 border-b border-surface/10 text-surface">
+<header class:list={["brand-header site-header z-40 border-b border-surface/10 text-surface", { "is-interior": !homepage }]}>
   <div
     class="mx-auto flex min-h-[76px] max-w-[1232px] items-center justify-between px-5"
   >
@@ -206,10 +211,11 @@ const patientResourceLinks = [
 
     <div class="hidden items-center xl:flex">
       <a
-        href="/contact-us/"
+        href={homepage ? "/#appointment" : "/contact-us/"}
         class="inline-flex h-11 items-center rounded-md bg-surface px-5 text-sm font-bold text-primary transition-colors hover:bg-aqua-pale"
       >
         Request Appointment
+        <span class="site-header-arrow" aria-hidden="true">→</span>
       </a>
     </div>
 
@@ -374,7 +380,7 @@ const patientResourceLinks = [
           </nav>
           <div class="mt-8">
             <a
-              href="/contact-us/"
+              href={homepage ? "/#appointment" : "/contact-us/"}
               class="inline-flex w-full justify-center rounded-md bg-secondary px-5 py-3 text-sm font-bold text-surface sm:w-auto"
             >
               Request Appointment
@@ -385,3 +391,30 @@ const patientResourceLinks = [
     </details>
   </div>
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>(".site-header");
+  const menu = header?.querySelector<HTMLDetailsElement>("details.group\\/menu");
+
+  if (header && menu) {
+    const updateHeader = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
+      header.classList.toggle("menu-is-open", menu.open);
+    };
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    menu.addEventListener("toggle", updateHeader);
+    menu.addEventListener("click", (event) => {
+      if (event.target instanceof Element && event.target.closest("a")) menu.open = false;
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu.open) {
+        menu.open = false;
+        menu.querySelector<HTMLElement>("summary")?.focus();
+      }
+    });
+    window.matchMedia("(min-width: 1280px)").addEventListener("change", (event) => {
+      if (event.matches) menu.open = false;
+    });
+  }
+</script>
