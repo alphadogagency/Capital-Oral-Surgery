@@ -1,0 +1,64 @@
+name: Deploy Capital to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: capital-cloudflare-pages-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.repository == 'alphadogagency/Capital-Oral-Surgery' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      deployments: write
+    environment:
+      name: production
+      url: https://capital-oral-surgery.pages.dev
+    steps:
+      - name: Check out the pushed commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Check Astro and TypeScript
+        run: npm run astro -- check
+
+      - name: Build the static Pages site
+        run: npm run build:pages
+
+      - name: Check deployment output
+        run: |
+          test -s dist/index.html
+          test -s dist/services/bone-grafting/index.html
+          test -s dist/doctors/patrick-lucaci/index.html
+          test -s dist/contact-us/index.html
+          test -s dist/refer-a-patient/form/index.html
+          test ! -e dist/server/index.js
+
+      - name: Deploy to the existing Capital Pages project
+        id: deployment
+        uses: cloudflare/wrangler-action@953926a2e2182532811c01a25e53647d93bf07c0 # v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: '4.151.3'
+          command: pages deploy dist --project-name=capital-oral-surgery --branch=main --commit-hash=${{ github.sha }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

@@ -31,3 +31,32 @@ npm run build
 Inspect desktop and mobile layouts after visual changes. Keep the existing text, metadata, routes, form fields, and image descriptions intact unless the requested change includes them.
 
 The homepage and contact forms retain their existing static `action="#"`. The referral form retains `/api/referral`, currently a stub. Styling work does not connect these forms to a production delivery service.
+
+## Production deployment
+
+Production is the existing Cloudflare Pages project `capital-oral-surgery` at
+https://capital-oral-surgery.pages.dev. The repository is now
+`alphadogagency/Capital-Oral-Surgery`; Cloudflare's older native Git connection
+still references the former `bryguy-404` owner.
+
+`.github/workflows/deploy-pages.yml` checks, builds, and deploys pushes to `main`
+directly to the existing Pages project. It also supports manual runs on `main`.
+The job is restricted to this repository and branch, and production uploads run
+one at a time.
+
+GitHub Actions uses the encrypted repository secret
+`CLOUDFLARE_API_TOKEN` and the repository variable `CLOUDFLARE_ACCOUNT_ID`.
+The token requires only **Account → Cloudflare Pages → Edit** on the hosting
+account. This permission applies to Pages projects throughout that account.
+Never commit a token. Credentials are available only to the deployment step.
+The account token is named `Capital Oral Surgery GitHub Deploy` and expires
+October 20, 2027. Renew it and update the GitHub secret before that date.
+
+`npm run build:pages` builds the static website for Cloudflare, while the existing
+`npm run build` also packages the separate ChatGPT Sites worker. Keep the Sites
+worker out of Pages uploads. Wrangler includes the existing `functions/` folder
+when deploying from the repository root.
+
+Disable the old native Cloudflare automatic branch builds once the GitHub
+workflow is operational to avoid duplicate deployments. Check the workflow result
+and verify the affected pages on the existing live URL after publishing.
