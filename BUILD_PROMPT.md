@@ -1,6 +1,6 @@
 # Capital Oral Surgery — Future Build Prompt
 
-Work in this existing Astro project. Bryan approved the CIDWP-inspired design across the whole site on October 20, 2026. Preserve Capital's existing copy, brand colors, logo, and photographs.
+Work in this existing Astro project. Bryan approved the CIDWP-inspired design across the whole site on October 20, 2026, then requested the September 2026 branding on October 22 without layout changes. Preserve the current copy, photographs, page structure, forest/linen/wheat palette, and updated logo. Keep Work Sans until the requested Trajan Pro 3 Light and Futura PT Light webfonts are supplied.
 
 Read `BLUEPRINT.md`, `src/lib/theme.config.ts`, `src/styles/site.css`, and `src/styles/interior.css` before changing layouts. `src/styles/global.css` mirrors the canonical palette into Tailwind v4.
 

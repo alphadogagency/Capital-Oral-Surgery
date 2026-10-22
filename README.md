@@ -4,7 +4,9 @@ Astro website for Capital Oral Surgery & Dental Implants in Topeka, Kansas.
 
 ## Design source of truth
 
-Bryan approved the CIDWP-inspired homepage and its extension to the remaining pages on October 20, 2026. Keep Capital's existing copy, logo, photographs, and brand palette. The reference provides the layout and typography, not the content or branding.
+Bryan approved the CIDWP-inspired homepage and its extension to the remaining pages on October 20, 2026. On October 22, Bryan requested the September 2026 branding guide while preserving that layout. Keep the existing copy, photographs, sections, and responsive structure. The current brand palette is Capital Forest, Espresso, Linen White, Wheat, and Terracotta; the header and footer use the updated logo extracted from the supplied guide.
+
+Work Sans stays in place at Bryan's request until an Adobe Fonts web-project link or licensed webfont files are supplied for **Trajan Pro 3 Light** and **Futura PT Light**. Do not substitute other fonts in the meantime. The guide's exact terracotta is decorative; a darker derived shade is used for readable small text on linen.
 
 - `BLUEPRINT.md`: approved layout and responsive patterns.
 - `BUILD_PROMPT.md`: guidance for future edits.

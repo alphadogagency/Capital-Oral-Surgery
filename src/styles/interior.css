@@ -8,8 +8,8 @@
 /* Fade anchored content without shifting its scroll destination after navigation. */
 html.reveal-ready .interior-main [data-reveal] { transform: none; transition-property: opacity; }
 .interior-main :is(.grid, .flex) > * { min-width: 0; }
-.interior-main h2 { font-size: clamp(34px, 3.5vw, 50px); font-weight: 300; line-height: 1.15; }
-.interior-main h3 { font-size: clamp(25px, 2.3vw, 32px); font-weight: 400; line-height: 1.2; }
+.interior-main h2 { color: var(--color-capital-forest); font-size: clamp(34px, 3.5vw, 50px); font-weight: 300; line-height: 1.15; }
+.interior-main h3 { color: var(--color-capital-forest); font-size: clamp(25px, 2.3vw, 32px); font-weight: 400; line-height: 1.2; }
 .interior-main p[class*="tracking-"] { font-size: 14px; font-weight: 500; letter-spacing: 0; text-transform: none; }
 .interior-main :is(article, section, div, form, a).rounded-lg {
   border-radius: 0;
@@ -33,8 +33,8 @@ html.reveal-ready .interior-main [data-reveal] { transform: none; transition-pro
 /* The reference's pale, full-width split hero, using Capital's own photography. */
 .interior-main .interior-hero {
   padding: 0;
-  background: var(--color-pale-sky);
-  color: var(--color-slate-ink);
+  background: var(--color-linen-tint);
+  color: var(--color-espresso);
 }
 .interior-hero .interior-hero-grid {
   display: grid;
@@ -51,9 +51,9 @@ html.reveal-ready .interior-main [data-reveal] { transform: none; transition-pro
   align-self: center;
   padding: clamp(54px, 5.4vw, 84px) var(--home-gutter);
 }
-.interior-hero .interior-hero-copy > a { font-size: 14px; font-weight: 500; color: var(--color-capital-blue); }
-.interior-hero .interior-hero-copy > a:hover { color: var(--color-midnight-blue); text-decoration: underline; }
-.interior-hero .interior-hero-copy > p[class*="tracking-"] { color: var(--color-capital-blue); }
+.interior-hero .interior-hero-copy > a { font-size: 14px; font-weight: 500; color: var(--color-capital-forest); }
+.interior-hero .interior-hero-copy > a:hover { color: var(--color-capital-forest); text-decoration: underline; }
+.interior-hero .interior-hero-copy > p[class*="tracking-"] { color: var(--color-accent-ink); }
 .interior-hero .interior-hero-copy > a + p { margin-top: 34px; }
 .interior-main .interior-hero h1 {
   max-width: 780px;
@@ -62,20 +62,20 @@ html.reveal-ready .interior-main [data-reveal] { transform: none; transition-pro
   font-weight: 300;
   line-height: 1.04;
   letter-spacing: -.05em;
-  color: var(--color-midnight-blue);
+  color: var(--color-capital-forest);
   overflow-wrap: break-word;
 }
 .interior-hero .interior-hero-copy > p:not([class*="tracking-"]) {
   max-width: 650px;
   font-size: 17px;
   line-height: 1.8;
-  color: var(--color-warm-taupe);
+  color: var(--color-muted);
 }
 .interior-hero .interior-hero-copy > div.flex { flex-wrap: wrap; gap: 12px; }
 .interior-hero .interior-hero-copy a.h-14 { min-width: 0; }
-.interior-hero .interior-hero-copy a.bg-secondary { background: var(--color-capital-blue); color: var(--color-linen-white); }
-.interior-hero .interior-hero-copy a.border { border-color: var(--color-capital-blue); color: var(--color-midnight-blue); }
-.interior-hero .interior-hero-copy a.h-14:hover { background: var(--color-midnight-blue); color: var(--color-linen-white); opacity: 1; }
+.interior-hero .interior-hero-copy a.bg-secondary { background: var(--color-capital-forest); color: var(--color-linen-white); }
+.interior-hero .interior-hero-copy a.border { border-color: var(--color-capital-forest); color: var(--color-capital-forest); }
+.interior-hero .interior-hero-copy a.h-14:hover { background: var(--color-capital-forest); color: var(--color-linen-white); opacity: 1; }
 .interior-hero .interior-hero-media {
   position: relative;
   align-self: stretch;
@@ -103,10 +103,10 @@ html.reveal-ready .interior-main [data-reveal] { transform: none; transition-pro
   width: 100%;
   margin: 0;
   padding: 22px 32px;
-  background: var(--color-midnight-blue);
+  background: var(--color-capital-forest);
   color: var(--color-linen-white);
 }
-.interior-contact .interior-hero-media > .bg-surface p:first-child { color: var(--color-coastal-teal); }
+.interior-contact .interior-hero-media > .bg-surface p:first-child { color: var(--color-linen-white); }
 .interior-contact .interior-hero-media > .bg-surface p:last-child { margin-top: 5px; color: var(--color-linen-white); }
 
 /* Roomy sections and quiet, square panels keep longer clinical copy readable. */
@@ -119,12 +119,13 @@ html.reveal-ready .interior-main [data-reveal] { transform: none; transition-pro
 }
 .interior-resource > section:not(.interior-hero) > div[class*="max-w-[920px]"] { max-width: 940px; }
 .interior-main .brand-cyan-band { border: 0; }
-.interior-main .service-cyan-cta { border: 0; background: var(--color-coastal-teal); color: var(--color-midnight-blue); }
-.interior-main .service-cyan-cta :is(.text-muted, .text-surface\/75) { color: var(--color-midnight-blue); }
-.interior-main .service-cyan-cta a.bg-secondary { background: var(--color-midnight-blue); color: var(--color-linen-white); }
-.interior-main .service-cyan-cta a.border { border-color: var(--color-midnight-blue); }
-.interior-main .service-cyan-cta a:hover { background: var(--color-linen-white); color: var(--color-midnight-blue); }
-.interior-main :is(article, aside) > .flex > span.rounded-full { border-radius: 0; background: transparent; color: var(--color-capital-blue); }
+.interior-main .service-cyan-cta { border: 0; background: var(--color-wheat); color: var(--color-espresso); }
+.interior-main .service-cyan-cta .text-secondary { color: var(--color-espresso); }
+.interior-main .service-cyan-cta :is(.text-muted, .text-surface\/75) { color: var(--color-espresso); }
+.interior-main .service-cyan-cta a.bg-secondary { background: var(--color-capital-forest); color: var(--color-linen-white); }
+.interior-main .service-cyan-cta a.border { border-color: var(--color-espresso); color: var(--color-espresso); }
+.interior-main .service-cyan-cta a:hover { background: var(--color-linen-white); color: var(--color-capital-forest); }
+.interior-main :is(article, aside) > .flex > span.rounded-full { border-radius: 0; background: transparent; color: var(--color-capital-forest); }
 
 /* Service navigation sits alongside one reading column, without an empty third column. */
 .interior-service .interior-service-shell {
@@ -141,7 +142,7 @@ html.reveal-ready .interior-main [data-reveal] { transform: none; transition-pro
   overflow-y: auto;
   padding: 22px 0 0;
   border: 0;
-  border-top: 1px solid var(--color-coastal-teal);
+  border-top: 1px solid var(--color-wheat);
   background: transparent;
 }
 .interior-service-shell > aside > div > p { padding-inline: 12px; }
@@ -151,11 +152,11 @@ html.reveal-ready .interior-main [data-reveal] { transform: none; transition-pro
 .interior-service-content article { padding: 30px; }
 .interior-service-content article h3 { font-size: 28px; }
 .interior-main article h2 { font-size: clamp(28px, 2.6vw, 36px); }
-.interior-main article > div.rounded-full { width: auto; height: auto; justify-content: flex-start; border-radius: 0; background: transparent; color: var(--color-capital-blue); font-weight: 500; }
+.interior-main article > div.rounded-full { width: auto; height: auto; justify-content: flex-start; border-radius: 0; background: transparent; color: var(--color-capital-forest); font-weight: 500; }
 .interior-service-content > .grid.bg-aqua-soft p.rounded-md { border-radius: 0; }
 .interior-contact > section:nth-child(2) h2 { font-size: clamp(25px, 2.4vw, 34px); font-weight: 400; }
-.interior-contact > section:nth-child(2) a { padding: 32px; background: var(--color-pale-sky); }
-.interior-contact > section:nth-child(2) a:hover { transform: none; border-color: var(--color-capital-blue); }
+.interior-contact > section:nth-child(2) a { padding: 32px; background: var(--color-linen-tint); }
+.interior-contact > section:nth-child(2) a:hover { transform: none; border-color: var(--color-capital-forest); }
 
 /* Preserve the existing selected states and tooth shapes in the referral form. */
 .interior-main form :is(input, select, textarea):not([type="checkbox"]):not([type="radio"]):not([type="hidden"]) {
