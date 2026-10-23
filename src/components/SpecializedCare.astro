@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import carePhoto from "../../public/images/specialized-care.jpg";
+import { practicePhotos } from "../data/practicePhotos";
+const carePhoto = practicePhotos.preparation;
 const checklist = [
   "Two board-trained surgeons under one roof",
   "Sedation options for anxious patients",
@@ -10,7 +11,7 @@ const checklist = [
 
 <section id="about" class="home-care" aria-labelledby="specialized-care-heading">
   <div class="home-care-photo">
-    <Image src={carePhoto} alt="3D dental imaging equipment at Capital Oral Surgery" widths={[600, 900, 1400]} sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" />
+    <Image src={carePhoto.src} alt={carePhoto.alt} style={`object-position: ${carePhoto.position}`} widths={[600, 900, 1400]} sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" />
   </div>
   <div class="home-section-copy home-care-copy" data-reveal>
     <p class="home-eyebrow">A specialist practice</p>

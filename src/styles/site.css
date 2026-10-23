@@ -194,7 +194,7 @@
   .site-template :is(section[id], main[id]) { scroll-margin-top: 100px; }
   .home-hero { min-height: 760px; height: 100svh; max-height: 920px; }
   .home-hero-content { padding-block: 185px 42px; gap: 26px; }
-  .home-hero-media img { object-position: 61% center; }
+  .home-hero-media img { object-position: 44% center; }
   .home-hero-shade { background: linear-gradient(180deg, rgb(62 90 64 / .78), rgb(30 27 24 / .25) 28%, rgb(30 27 24 / .92) 100%); }
   .home-hero-location { font-size: 15px; max-width: 260px; margin-bottom: 20px; }
   .site-template .home-hero h1 { font-size: clamp(42px, 10.5vw, 62px); line-height: 1.05; margin-bottom: 24px; }

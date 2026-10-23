@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import interiorHeroImage from "../../../public/images/specialized-care.jpg";
+import { practicePhotos } from "../../data/practicePhotos";
+const interiorPhoto = practicePhotos.imaging;
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
@@ -101,14 +102,13 @@ const imagingUses = [
           </div>
           <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
             <Image
-              src={interiorHeroImage}
+              src={interiorPhoto.src}
               widths={[600, 900, 1400]}
               sizes="(min-width: 900px) 46vw, 100vw"
               format="webp"
-              alt="Cone beam CT imaging equipment used for oral surgery planning"
-              class="h-full w-full object-cover object-center"
-              width="5184"
-              height="3456"
+              alt={interiorPhoto.alt}
+              class="h-full w-full object-cover"
+              style={`object-position: ${interiorPhoto.position}`}
               loading="eager"
               decoding="async"
               fetchpriority="high"
