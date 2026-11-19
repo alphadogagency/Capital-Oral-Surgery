@@ -20,104 +20,33 @@ import { OFFICE_PHONE } from "../lib/site";
         Let's get you<br /><span>scheduled.</span>
       </h2>
       <p class="mt-6 max-w-[540px] text-base leading-7 text-muted">
-        Send us a note and our team will reach out within one business day to confirm
-        a time that works for you.
+        Call our team to schedule your appointment and find a time that works for you.
       </p>
 
       <dl class="mt-9 space-y-4 text-sm text-foreground">
         <div>
-          <dt class="inline font-bold">Address:</dt>
-          <dd class="inline"> Topeka, Kansas</dd>
+          <dt class="inline font-bold">Address</dt>
+          <dd class="inline"> 2445 SW Wanamaker Rd, Suite 101<br />Topeka, KS 66614</dd>
         </div>
         <div>
-          <dt class="inline font-bold">Phone:</dt>
-          <dd class="inline"> {OFFICE_PHONE.display}</dd>
+          <dt class="inline font-bold">Phone</dt>
+          <dd class="inline"> <a href="tel:+17855884244">{OFFICE_PHONE.display}</a></dd>
         </div>
         <div>
-          <dt class="inline font-bold">Hours:</dt>
+          <dt class="inline font-bold">Hours</dt>
           <dd class="inline"> Mon-Fri, 8am-5pm</dd>
         </div>
       </dl>
     </div>
 
-    <form
-      class="home-appointment-form"
-      action="#"
-      method="post"
-      data-reveal
-      style="--reveal-delay: 120ms"
-    >
-      <div class="grid gap-4 sm:grid-cols-2">
-        <label class="sr-only" for="first-name">First name</label>
-        <input
-          id="first-name"
-          name="firstName"
-          type="text"
-          autocomplete="given-name"
-          placeholder="First name"
-          class="h-[46px] w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground placeholder:text-placeholder"
-        />
-
-        <label class="sr-only" for="last-name">Last name</label>
-        <input
-          id="last-name"
-          name="lastName"
-          type="text"
-          autocomplete="family-name"
-          placeholder="Last name"
-          class="h-[46px] w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground placeholder:text-placeholder"
-        />
-      </div>
-
-      <label class="sr-only" for="email">Email</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        autocomplete="email"
-        placeholder="Email"
-        class="mt-4 h-[46px] w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground placeholder:text-placeholder"
-      />
-
-      <label class="sr-only" for="phone">Phone</label>
-      <input
-        id="phone"
-        name="phone"
-        type="tel"
-        autocomplete="tel"
-        placeholder="Phone"
-        class="mt-4 h-[46px] w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground placeholder:text-placeholder"
-      />
-
-      <label class="sr-only" for="visit-reason">Reason for visit</label>
-      <select
-        id="visit-reason"
-        name="visitReason"
-        class="mt-4 h-[46px] w-full rounded-md border border-line bg-surface px-4 text-sm text-muted"
-      >
-        <option value="">Reason for visit</option>
-        <option value="dental-implants">Dental implants</option>
-        <option value="wisdom-teeth">Wisdom teeth</option>
-        <option value="tooth-extractions">Tooth extractions</option>
-        <option value="bone-grafting">Bone grafting</option>
-        <option value="oral-pathology">Oral pathology</option>
-        <option value="corrective-jaw-surgery">Corrective jaw surgery</option>
-      </select>
-
-      <label class="sr-only" for="message">How can we help?</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="How can we help?"
-        class="mt-4 min-h-[106px] w-full resize-y rounded-md border border-line bg-surface px-4 py-3 text-sm text-foreground placeholder:text-placeholder"
-      ></textarea>
-
-      <button
-        type="submit"
-        class="mt-5 h-14 w-full rounded-md bg-secondary px-6 text-base font-bold text-surface transition-opacity hover:opacity-90"
-      >
-        Send Request
-      </button>
-    </form>
+    <div class="home-schedule-card" data-reveal>
+      <p class="home-eyebrow">Let’s talk</p>
+      <h3>Schedule your visit.</h3>
+      <p>Our team is here to help you take the next step.</p>
+      <a class="cap-btn green home-schedule-call" href="tel:+17855884244">
+        Call to Schedule <span aria-hidden="true">↗</span>
+      </a>
+      <p class="home-schedule-number">{OFFICE_PHONE.display}</p>
+    </div>
   </div>
 </section>

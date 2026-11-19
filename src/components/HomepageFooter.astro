@@ -1,0 +1,14 @@
+---
+const columns = [
+ {title:'Procedures',links:[['Dental implants','/services/replacing-missing-teeth/'],['Wisdom teeth removal','/services/wisdom-teeth-removal/'],['Bone grafting','/services/bone-grafting/'],['Tooth extractions','/services/tooth-extractions/'],['3D imaging','/services/3d-imaging/'],['Anesthesia','/services/anesthesia/']]},
+ {title:'Patients',links:[['Your first visit','/first-visit/'],['Surgical instructions','/surgical-instructions/'],['Payment plans','/payment-plans/'],['Dental anxiety','/dental-anxiety-and-phobia/'],['Implant FAQ','/services/dental-implants-faq/']]},
+ {title:'Practice',links:[['Dr. Patrick Lucaci','/doctors/patrick-lucaci/'],['Dr. Owen Lonergan','/doctors/owen-lonergan/'],['Why choose us','/why-choose-our-practice/'],['Refer a patient','/refer-a-patient/'],['Contact us','/contact-us/']]},
+];
+---
+<footer class="cap-ft"><div class="ft-wrap">
+ <div class="ft-top"><div><a href="/" aria-label="Capital Oral Surgery home"><img src="/images/logo-light.png" alt="Capital Oral Surgery and Dental Implants" width="1207" height="399"/></a><p>A genuine passion for patient care allows us to provide optimal experiences and results every day.</p></div><div class="ft-btns"><a class="ft-btn t" href="#appointment">Request Appointment</a><a class="ft-btn o" href="tel:+17855884244">Call (785) 588-4244</a></div></div>
+ <div class="ft-grid"><div><div><h3>Office</h3><address>2445 SW Wanamaker Rd, Suite 101<br/>Topeka, KS 66614<br/><a href="tel:+17855884244">(785) 588-4244</a></address><a class="ft-dir" href="https://maps.google.com/?q=Capital+Oral+Surgery+2445+SW+Wanamaker+Rd+Topeka+KS+66614" target="_blank" rel="noopener noreferrer">Get directions →</a></div><div><h3 style="margin-top:28px">Hours</h3>Monday to Friday<br/>8 AM to 5 PM</div></div>
+ {columns.map(c=><div><h3>{c.title}</h3><ul>{c.links.map(([title,href])=><li><a href={href}>{title}</a></li>)}</ul></div>)}
+ </div>
+ <div class="ft-legal"><span>© {new Date().getFullYear()} Capital Oral Surgery &amp; Dental Implants. All rights reserved.</span></div>
+</div></footer>

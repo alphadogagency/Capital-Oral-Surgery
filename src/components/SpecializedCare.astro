@@ -10,7 +10,7 @@ const checklist = [
 ---
 
 <section id="about" class="home-care" aria-labelledby="specialized-care-heading">
-  <div class="home-care-photo">
+  <div class="home-care-photo" data-reveal>
     <Image src={carePhoto.src} alt={carePhoto.alt} style={`object-position: ${carePhoto.position}`} widths={[600, 900, 1400]} sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" />
   </div>
   <div class="home-section-copy home-care-copy" data-reveal>
@@ -29,5 +29,6 @@ const checklist = [
     <ul class="home-checklist">
       {checklist.map((item) => (<li><span aria-hidden="true">✓</span>{item}</li>))}
     </ul>
+    <div class="cap-actions"><a class="cap-btn green" href="/first-visit/">Your first visit →</a><a class="cap-link" href="/why-choose-our-practice/">Why patients choose us →</a></div>
   </div>
 </section>

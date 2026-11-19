@@ -6,6 +6,7 @@ interface Props {
   homepage?: boolean;
 }
 const { homepage = false } = Astro.props;
+const menuLabel = (label: string) => homepage ? label.replace(/(\S)\s(Of|For|And|The|To|In|On|With)\b/g, (_, before, word) => `${before} ${word.toLowerCase()}`) : label;
 
 const navLinks = [
   { label: "Our Practice", href: "/#about" },
@@ -67,7 +68,7 @@ const patientResourceLinks = [
                 href={href}
                 aria-haspopup="true"
               >
-                {label}
+                {menuLabel(label)}
                 <span
                   class="text-[10px] leading-none transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
                   aria-hidden="true"
@@ -86,7 +87,7 @@ const patientResourceLinks = [
                           href={href}
                           class="block border-b border-line pb-4 text-xs font-bold tracking-[.28em] text-secondary transition-colors hover:text-foreground focus:text-foreground focus:outline-none"
                         >
-                          {label}
+                          {menuLabel(label)}
                         </a>
                         <div class="mt-4 grid gap-1">
                           {items.map(({ label, href, items: childItems }) => (
@@ -96,7 +97,7 @@ const patientResourceLinks = [
                                 class="flex items-center justify-between rounded-md px-2 py-2 text-[14px] leading-5 text-muted transition-colors hover:bg-aqua-soft hover:text-foreground focus:bg-aqua-soft focus:text-foreground focus:outline-none"
                                 aria-haspopup={childItems ? "true" : undefined}
                               >
-                                <span>{label}</span>
+                                <span>{menuLabel(label)}</span>
                                 {childItems && (
                                   <span class="ml-2 text-xs text-secondary" aria-hidden="true">
                                     →
@@ -113,7 +114,7 @@ const patientResourceLinks = [
                                         href={href}
                                         class="block rounded-md px-4 py-3 text-sm leading-5 text-muted transition-colors hover:bg-aqua-soft hover:text-foreground focus:bg-aqua-soft focus:text-foreground focus:outline-none"
                                       >
-                                        {label}
+                                        {menuLabel(label)}
                                       </a>
                                     ))}
                                   </div>
@@ -134,7 +135,7 @@ const patientResourceLinks = [
                 class="inline-flex items-center gap-2 transition-colors hover:text-surface/75 focus:outline-none focus-visible:text-surface/75"
                 href={href}
               >
-                {label}
+                {menuLabel(label)}
                 <span
                   class="text-[10px] leading-none transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
                   aria-hidden="true"
@@ -158,7 +159,7 @@ const patientResourceLinks = [
                         href={href}
                         class="block rounded-md px-4 py-3 text-sm text-muted transition-colors hover:bg-aqua-soft hover:text-foreground focus:bg-aqua-soft focus:text-foreground focus:outline-none"
                       >
-                        {label}
+                        {menuLabel(label)}
                       </a>
                     ))
                   }
@@ -172,7 +173,7 @@ const patientResourceLinks = [
                 class="inline-flex items-center gap-2 transition-colors hover:text-surface/75 focus:outline-none focus-visible:text-surface/75"
                 aria-haspopup="true"
               >
-                {label}
+                {menuLabel(label)}
                 <span
                   class="text-[10px] leading-none transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
                   aria-hidden="true"
@@ -190,7 +191,7 @@ const patientResourceLinks = [
                         href={href}
                         class="block rounded-md px-4 py-3 text-sm text-muted transition-colors hover:bg-aqua-soft hover:text-foreground focus:bg-aqua-soft focus:text-foreground focus:outline-none"
                       >
-                        {label}
+                        {menuLabel(label)}
                       </a>
                     ))
                   }
@@ -202,7 +203,7 @@ const patientResourceLinks = [
               class="inline-flex min-h-[76px] items-center transition-colors hover:text-surface/75"
               href={href}
             >
-              {label}
+              {menuLabel(label)}
             </a>
           ),
         )
@@ -258,7 +259,7 @@ const patientResourceLinks = [
                 label === "Procedures" ? (
                   <details class="group/services border-y border-foreground/10 py-1" open>
                     <summary class="flex cursor-pointer list-none items-center justify-between py-3 text-lg font-medium text-foreground hover:text-secondary">
-                      <span>{label}</span>
+                      <span>{menuLabel(label)}</span>
                       <span
                         class="text-sm transition-transform group-open/services:rotate-180"
                         aria-hidden="true"
@@ -270,7 +271,7 @@ const patientResourceLinks = [
                       {serviceGroups.map(({ label, items }) => (
                         <details class="group/category border-t border-foreground/10 py-1">
                           <summary class="flex cursor-pointer list-none items-center justify-between py-3 pl-3 text-xs font-bold tracking-[.28em] text-foreground hover:text-secondary">
-                            <span>{label}</span>
+                            <span>{menuLabel(label)}</span>
                             <span
                               class="text-sm transition-transform group-open/category:rotate-180"
                               aria-hidden="true"
@@ -283,7 +284,7 @@ const patientResourceLinks = [
                               childItems ? (
                                 <details class="group/mobile-sub">
                                   <summary class="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-2 text-sm text-muted hover:bg-aqua-soft hover:text-foreground">
-                                    <span>{label}</span>
+                                    <span>{menuLabel(label)}</span>
                                     <span
                                       class="text-xs transition-transform group-open/mobile-sub:rotate-180"
                                       aria-hidden="true"
@@ -297,7 +298,7 @@ const patientResourceLinks = [
                                         class="block rounded-md px-3 py-2 text-sm text-muted hover:bg-aqua-soft hover:text-foreground focus:bg-aqua-soft focus:text-foreground focus:outline-none"
                                         href={href}
                                       >
-                                        {label}
+                                        {menuLabel(label)}
                                       </a>
                                     ))}
                                   </div>
@@ -307,7 +308,7 @@ const patientResourceLinks = [
                                   class="block rounded-md px-3 py-2 text-sm text-muted hover:bg-aqua-soft hover:text-foreground focus:bg-aqua-soft focus:text-foreground focus:outline-none"
                                   href={href}
                                 >
-                                  {label}
+                                  {menuLabel(label)}
                                 </a>
                               ),
                             )}
@@ -319,7 +320,7 @@ const patientResourceLinks = [
                 ) : label === "Doctors" ? (
                   <details class="group/doctors border-y border-foreground/10 py-1">
                     <summary class="flex cursor-pointer list-none items-center justify-between py-3 text-lg text-foreground hover:text-secondary">
-                      <span>{label}</span>
+                      <span>{menuLabel(label)}</span>
                       <span
                         class="text-sm transition-transform group-open/doctors:rotate-180"
                         aria-hidden="true"
@@ -340,7 +341,7 @@ const patientResourceLinks = [
                             class="block py-2 text-base text-foreground hover:text-secondary"
                             href={href}
                           >
-                            {label}
+                            {menuLabel(label)}
                           </a>
                         ))
                       }
@@ -349,7 +350,7 @@ const patientResourceLinks = [
                 ) : label === "Patient Resources" ? (
                   <details class="group/resources border-y border-foreground/10 py-1">
                     <summary class="flex cursor-pointer list-none items-center justify-between py-3 text-lg text-foreground hover:text-secondary">
-                      <span>{label}</span>
+                      <span>{menuLabel(label)}</span>
                       <span
                         class="text-sm transition-transform group-open/resources:rotate-180"
                         aria-hidden="true"
@@ -364,7 +365,7 @@ const patientResourceLinks = [
                             class="block py-2 text-base text-foreground hover:text-secondary"
                             href={href}
                           >
-                            {label}
+                            {menuLabel(label)}
                           </a>
                         ))
                       }
@@ -372,7 +373,7 @@ const patientResourceLinks = [
                   </details>
                 ) : (
                   <a class="block py-3 text-lg text-foreground hover:text-secondary" href={href}>
-                    {label}
+                    {menuLabel(label)}
                   </a>
                 ),
               )

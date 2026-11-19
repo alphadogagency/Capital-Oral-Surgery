@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import implantRoom from "../assets/homepage/implant-room.webp";
 const procedures = [
   {
     number: "01",
@@ -44,22 +46,13 @@ const procedures = [
       <p class="home-eyebrow">Procedures</p>
       <h2 id="procedures-heading">A complete range<br />of <span>oral surgery</span></h2>
     </div>
-    <div class="home-procedure-grid">
-      {procedures.map(({ number, title, body, href }, index) => {
-        const Tag = href ? "a" : "div";
-        return (
-          <article data-reveal style={`--reveal-delay: ${(index % 3) * 80}ms`}>
-            <Tag class="home-procedure" href={href}>
-              <div class="home-procedure-top">
-                <span class="home-procedure-number">{number}</span>
-                {href && <span class="home-procedure-arrow" aria-hidden="true">↗</span>}
-              </div>
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </Tag>
-          </article>
-        );
-      })}
+    <div class="cap-proc">
+      <div class="cap-proc-feat" data-reveal><div class="bg"><Image src={implantRoom} alt="A bright procedure room at Capital Oral Surgery" widths={[600,900,1200]} sizes="(max-width:900px) 100vw, 45vw" loading="lazy" /></div>
+        <div><small>Our specialty</small><h3>Dental implants</h3><p>Permanent, natural-feeling tooth replacement.</p></div>
+        <div><div class="cap-proc-subs"><a href="/services/single-tooth-implant/">Single tooth</a><a href="/services/full-mouth-dental-implants/">Full-mouth</a><a href="/services/implant-dentures/">Implant dentures</a><a href="/services/bone-grafting-for-implants/">Bone grafting</a></div><a class="cap-proc-explore" href="/services/replacing-missing-teeth/">Explore dental implants →</a></div>
+      </div>
+      <ul class="cap-proc-list" data-reveal>{procedures.slice(1).map(({title,body,href})=>{const Tag=href?'a':'div';return <li><Tag href={href}><span><h3>{title}</h3><p>{body}</p></span>{href&&<i aria-hidden="true">→</i>}</Tag></li>;})}</ul>
     </div>
+    <div class="cap-proc-more"><span><b>Not sure which procedure you need?</b>A referral from your dentist or a quick call to our team is a good place to start.</span><a class="cap-link" href="tel:+17855884244">Call (785) 588-4244</a></div>
   </div>
 </section>

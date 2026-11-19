@@ -7,16 +7,19 @@ import MeetTeam from "../components/MeetTeam.astro";
 import Procedures from "../components/Procedures.astro";
 import Testimonial from "../components/Testimonial.astro";
 import CallToAction from "../components/CallToAction.astro";
-import Footer from "../components/Footer.astro";
+import Footer from "../components/HomepageFooter.astro";
+import HomepageDetails from "../components/HomepageDetails.astro";
+import "../styles/homepage-refresh.css";
 ---
 
-<Layout homepage>
+<Layout homepage canonical="https://capitaloralsurgerytopeka.com/">
   <Header homepage />
   <main id="main-content" tabindex="-1">
     <Hero />
     <MeetTeam />
     <SpecializedCare />
     <Procedures />
+    <HomepageDetails />
     <Testimonial />
     <CallToAction />
   </main>

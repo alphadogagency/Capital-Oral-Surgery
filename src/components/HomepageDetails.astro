@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import { doctors } from '../data/doctors';
+import exterior from '../assets/homepage/visit-exterior.webp';
+import reception from '../assets/homepage/visit-reception.webp';
+import waiting from '../assets/homepage/visit-waiting.webp';
+import room from '../assets/homepage/visit-procedure.webp';
+import scanner from '../assets/homepage/cone-beam-scanner.webp';
+import planning from '../assets/homepage/implant-planning.webp';
+import sedation from '../assets/homepage/sedation-equipment.webp';
+import staffOne from '../assets/homepage/team-member-one.webp';
+import staffTwo from '../assets/homepage/team-member-two.webp';
+import staffThree from '../assets/homepage/team-member-three.webp';
+const technology = [
+ {image:scanner,position:'50% 45%',alt:'Cone beam CT scanner at Capital Oral Surgery',tag:'Diagnosis and planning',title:'3D cone beam imaging',body:'Cone beam CT imaging provides detailed 3D views that help the team evaluate anatomy, identify concerns, and plan treatment with greater confidence.',href:'/services/3d-imaging/',link:'About 3D imaging'},
+ {image:planning,position:'22% 40%',alt:'Equipment in a Capital Oral Surgery procedure room',tag:'Implant surgery',title:'Dental implant planning',body:'Three-dimensional images make it easier to understand bone, teeth, nerves, sinuses, and other anatomy involved in treatment.',href:'/services/replacing-missing-teeth/',link:'About dental implants'},
+ {image:sedation,position:'50% 45%',alt:'Sedation equipment at Capital Oral Surgery',tag:'Comfort',title:'Sedation options',body:'Anesthesia is chosen around the procedure, your health, and your anxiety level.',href:'/services/anesthesia/',link:'Anesthesia options'},
+];
+const visit = [
+ {image:exterior,alt:'The Capital Oral Surgery building in Topeka',position:'50% 60%',title:'Find us',body:'2445 SW Wanamaker Rd, Suite 101, Topeka, KS 66614.'},
+ {image:reception,alt:'The front desk at Capital Oral Surgery',position:'50% 50%',title:'Check in',body:'Meet our team at the front desk.'},
+ {image:waiting,alt:'The waiting room at Capital Oral Surgery',position:'50% 60%',title:'Settle in',body:'A look inside our waiting room.'},
+ {image:room,alt:'A procedure room at Capital Oral Surgery',position:'50% 55%',title:'Your procedure',body:'See where your care takes place.'},
+];
+const staff = [{image:staffOne,z:1.3,y:-29},{image:staffTwo,z:1.28,y:-25},{image:staffThree,z:1.05,y:-4}];
+---
+<section class="cap-tech" id="cap-tech" aria-labelledby="technology-heading"><div class="cap-wrap">
+ <div class="cap-head" data-reveal><div><p class="home-eyebrow">Technology</p><h2 id="technology-heading"><span>Modern technology,</span><br/>planned around you.</h2></div></div>
+ <p class="cap-scroll-hint">Swipe or use arrow keys to explore →</p>
+ <div class="cap-trio cap-scroll" tabindex="0" role="region" aria-label="Technology photos and information">
+  {technology.map(t=><article data-reveal><div class="ph"><Image src={t.image} alt={t.alt} widths={[400,700,1000]} sizes="(max-width:900px) 80vw, 30vw" loading="lazy" style={`object-position:${t.position}`} /></div><small>{t.tag}</small><h3>{t.title}</h3><p>{t.body}</p><a href={t.href}>{t.link} <span aria-hidden="true">→</span></a></article>)}
+ </div>
+</div></section>
+<section class="cap-visit" id="visit" aria-labelledby="visit-heading"><div class="cap-wrap">
+ <div class="cap-head" data-reveal><div><p class="home-eyebrow">Your visit</p><h2 id="visit-heading"><span>Know what to expect</span><br/>before you arrive.</h2></div><p class="cap-lede">Take a look around our Topeka office, from the entrance to the procedure room.</p></div>
+ <p class="cap-scroll-hint">Swipe or use arrow keys to explore →</p>
+ <div class="cap-steps cap-scroll" tabindex="0" role="region" aria-label="Explore the four stages of your visit">
+  {visit.map(v=><article class="cap-step" data-reveal><div class="ph"><Image src={v.image} alt={v.alt} widths={[400,700,1000]} sizes="(max-width:900px) 78vw, 23vw" loading="lazy" style={`object-position:${v.position}`} /></div><h3>{v.title}</h3><p>{v.body}</p></article>)}
+ </div>
+ <div class="cap-visit-foot"><span><b>First time with us?</b> See what to bring and how to prepare.</span><a class="cap-link" href="/first-visit/">Your first visit <span aria-hidden="true">→</span></a></div>
+</div></section>
+<section class="cap-team" id="cap-team" aria-labelledby="all-team-heading"><div class="cap-wrap">
+ <div class="cap-head" data-reveal><div><p class="home-eyebrow">Meet the team</p><h2 id="all-team-heading"><span>Familiar faces</span><br/>from check-in to recovery.</h2></div></div>
+ <div class="cap-chips" role="group" aria-label="Filter the team" hidden>
+  <button type="button" data-filter="all" aria-pressed="true">Everyone</button><button type="button" data-filter="surgeons" aria-pressed="false">Surgeons</button><button type="button" data-filter="staff" aria-pressed="false">Team members</button>
+ </div>
+ <div class="cap-all">
+ {doctors.map(d=><a class="cap-person" data-group="surgeons" href={`/doctors/${d.slug}/`}><div class="ph"><img src={d.image} alt={d.imageAlt} width={d.imageWidth} height={d.imageHeight} loading="lazy" style="object-position:50% 15%"/></div><b>{d.name}</b><small>Oral &amp; maxillofacial surgeon</small></a>)}
+ {staff.map((s,index)=><figure class="cap-person" data-group="staff"><div class="ph"><Image src={s.image} alt={`Capital Oral Surgery team portrait ${index+1}`} widths={[300,500,700]} sizes="(max-width:900px) 45vw, 15vw" loading="lazy" style={`object-position:50% 25%;--z:${s.z};--y:${s.y}%`} /></div><figcaption><b>Our team</b><small>Capital Oral Surgery</small></figcaption></figure>)}
+ <a class="cap-tile" href="tel:+17855884244"><b>Questions before your visit?</b><span>Call (785) 588-4244 <span aria-hidden="true">→</span></span></a>
+ </div>
+ <p class="sr-only" id="team-filter-status" aria-live="polite"></p>
+</div></section>
+<script>
+ const section = document.querySelector('#cap-team');
+ const chips = section?.querySelector<HTMLElement>('.cap-chips');
+ if(chips && section){
+  const buttons=chips.querySelectorAll<HTMLButtonElement>('button');
+  buttons.forEach(button=>button.addEventListener('click',()=>{
+   const filter=button.dataset.filter;
+   buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+   let count=0;
+   section.querySelectorAll<HTMLElement>('.cap-person').forEach(person=>{person.hidden=filter!=='all'&&person.dataset.group!==filter;if(!person.hidden)count++;});
+   const status=section.querySelector('#team-filter-status');if(status)status.textContent=`Showing ${count} team members.`;
+  }));
+  chips.hidden=false;
+ }
+</script>
+<script>
+ // Progressive enhancement: observe first, then hide only offscreen content.
+ const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const elements=[...document.querySelectorAll<HTMLElement>('.homepage-template [data-reveal]')];
+ const reveal=(element:HTMLElement)=>element.classList.remove('cap-reveal-pending');
+ if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{if(entry.isIntersecting){reveal(entry.target as HTMLElement);observer.unobserve(entry.target);}});
+  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  if(!motion.matches)elements.forEach(element=>{
+   if(element.getBoundingClientRect().top>window.innerHeight){observer.observe(element);element.classList.add('cap-reveal-pending');}
+  });
+  motion.addEventListener('change',()=>{if(motion.matches){elements.forEach(reveal);observer.disconnect();}});
+  const revealAnchor=()=>{const id=location.hash.slice(1);if(id){const target=document.getElementById(id);if(target){elements.filter(e=>e===target||target.contains(e)||e.contains(target)).forEach(reveal);}}};
+  window.addEventListener('hashchange',revealAnchor);revealAnchor();
+  document.addEventListener('focusin',event=>{if(event.target instanceof Element)elements.filter(e=>e.contains(event.target as Node)).forEach(reveal);});
+ }
+</script>
