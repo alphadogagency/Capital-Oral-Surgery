@@ -1,0 +1,20 @@
+---
+import { faqSchema } from "../../lib/schema";
+
+interface Props {
+  items: { q: string; a: string }[];
+  /** Emit FAQPage JSON-LD that mirrors the visible questions. */
+  schema?: boolean;
+}
+const { items, schema = true } = Astro.props;
+---
+
+<div class="pr-faq" data-rv>
+  {items.map(({ q, a }, index) => (
+    <details open={index === 0}>
+      <summary>{q}<i aria-hidden="true"></i></summary>
+      <div class="pr-fa"><p>{a}</p></div>
+    </details>
+  ))}
+</div>
+{schema && <script is:inline type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", ...faqSchema(items) })} />}

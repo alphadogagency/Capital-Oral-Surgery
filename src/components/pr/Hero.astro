@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import type { SitePhoto } from "../../data/sitePhotos";
+import type { Crumb } from "../../lib/schema";
+import { OFFICE_PHONE } from "../../lib/site";
+
+interface Button { label: string; href: string }
+interface Props {
+  crumbs: Crumb[];
+  eyebrow: string;
+  /** Heading HTML; the medium-weight half sits in a <span>. */
+  title: string;
+  lede?: string;
+  photo?: SitePhoto;
+  /** Plain <img> portrait from /public (doctor pages). */
+  portrait?: { src: string; alt: string; width: number; height: number; position: string };
+  primary?: Button | null;
+  secondary?: Button | null;
+}
+
+const {
+  crumbs,
+  eyebrow,
+  title,
+  lede,
+  photo,
+  portrait,
+  primary = { label: "Request Appointment", href: "/contact-us/#contact-form" },
+  secondary = { label: `Call ${OFFICE_PHONE.display}`, href: OFFICE_PHONE.href },
+} = Astro.props;
+const hasMedia = Boolean(photo || portrait);
+---
+
+<section class:list={["pr-hero", { portrait: Boolean(portrait) }]} aria-labelledby="page-heading">
+  <div class:list={["pr-wrap pr-hero-grid", { solo: !hasMedia }]}>
+    <div class="pr-hero-copy">
+      <nav class="pr-crumbs" aria-label="Breadcrumb">
+        <ol>
+          {crumbs.map((crumb, index) => (
+            <li aria-current={index === crumbs.length - 1 ? "page" : undefined}>
+              {crumb.href && index < crumbs.length - 1 ? <a href={crumb.href}>{crumb.name}</a> : crumb.name}
+            </li>
+          ))}
+        </ol>
+      </nav>
+      <p class="pr-eb">{eyebrow}</p>
+      <h1 id="page-heading" set:html={title} />
+      <slot name="tags" />
+      {lede && <p class="pr-hero-lede">{lede}</p>}
+      {(primary || secondary) && (
+        <div class="pr-hero-btns">
+          {primary && <a class="pr-btn g" href={primary.href}>{primary.label}</a>}
+          {secondary && <a class="pr-btn line" href={secondary.href}>{secondary.label}</a>}
+        </div>
+      )}
+      <slot />
+    </div>
+    {photo && (
+      <div class="pr-hero-media">
+        <Image src={photo.src} alt={photo.alt} widths={[480, 720, 1000]} sizes="(max-width: 900px) 92vw, 500px" style={`object-position: ${photo.position}`} loading="eager" fetchpriority="high" />
+      </div>
+    )}
+    {portrait && (
+      <div class="pr-hero-media">
+        <img src={portrait.src} alt={portrait.alt} width={portrait.width} height={portrait.height} style={`object-position: ${portrait.position}`} loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    )}
+  </div>
+</section>

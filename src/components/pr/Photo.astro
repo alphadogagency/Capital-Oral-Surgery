@@ -1,0 +1,11 @@
+---
+import { Image } from "astro:assets";
+import type { SitePhoto } from "../../data/sitePhotos";
+
+interface Props { photo: SitePhoto; left?: boolean; reveal?: "up" | "left" | "right" }
+const { photo, left = false, reveal = "up" } = Astro.props;
+---
+
+<div class:list={["pr-photo", { l: left }]} data-rv={reveal}>
+  <Image src={photo.src} alt={photo.alt} widths={[480, 720, 1000]} sizes="(max-width: 900px) 92vw, 44vw" style={`object-position: ${photo.position}`} loading="lazy" />
+</div>

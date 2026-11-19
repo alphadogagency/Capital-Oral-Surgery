@@ -2,7 +2,10 @@
 import "../styles/global.css";
 import "../styles/site.css";
 import "../styles/interior.css";
+import "../styles/redesign.css";
 import { theme } from "../lib/theme.config";
+import { SITE_URL, absoluteUrl } from "../lib/site";
+import { practiceSchema, websiteSchema } from "../lib/schema";
 
 interface Props {
   title?: string;
@@ -10,15 +13,22 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   homepage?: boolean;
+  /** Extra JSON-LD nodes for this page (breadcrumbs, FAQ, profile). */
+  schema?: Record<string, unknown>[];
+  noindex?: boolean;
 }
 
 const {
-  title = "Capital Oral Surgery & Dental Implants — Topeka, KS",
+  title = "Oral Surgeon in Topeka, KS | Capital Oral Surgery",
   description = "Capital Oral Surgery and Dental Implants helps patients live healthier lives in a caring, nurturing environment where comfort is a priority. Dental implants, wisdom teeth, oral pathology, and more in Topeka, KS.",
-  canonical = Astro.url.href,
+  canonical = absoluteUrl(Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`),
   ogImage = "/og.png",
   homepage = false,
+  schema = [],
+  noindex = false,
 } = Astro.props;
+const socialImage = new URL(ogImage, SITE_URL).href;
+const graph = [practiceSchema, websiteSchema, ...schema];
 ---
 
 <!doctype html>
@@ -32,20 +42,24 @@ const {
     <link rel="alternate icon" href="/favicon.ico" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(ogImage, Astro.url).href} />
+    <meta property="og:site_name" content="Capital Oral Surgery & Dental Implants" />
+    <meta property="og:image" content={socialImage} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(ogImage, Astro.url).href} />
+    <meta name="twitter:image" content={socialImage} />
 
     <link rel="preload" href="/fonts/work-sans-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/work-sans-300.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": graph })} />
   </head>
   <body class:list={["site-template", { "homepage-template": homepage, "interior-template": !homepage } ]}>
     <a href="#main-content" class="site-skip-link">Skip to content</a>
@@ -75,6 +89,49 @@ const {
         );
 
         revealItems.forEach((item) => revealObserver.observe(item));
+      }
+    </script>
+    <script>
+      // Interior pages: observe first, then hide only what is still below the
+      // fold, so content stays visible without JavaScript or with reduced motion.
+      const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const groups = [...document.querySelectorAll<HTMLElement>("[data-rv]")];
+      const show = (element: HTMLElement) => element.classList.remove("rv-pending");
+      if (groups.length > 0 && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              show(entry.target as HTMLElement);
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
+        );
+        if (!motion.matches) {
+          groups.forEach((element) => {
+            if (element.getBoundingClientRect().top > window.innerHeight) {
+              observer.observe(element);
+              element.classList.add("rv-pending");
+            }
+          });
+        }
+        motion.addEventListener("change", () => {
+          if (motion.matches) {
+            groups.forEach(show);
+            observer.disconnect();
+          }
+        });
+        const showAnchor = () => {
+          const target = location.hash.length > 1 ? document.getElementById(location.hash.slice(1)) : null;
+          if (target) groups.filter((g) => g === target || target.contains(g) || g.contains(target)).forEach(show);
+        };
+        window.addEventListener("hashchange", showAnchor);
+        showAnchor();
+        document.addEventListener("focusin", (event) => {
+          if (event.target instanceof Node) groups.filter((g) => g.contains(event.target as Node)).forEach(show);
+        });
+        window.addEventListener("beforeprint", () => groups.forEach(show));
       }
     </script>
   </body>

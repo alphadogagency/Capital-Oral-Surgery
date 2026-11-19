@@ -1,266 +1,206 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import Hero from "../../components/pr/Hero.astro";
+import Section from "../../components/pr/Section.astro";
+import LinkList from "../../components/pr/LinkList.astro";
 import { doctors, type Doctor } from "../../data/doctors";
-import { OFFICE_PHONE } from "../../lib/site";
+import { doctorProfiles, practiceProcedures } from "../../data/doctorProfiles";
+import { sitePhotos } from "../../data/sitePhotos";
+import { splitHeading } from "../../lib/headings";
+import { breadcrumbSchema, PRACTICE_ID } from "../../lib/schema";
+import { OFFICE_PHONE, absoluteUrl } from "../../lib/site";
 
 export function getStaticPaths() {
-  return doctors.map((doctor) => ({
-    params: { slug: doctor.slug },
-    props: { doctor },
-  }));
+  return doctors.map((doctor) => ({ params: { slug: doctor.slug }, props: { doctor } }));
 }
 
-interface Props {
-  doctor: Doctor;
-}
-
+interface Props { doctor: Doctor }
 const { doctor } = Astro.props;
-const title = `${doctor.name} | Capital Oral Surgery & Dental Implants`;
-const description = `Meet ${doctor.name}, ${doctor.role.toLowerCase()} at Capital Oral Surgery & Dental Implants.`;
-const sectionBands = [
-  "bg-surface",
-  "bg-aqua-soft",
-  "bg-background",
-  "bg-surface",
+const profile = doctorProfiles[doctor.slug];
+const other = doctors.find((entry) => entry.slug !== doctor.slug)!;
+const isLucaci = doctor.slug === "patrick-lucaci";
+const { background, expertise, affiliations, recognition } = doctor.sections;
+const path = `/doctors/${doctor.slug}/`;
+const title = `${doctor.name}, ${doctor.credentials} | Oral Surgeon in Topeka, KS`;
+const description = `Meet ${doctor.name}, ${doctor.credentials}, an oral and maxillofacial surgeon at Capital Oral Surgery & Dental Implants in Topeka, KS. Call ${OFFICE_PHONE.display}.`;
+const crumbs = [{ name: "Home", href: "/" }, { name: "Doctors", href: "/#team" }, { name: doctor.name }];
+
+// Dr. Lucaci: memberships and lectures. Dr. Lonergan: board certification,
+// memberships and teaching. All items are from the existing biographies.
+const memberships = isLucaci
+  ? recognition.lists[0].items
+  : ["Diplomate, American Board of Oral and Maxillofacial Surgery", ...recognition.lists[0].items];
+const sideList = isLucaci ? recognition.lists[1] : affiliations.lists[0];
+const personal = isLucaci ? undefined : recognition.lists[1].items[0];
+const careCard = isLucaci ? expertise.cards[1] : undefined;
+const treats = [...practiceProcedures, ...(isLucaci ? [{ title: "Reconstructive oral surgery", text: "", href: "" }] : [])];
+const icon = (text: string) =>
+  /^Recipient/.test(text) ? "award" : isLucaci ? "talk" : "teach";
+
+const schema = [
+  breadcrumbSchema(crumbs.map((crumb, index) => (index === crumbs.length - 1 ? { ...crumb, href: path } : crumb))),
+  {
+    "@type": "ProfilePage",
+    "@id": `${absoluteUrl(path)}#webpage`,
+    url: absoluteUrl(path),
+    name: title,
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${absoluteUrl(path)}#person`,
+      name: doctor.name.replace(/^Dr\.\s*/, ""),
+      honorificPrefix: "Dr.",
+      honorificSuffix: doctor.credentials,
+      jobTitle: "Oral and maxillofacial surgeon",
+      description: doctor.heroLead,
+      image: absoluteUrl(doctor.image),
+      url: absoluteUrl(path),
+      worksFor: { "@id": PRACTICE_ID },
+      hasCredential: profile.credentials.map((name) => ({ "@type": "EducationalOccupationalCredential", name })),
+      alumniOf: profile.alumniOf.map((name) => ({ "@type": "CollegeOrUniversity", name })),
+      memberOf: recognition.lists[0].items.map((name) => ({ "@type": "Organization", name })),
+    },
+  },
 ];
 ---
 
-<Layout title={title} description={description} ogImage={doctor.image}>
+<Layout title={title} description={description} ogImage={doctor.image} schema={schema}>
   <Header />
-  <main id="main-content" tabindex="-1" class="interior-main interior-doctor">
-    <section class="interior-hero bg-midnight text-surface" aria-labelledby="doctor-heading">
-      <div
-        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-14 px-5 py-14 lg:grid-cols-[minmax(0,610px)_minmax(380px,500px)] lg:px-0"
-      >
-        <div class="interior-hero-copy" data-reveal>
-          <a
-            href="/#team"
-            class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
-          >
-            ← Meet the team
-          </a>
-          <p class="mt-10 text-xs font-bold tracking-[.34em] text-secondary">
-            Meet the doctor
-          </p>
-          <h1
-            id="doctor-heading"
-            class="serif mt-5 max-w-[680px] text-5xl leading-[0.96] text-surface sm:text-6xl lg:text-[72px]"
-          >
-            {doctor.name}
-          </h1>
-          <p class="mt-5 text-sm font-semibold tracking-[.2em] text-surface/75">
-            {doctor.credentials}
-          </p>
-          <p class="mt-2 text-xs font-semibold tracking-[.24em] text-surface/55">
-            {doctor.role}
-          </p>
-          <p class="mt-7 max-w-[590px] text-lg leading-8 text-surface/75 sm:text-xl">
-            {doctor.heroLead}
-          </p>
-          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="/#appointment"
-              class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90 sm:min-w-[223px]"
-            >
-              Request Appointment
-            </a>
-            <a
-              href={OFFICE_PHONE.href}
-              class="inline-flex h-14 items-center justify-center rounded-md border border-surface/40 px-7 font-bold text-surface transition-colors hover:bg-surface/10 sm:min-w-[216px]"
-            >
-              Call {OFFICE_PHONE.display}
-            </a>
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow="Meet the doctor"
+      title={`${profile.first} <span>${profile.last}</span>`}
+      lede={doctor.heroLead}
+      portrait={{ src: doctor.image, alt: `${doctor.name}, oral and maxillofacial surgeon in Topeka`, width: doctor.imageWidth, height: doctor.imageHeight, position: "50% 18%" }}
+    >
+      <div class="pr-tags" slot="tags">{profile.tags.map((tag) => <span class="pr-tag">{tag}</span>)}</div>
+      <div class="dr-facts">
+        {profile.facts.map(([label, detail]) => <div><b>{label}</b><small>{detail}</small></div>)}
+      </div>
+    </Hero>
+
+    <Section tone="cream" label="Background and training" id="background" wrapClass="dr-two">
+      <div class="dr-story" data-rv>
+        <p class="pr-eb">{background.eyebrow}</p>
+        <h2 class="pr-h2" set:html={splitHeading(background.heading)} />
+        {background.paragraphs.map((paragraph) => <p class="pr-p">{paragraph}</p>)}
+        {personal && <p class="pr-p">{personal}</p>}
+      </div>
+      <div class="dr-train" data-rv="right">
+        <h3>Education and training</h3>
+        {isLucaci && <p class="pr-p" style="margin-bottom:24px;font-size:15px">{affiliations.intro}</p>}
+        <ol class="dr-tl">
+          {profile.timeline.map(([year, degree, school]) => <li><em>{year}</em><b>{degree}</b><small>{school}</small></li>)}
+        </ol>
+        <div class="dr-certs">
+          <span>Advanced certifications</span>
+          {profile.certifications.map((cert) => <span class="pr-tag">{cert}</span>)}
+        </div>
+      </div>
+    </Section>
+
+    {isLucaci && careCard ? (
+      <Section tone="sand" label="Care and specialties">
+        <div class="pr-head">
+          <div data-rv>
+            <p class="pr-eb">Care and specialties</p>
+            <h2 class="pr-h2" set:html={splitHeading(expertise.heading)} />
+          </div>
+          <p class="pr-p" data-rv>{expertise.cards[0].paragraphs[0]}</p>
+        </div>
+        <div class="dr-care">
+          <div class="dr-feat" data-rv="left">
+            <div class="bg"><Image src={sitePhotos.roomWide.src} alt="" widths={[600, 900, 1200]} sizes="(max-width: 900px) 100vw, 45vw" loading="lazy" /></div>
+            <div>
+              <small>How he works</small>
+              <h3>{careCard.title}</h3>
+              {careCard.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+            <div><a class="pr-btn t" href="/contact-us/#contact-form">Request a consultation →</a></div>
+          </div>
+          <div data-rv>
+            <p class="dr-list-h">What Dr. {profile.last} treats</p>
+            <p class="pr-p" style="margin-bottom:16px;font-size:15px">{expertise.cards[0].paragraphs[1]}</p>
+            <LinkList items={treats.map((item) => ({ title: item.title, text: item.text || undefined, href: item.href || undefined }))} />
           </div>
         </div>
+      </Section>
+    ) : (
+      <Section tone="sand" label="Education and training">
+        <p class="pr-eb" data-rv>{expertise.eyebrow}</p>
+        <h2 class="pr-h2" data-rv set:html={splitHeading(expertise.heading)} />
+        <div class="pr-pair">
+          {expertise.cards.map((card, index) => (
+            <div data-rv style={`--rv-delay:${index * 80}ms`}>
+              <h3>{card.title}</h3>
+              {card.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          ))}
+        </div>
+        <p class="pr-cap" style="margin-top:56px" data-rv>Procedures at Capital Oral Surgery</p>
+        <div style="margin-top:14px"><LinkList items={practiceProcedures} columns={2} /></div>
+      </Section>
+    )}
 
-        <div
-          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <div
-            class="absolute -bottom-3 left-3 right-[-12px] top-3 rounded-lg border border-secondary"
-            aria-hidden="true"
-          >
+    <Section tone="cream" label={isLucaci ? "Affiliations and recognition" : "Credentials and teaching"}>
+      <div class="pr-head">
+        <div data-rv>
+          <p class="pr-eb">{isLucaci ? "Affiliations and recognition" : "Credentials and teaching"}</p>
+          <h2 class="pr-h2" set:html={splitHeading(recognition.heading)} />
+        </div>
+        <div data-rv>
+          <p class="pr-p">{recognition.intro}</p>
+          {!isLucaci && <p class="pr-p">{affiliations.intro}</p>}
+        </div>
+      </div>
+      <div class="dr-cols">
+        <div data-rv>
+          <h3>{isLucaci ? "Professional memberships" : "Board certification and memberships"}</h3>
+          <ul class="dr-mem">
+            {memberships.map((item) => (
+              <li><span class="pr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div data-rv style="--rv-delay:80ms">
+          <h3>{isLucaci ? sideList.title : "Teaching and curriculum"}</h3>
+          <ul class="dr-rec">
+            {sideList.items.map((item) => (
+              <li>
+                <span class="pr-ic">
+                  {icon(item) === "talk" && <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5 11a7 7 0 0 0 14 0M12 18v3" /></svg>}
+                  {icon(item) === "award" && <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6" /><path d="M8.5 14 7 22l5-3 5 3-1.5-8" /></svg>}
+                  {icon(item) === "teach" && <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z" /><path d="M6 11v5c3 2.5 9 2.5 12 0v-5" /></svg>}
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Section>
+
+    <section class="pr-sec pr-cream flush" aria-label="Schedule a consultation">
+      <div class="pr-wrap">
+        <div class="pr-band" data-rv>
+          <div>
+            <p class="pr-eb">Schedule a consultation</p>
+            <h2 style="margin-bottom:26px"><span>Start with care</span><br />that keeps you informed.</h2>
+            <div class="btns">
+              <a class="pr-btn t" href="/contact-us/#contact-form">Request Appointment</a>
+              <a class="pr-btn o" href={OFFICE_PHONE.href}>Call {OFFICE_PHONE.display}</a>
+            </div>
           </div>
-          <div
-            class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5"
-          >
-            <img
-              src={doctor.image}
-              alt={doctor.imageAlt}
-              class="h-full w-full object-cover"
-              style={`object-position: ${doctor.imagePosition};`}
-              width={doctor.imageWidth}
-              height={doctor.imageHeight}
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class={`${sectionBands[0]} py-20 text-foreground lg:py-28`}>
-      <div class="mx-auto max-w-7xl px-5 text-center lg:px-0">
-        <div data-reveal>
-          <p class="text-xs font-bold tracking-[.34em] text-secondary">
-            {doctor.sections.background.eyebrow}
-          </p>
-          <h2 class="serif mx-auto mt-4 max-w-5xl text-4xl leading-tight sm:text-5xl">
-            {doctor.sections.background.heading}
-          </h2>
-        </div>
-        <div
-          class="mx-auto mt-10 max-w-5xl space-y-6 text-center text-base leading-8 text-muted"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          {doctor.sections.background.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-        </div>
-      </div>
-    </section>
-
-    <section class={`${sectionBands[1]} py-20 text-foreground lg:py-28`}>
-      <div class="mx-auto max-w-7xl px-5 lg:px-0">
-        <div class="max-w-3xl" data-reveal>
-          <p class="text-xs font-bold tracking-[.34em] text-secondary">
-            {doctor.sections.expertise.eyebrow}
-          </p>
-          <h2 class="serif mt-4 text-4xl leading-tight sm:text-5xl">
-            {doctor.sections.expertise.heading}
-          </h2>
-        </div>
-        <div class="mt-12 grid gap-6 md:grid-cols-2">
-          {
-            doctor.sections.expertise.cards.map((card, index) => (
-              <article
-                class="rounded-lg border border-line bg-surface p-7 shadow-sm sm:p-9"
-                data-reveal
-                style={`--reveal-delay: ${index * 90}ms`}
-              >
-                <h3 class="serif text-2xl font-bold text-foreground">{card.title}</h3>
-                <div class="mt-5 space-y-5 text-base leading-7 text-muted">
-                  {card.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-                </div>
-              </article>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <section class={`${sectionBands[2]} py-20 text-foreground lg:py-28`}>
-      <div
-        class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[minmax(0,520px)_minmax(0,620px)] lg:items-start lg:gap-20 lg:px-0"
-      >
-        <div data-reveal>
-          <p class="text-xs font-bold tracking-[.34em] text-secondary">
-            {doctor.sections.affiliations.eyebrow}
-          </p>
-          <h2 class="serif mt-4 text-4xl leading-tight sm:text-5xl">
-            {doctor.sections.affiliations.heading}
-          </h2>
-          {
-            doctor.sections.affiliations.intro && (
-              <p class="mt-6 text-base leading-7 text-muted">
-                {doctor.sections.affiliations.intro}
-              </p>
-            )
-          }
-        </div>
-        <div class="grid gap-6" data-reveal style="--reveal-delay: 120ms">
-          {
-            doctor.sections.affiliations.lists.map((list) => (
-              <article class="rounded-lg bg-surface p-7 shadow-sm sm:p-8">
-                <h3 class="serif text-2xl font-bold text-foreground">{list.title}</h3>
-                <ul class="mt-5 grid gap-3 text-base leading-7 text-muted">
-                  {list.items.map((item) => (
-                    <li class="flex gap-3">
-                      <span class="mt-1 text-secondary" aria-hidden="true">
-                        ✓
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <section class={`${sectionBands[3]} py-20 text-foreground lg:py-28`}>
-      <div
-        class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[minmax(0,520px)_minmax(0,620px)] lg:items-start lg:gap-20 lg:px-0"
-      >
-        <div data-reveal>
-          <p class="text-xs font-bold tracking-[.34em] text-secondary">
-            {doctor.sections.recognition.eyebrow}
-          </p>
-          <h2 class="serif mt-4 text-4xl leading-tight sm:text-5xl">
-            {doctor.sections.recognition.heading}
-          </h2>
-          {
-            doctor.sections.recognition.intro && (
-              <p class="mt-6 text-base leading-7 text-muted">
-                {doctor.sections.recognition.intro}
-              </p>
-            )
-          }
-        </div>
-        <div class="grid gap-6" data-reveal style="--reveal-delay: 120ms">
-          {
-            doctor.sections.recognition.lists.map((list) => (
-              <article class="rounded-lg border border-line bg-aqua-soft p-7 sm:p-8">
-                <h3 class="serif text-2xl font-bold text-foreground">{list.title}</h3>
-                <ul class="mt-5 grid gap-3 text-base leading-7 text-muted">
-                  {list.items.map((item) => (
-                    <li class="flex gap-3">
-                      <span class="mt-1 text-secondary" aria-hidden="true">
-                        ✓
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <section class="brand-cyan-band px-5 py-20 lg:py-24">
-      <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(0,700px)_auto] lg:items-center lg:px-0">
-        <div data-reveal>
-          <p class="text-xs font-bold tracking-[.34em] text-secondary">
-            Schedule a consultation
-          </p>
-          <h2 class="serif mt-4 text-4xl leading-tight sm:text-5xl">
-            Start with care that keeps you informed.
-          </h2>
-        </div>
-        <div class="flex flex-col gap-3 sm:flex-row lg:justify-end" data-reveal style="--reveal-delay: 120ms">
-          <a
-            href="/#appointment"
-            class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90"
-          >
-            Request Appointment
-          </a>
-          <a
-            href="/#team"
-            class="inline-flex h-14 items-center justify-center rounded-md border border-secondary px-7 font-bold text-foreground transition-colors hover:bg-surface"
-          >
-            Meet All Doctors
+          <a class="dr-other" href={`/doctors/${other.slug}/`}>
+            <img src={other.image} alt="" width={other.imageWidth} height={other.imageHeight} loading="lazy" decoding="async" />
+            <span><small>Also on our team</small><b>{other.name}</b><span>{other.credentials} · View profile →</span></span>
           </a>
         </div>
       </div>
     </section>
   </main>
-  <Footer />
+  <SiteFooter />
 </Layout>

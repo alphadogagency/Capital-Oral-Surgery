@@ -1,0 +1,169 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import Hero from "../../components/pr/Hero.astro";
+import Section from "../../components/pr/Section.astro";
+import Photo from "../../components/pr/Photo.astro";
+import Faq from "../../components/pr/Faq.astro";
+import TeamCards from "../../components/pr/TeamCards.astro";
+import Band from "../../components/pr/Band.astro";
+import LinkList from "../../components/pr/LinkList.astro";
+import procedures from "../../data/procedures.json";
+import { sitePhotos, type SitePhotoKey } from "../../data/sitePhotos";
+import { clusters, pageCluster, procedureLinks, procedureNames, procedureTitles, sectionPhotos, sequencePages } from "../../data/procedureMeta";
+import { SHOW_PENDING_FAQS, pendingProcedureFaqs } from "../../data/procedureFaqs";
+import { splitHeading, splitTitle } from "../../lib/headings";
+import { breadcrumbSchema, medicalPageSchema } from "../../lib/schema";
+
+// One template for every procedure page except the hand-built implants hub.
+export function getStaticPaths() {
+  return Object.keys(procedures)
+    .filter((slug) => slug !== "replacing-missing-teeth")
+    .map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params as { slug: keyof typeof procedures };
+const page = procedures[slug];
+const path = `/services/${slug}/`;
+const title = procedureTitles[slug];
+const cluster = clusters[pageCluster[slug]];
+const photos = sectionPhotos(slug);
+const crumbs = [
+  { name: "Home", href: "/" },
+  { name: "Procedures", href: "/#procedures" },
+  { name: procedureLinks[slug].name },
+];
+
+const isSequence = sequencePages.includes(slug);
+const questionCards = page.cards.items.filter((item) => item.title.endsWith("?")).length >= page.cards.items.length / 2;
+const cardFaq = page.cards.items.map((item) => ({ q: item.title, a: item.body.join(" ") }));
+const pendingFaq = !questionCards && SHOW_PENDING_FAQS ? pendingProcedureFaqs[slug] : undefined;
+const related = cluster.pages
+  .filter((other) => other !== slug)
+  .slice(0, 6)
+  .map((other) => ({ title: procedureLinks[other].name, text: procedureLinks[other].line, href: `/services/${other}/` }));
+const chipRows = Math.ceil(page.panel.chips.length / 2);
+
+// Sections alternate cream and sand in the order they render.
+const order = ["overview", "details", "related", "benefits", ...(page.pair.length ? ["pair"] : []), "team", ...(pendingFaq ? ["faq"] : []), "band"];
+const tone = (name: string) => {
+  const index = name === "band" ? order.length - 2 : order.indexOf(name);
+  return index % 2 === 0 ? "cream" : "sand";
+};
+const schema = [
+  breadcrumbSchema(crumbs.map((crumb, index) => (index === crumbs.length - 1 ? { ...crumb, href: path } : crumb))),
+  medicalPageSchema({ path, name: procedureLinks[slug].name, description: page.description, procedure: procedureNames[slug] }),
+];
+---
+
+<Layout title={title} description={page.description} schema={schema}>
+  <Header />
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow={page.hero.eyebrow}
+      title={splitTitle(page.hero.h1)}
+      lede={page.hero.lede}
+      photo={sitePhotos[page.hero.photo as SitePhotoKey]}
+    />
+
+    <Section tone={tone("overview")} label="Overview" id="overview">
+      <div class="pr-why">
+        <div data-rv>
+          <p class="pr-eb">{page.intro.eyebrow}</p>
+          <h2 class="pr-h2" set:html={splitHeading(page.intro.h2)} />
+          {page.intro.paragraphs.map((paragraph) => <p class="pr-p">{paragraph}</p>)}
+          {page.intro.note && (
+            <div class="pr-note"><b>{page.intro.note.label}</b><span>{page.intro.note.text}</span></div>
+          )}
+        </div>
+        <Photo photo={sitePhotos[photos.overview]} reveal="right" />
+      </div>
+    </Section>
+
+    {questionCards ? (
+      <Section tone={tone("details")} label="Questions" wrapClass="pr-faqwrap">
+        <div data-rv>
+          <p class="pr-eb">{page.cards.eyebrow}</p>
+          <h2 class="pr-h2 sm" set:html={splitHeading(page.cards.h2)} />
+          {page.cards.sub.map((paragraph) => <p class="pr-p">{paragraph}</p>)}
+        </div>
+        <Faq items={cardFaq} />
+      </Section>
+    ) : (
+      <Section tone={tone("details")} label="Details">
+        <p class="pr-eb" data-rv>{page.cards.eyebrow}</p>
+        <h2 class="pr-h2" data-rv set:html={splitHeading(page.cards.h2)} />
+        {page.cards.sub.map((paragraph) => <p class="pr-p pr-sub" data-rv>{paragraph}</p>)}
+        <div class:list={["pr-rows", { two: !isSequence }]} data-rv>
+          {page.cards.items.map((item, index) => (
+            <div>
+              <h3>{item.title}</h3>
+              <div>{item.body.map((paragraph) => <p>{paragraph}</p>)}</div>
+              {isSequence && <small>Step {index + 1}</small>}
+            </div>
+          ))}
+        </div>
+      </Section>
+    )}
+
+    <Section tone={tone("related")} label="Related procedures">
+      <p class="pr-eb" data-rv>{cluster.eyebrow}</p>
+      <h2 class="pr-h2" data-rv set:html={cluster.heading} />
+      <div class="pr-ex">
+        <Photo photo={sitePhotos[photos.related]} left reveal="left" />
+        <LinkList items={related} />
+      </div>
+    </Section>
+
+    <Section tone={tone("benefits")} label={page.panel.eyebrow}>
+      <div class="pr-why r">
+        <div data-rv>
+          <p class="pr-eb">{page.panel.eyebrow}</p>
+          <h2 class="pr-h2" set:html={splitHeading(page.panel.h2)} />
+          {page.panel.paragraphs.map((paragraph) => <p class="pr-p">{paragraph}</p>)}
+          <ul class="pr-checks" style={`grid-template-rows:repeat(${chipRows},auto);grid-auto-flow:column`}>
+            {page.panel.chips.map((chip) => (
+              <li><span class="pr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>{chip}</li>
+            ))}
+          </ul>
+        </div>
+        <Photo photo={sitePhotos[photos.benefits]} reveal="right" />
+      </div>
+    </Section>
+
+    {page.pair.length > 0 && (
+      <Section tone={tone("pair")} label="More to know">
+        <div class="pr-pair">
+          {page.pair.map((item, index) => (
+            <div data-rv style={`--rv-delay:${index * 80}ms`}>
+              <p class="pr-eb">{item.eyebrow}</p>
+              <h3>{item.h2}</h3>
+              {item.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          ))}
+        </div>
+      </Section>
+    )}
+
+    <Section tone={tone("team")} label="Your surgical team">
+      <TeamCards />
+    </Section>
+
+    {pendingFaq && (
+      <Section tone={tone("faq")} label="Frequently asked questions" wrapClass="pr-faqwrap">
+        <div data-rv>
+          <p class="pr-eb">Patient questions</p>
+          <h2 class="pr-h2 sm"><span>Questions patients</span><br />ask most.</h2>
+          <p class="pr-p">A consultation is still the best way to get answers specific to your health and goals.</p>
+          {pageCluster[slug] === "implants" && <a class="pr-link" style="margin-top:24px" href="/services/dental-implants-faq/">All implant questions →</a>}
+        </div>
+        <Faq items={pendingFaq} />
+      </Section>
+    )}
+
+    <Band tone={tone("band")} eyebrow={page.cta.eyebrow} heading={splitHeading(page.cta.h2)} text={page.cta.paragraphs.join(" ")} />
+  </main>
+  <SiteFooter />
+</Layout>

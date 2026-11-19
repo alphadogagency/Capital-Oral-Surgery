@@ -1,188 +1,105 @@
 ---
-import { Image } from "astro:assets";
-import { practicePhotos } from "../data/practicePhotos";
-const interiorPhoto = practicePhotos.welcome;
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import Hero from "../components/pr/Hero.astro";
+import Section from "../components/pr/Section.astro";
+import Photo from "../components/pr/Photo.astro";
+import Faq from "../components/pr/Faq.astro";
+import TeamCards from "../components/pr/TeamCards.astro";
+import Resources from "../components/pr/Resources.astro";
+import Band from "../components/pr/Band.astro";
+import { sitePhotos } from "../data/sitePhotos";
+import { breadcrumbSchema } from "../lib/schema";
 import { OFFICE_PHONE } from "../lib/site";
 
-const title =
-  "First Visit | Capital Oral Surgery and Dental Implants, Topeka KS";
+const title = "Your First Visit | Capital Oral Surgery, Topeka, KS";
 const description =
-  "Prepare for your first visit to our Topeka, KS oral surgery office — what to bring, consultation details, and pre-surgery instructions.";
+  "Prepare for your first visit to our Topeka, KS oral surgery office: what to bring, consultation details, and pre-surgery instructions.";
+const path = "/first-visit/";
+const crumbs = [{ name: "Home", href: "/" }, { name: "Patient resources" }, { name: "Your first visit" }];
+
+const bring = [
+  "Your surgical referral slip and any x-rays if applicable.",
+  "A list of medications you are presently taking.",
+  "If you have medical or dental insurance, bring the necessary completed forms. This will save time and allow us to help you process any claims.",
+];
+const rows = [
+  ["Under 18", "All patients under the age of 18 must be accompanied by a parent or guardian at the consultation visit."],
+  ["IV anesthesia", "A preoperative consultation and physical examination is mandatory for patients undergoing IV anesthesia for surgery. Please have nothing to eat or drink eight hours prior to your surgery. You will also need an adult to drive you home."],
+  ["Health conditions and medications", "Please alert the office if you have a medical condition that may be of concern prior to surgery (i.e., diabetes, high blood pressure, artificial heart valves and joints, rheumatic fever, etc.) or if you are currently taking any medications (i.e., heart medications, aspirin, anticoagulant therapy, etc.)."],
+  ["X-Rays", "If your dentist or physician has taken x-rays you may request that they forward them to our office. If there is not enough time, please pick them up and bring them to our office. If additional films are necessary they can be taken at our facility."],
+];
+// Answers restate what this page already says.
+const faq = [
+  { q: "Can I have surgery on the same day as my consultation?", a: "Occasionally, yes. A complex medical history or treatment plan may require an evaluation and a second appointment to provide treatment on another day." },
+  { q: "What should I bring to my first visit?", a: "Your surgical referral slip and any x-rays, a list of the medications you are taking, and completed insurance forms if you have medical or dental insurance." },
+  { q: "Do I need someone to drive me home?", a: "If you are having surgery with IV anesthesia, yes. An adult must drive you home, and you should have nothing to eat or drink for eight hours before your surgery." },
+  { q: "Can a minor come to the consultation alone?", a: "No. All patients under the age of 18 must be accompanied by a parent or guardian at the consultation visit." },
+];
+const schema = [breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Your first visit", href: path }])];
 ---
 
-<Layout title={title} description={description} ogImage="/og.png">
+<Layout title={title} description={description} schema={schema}>
   <Header />
-  <main id="main-content" tabindex="-1" class="interior-main interior-resource">
-    <section class="interior-hero bg-midnight text-surface" aria-labelledby="first-visit-heading">
-      <div
-        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-10 px-5 py-14 lg:gap-14 xl:grid-cols-[minmax(0,610px)_minmax(360px,500px)] xl:justify-between xl:px-0"
-      >
-        <div class="interior-hero-copy" data-reveal>
-          <a
-            href="/"
-            class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
-          >
-            ← Home
-          </a>
-          <p class="mt-10 text-xs font-bold tracking-[.34em] text-secondary">
-            Patient Resources
-          </p>
-          <h1
-            id="first-visit-heading"
-            class="serif mt-5 max-w-[760px] text-5xl leading-[0.96] text-surface sm:text-6xl xl:text-[72px]"
-          >
-            First Visit
-          </h1>
-          <p class="mt-7 max-w-[590px] text-lg leading-8 text-surface/75 sm:text-xl">
-            Your initial appointment will consist of a consultation explaining your diagnosis and treatment options. Occasionally, surgery can be performed the same day as the consultation. However, a complex medical history or treatment plan may require an evaluation and a second appointment to provide treatment on another day.
-          </p>
-        </div>
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow="Patient resources"
+      title="Your first <span>visit.</span>"
+      lede="Your initial appointment will consist of a consultation explaining your diagnosis and treatment options."
+      photo={sitePhotos.welcome}
+    />
 
-        <div
-          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <div
-            class="absolute -bottom-3 left-3 right-[-12px] top-3 rounded-lg border border-secondary"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
-            <Image
-              src={interiorPhoto.src}
-              widths={[600, 900, 1400]}
-              sizes="(min-width: 900px) 46vw, 100vw"
-              format="webp"
-              alt={interiorPhoto.alt}
-              class="h-full w-full object-cover"
-              style={`object-position: ${interiorPhoto.position}`}
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-surface py-20 text-foreground lg:py-28">
-      <div
-        class="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[minmax(0,620px)_minmax(0,520px)] lg:items-start lg:gap-16 lg:px-0"
-      >
-        <article
-          class="rounded-lg border border-line bg-background p-7 shadow-sm sm:p-9"
-          data-reveal
-        >
-          <p class="text-base leading-8 text-muted">
-            <strong class="text-foreground">Please assist us by providing the following information at the time of your consultation:</strong>
-          </p>
-          <ul class="mt-6 list-disc space-y-4 pl-6 text-base leading-8 text-muted marker:text-secondary">
-            <li>Your surgical referral slip and any x-rays if applicable.</li>
-            <li>A list of medications you are presently taking.</li>
-            <li>
-              If you have medical or dental insurance, bring the necessary completed forms. This will save time and allow us to help you process any claims.
-            </li>
+    <Section tone="cream" label="Your consultation" id="consultation">
+      <div class="pr-why">
+        <div data-rv>
+          <p class="pr-eb">Your consultation</p>
+          <h2 class="pr-h2"><span>What to expect</span> at your first visit.</h2>
+          <p class="pr-p">Occasionally, surgery can be performed the same day as the consultation. However, a complex medical history or treatment plan may require an evaluation and a second appointment to provide treatment on another day.</p>
+          <p class="pr-cap">What to bring</p>
+          <p class="pr-p" style="margin-top:10px;font-size:15px">Please assist us by providing the following information at the time of your consultation:</p>
+          <ul class="pr-bring">
+            {bring.map((item) => (
+              <li><span class="pr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span><span>{item}</span></li>
+            ))}
           </ul>
-        </article>
-
-        <div class="grid gap-6" data-reveal style="--reveal-delay: 120ms">
-          <aside class="rounded-lg border-l-4 border-secondary bg-aqua-soft p-6 sm:p-7">
-            <p class="text-base leading-8 text-muted">
-              <strong class="text-foreground">IMPORTANT:</strong> All patients under the age of 18 must be accompanied by a parent or guardian at the consultation visit.
-            </p>
-          </aside>
-
-          <article class="rounded-lg border border-line bg-background p-7 shadow-sm sm:p-8">
-            <p class="text-base leading-8 text-muted">
-              A preoperative consultation and physical examination is mandatory for patients undergoing IV anesthesia for surgery. Please have nothing to eat or drink eight hours prior to your surgery. You will also need an adult to drive you home.
-            </p>
-          </article>
         </div>
+        <Photo photo={sitePhotos.checkInDesk} reveal="right" />
       </div>
-    </section>
+    </Section>
 
-    <section class="bg-aqua-soft py-20 text-foreground lg:py-28">
-      <div
-        class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[minmax(0,560px)_minmax(0,620px)] lg:items-start lg:gap-20 lg:px-0"
-      >
-        <article
-          class="rounded-lg border border-line bg-surface p-7 shadow-sm sm:p-9"
-          data-reveal
-        >
-          <p class="text-base leading-8 text-muted">
-            Please alert the office if you have a medical condition that may be of concern prior to surgery (i.e., diabetes, high blood pressure, artificial heart valves and joints, rheumatic fever, etc.) or if you are currently taking any medications (i.e., heart medications, aspirin, anticoagulant therapy, etc.).
-          </p>
-        </article>
-
-        <section
-          aria-labelledby="x-rays-heading"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <h2
-            id="x-rays-heading"
-            class="serif text-4xl leading-tight sm:text-5xl"
-          >
-            X-Rays
-          </h2>
-          <p class="mt-6 text-base leading-8 text-muted">
-            If your dentist or physician has taken x-rays you may request that they forward them to our office. If there is not enough time, please pick them up and bring them to our office. If additional films are necessary they can be taken at our facility.
-          </p>
-        </section>
+    <Section tone="sand" label="Before you come in">
+      <p class="pr-eb" data-rv>Good to know</p>
+      <h2 class="pr-h2" data-rv><span>Before</span> you come in.</h2>
+      <div class="pr-rows two" data-rv>
+        {rows.map(([label, text]) => <div><h3>{label}</h3><p>{text}</p></div>)}
       </div>
-    </section>
+    </Section>
 
-    <section
-      class="brand-cyan-band px-5 py-20 lg:py-24"
-      aria-labelledby="consultation-cta-heading"
+    <Section tone="cream" label="Your care team">
+      <TeamCards eyebrow="Surgeons and technology" heading="<span>Your care</span><br>team." />
+    </Section>
+
+    <Section tone="sand" label="Frequently asked questions" wrapClass="pr-faqwrap">
+      <div data-rv>
+        <p class="pr-eb">Patient questions</p>
+        <h2 class="pr-h2 sm"><span>Questions patients</span><br />ask most.</h2>
+        <p class="pr-p">Call our office at <a href={OFFICE_PHONE.href}>{OFFICE_PHONE.display}</a> if you have a question that is not answered here.</p>
+      </div>
+      <Faq items={faq} />
+    </Section>
+
+    <Resources tone="cream" current={path} photo={sitePhotos.waitingRoom} />
+
+    <Band
+      tone="cream"
+      eyebrow="Patient resources"
+      heading="<span>Schedule a consultation</span><br>today."
+      text="Dr. Lucaci, Dr. Barber, Dr. Lonergan & our caring staff want to help take care of your oral surgery needs. Book an appointment today!"
     >
-      <div
-        class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(0,700px)_auto] lg:items-center lg:px-0"
-      >
-        <div data-reveal>
-          <p class="text-xs font-bold tracking-[.34em] text-secondary">
-            Patient Resources
-          </p>
-          <h2
-            id="consultation-cta-heading"
-            class="serif mt-4 text-4xl leading-tight sm:text-5xl"
-          >
-            Schedule a Consultation Today
-          </h2>
-          <p class="mt-5 max-w-[650px] text-base leading-7 text-surface/75">
-            Dr. Lucaci, Dr. Barber, Dr. Lonergan & our caring staff want to help take care of your oral surgery needs. Book an appointment today!
-          </p>
-        </div>
-        <div
-          class="flex flex-col gap-3 sm:flex-row lg:flex-col"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <a
-            href={OFFICE_PHONE.href}
-            class="inline-flex h-14 items-center justify-center rounded-md border border-surface/40 px-7 font-bold text-surface transition-colors hover:bg-surface/10 sm:min-w-[216px]"
-          >
-            {OFFICE_PHONE.display}
-          </a>
-          <a
-            href="/contact-us/"
-            class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90 sm:min-w-[216px]"
-          >
-            Request an Appointment
-          </a>
-          <a
-            href="/contact-us/#directions-heading"
-            class="inline-flex h-14 items-center justify-center rounded-md border border-surface/40 px-7 text-center font-bold text-surface transition-colors hover:bg-surface/10 sm:min-w-[216px]"
-          >
-            Map &amp; Driving Directions
-          </a>
-        </div>
-      </div>
-    </section>
+      <p style="margin-top:14px"><a href="/contact-us/#directions" style="color:#fff;text-decoration:underline;text-underline-offset:3px">Map &amp; driving directions</a></p>
+    </Band>
   </main>
-  <Footer />
+  <SiteFooter />
 </Layout>

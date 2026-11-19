@@ -1,0 +1,2460 @@
+{
+  "3d-imaging": {
+    "description": "Learn how cone beam CT 3D imaging helps diagnose oral surgery concerns, plan treatment, minimize radiation exposure, and collaborate with referring doctors.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "3D imaging.",
+      "lede": "Cone beam CT technology gives our team precise, crystal-clear 3D images for diagnosis and treatment planning while focusing the scan on your specific area of concern.",
+      "photo": "imaging"
+    },
+    "intro": {
+      "eyebrow": "Cone beam CT scan",
+      "h2": "Three-dimensional imaging helps us see the details that matter.",
+      "paragraphs": [
+        "The CS 9300 cone beam CT system helps our oral and maxillofacial surgery team diagnose potential concerns more accurately and plan care with greater confidence.",
+        "Unlike a traditional spiral CT scanner, cone beam technology captures precise digital images while minimizing radiation exposure. The scanner can focus on the field of view that best fits your treatment needs.",
+        "The resulting 3D images help us explain your case more clearly, answer questions, and plan treatment around the actual anatomy we see."
+      ],
+      "note": {
+        "label": "Focused scanning",
+        "text": "Choosing the right scanning area helps capture the information needed while limiting exposure to the area of concern."
+      }
+    },
+    "cards": {
+      "eyebrow": "Why 3D matters",
+      "h2": "Better visualization supports safer, more confident planning.",
+      "sub": [
+        "Detailed views of teeth, bone, nerves, sinuses, and surrounding anatomy can help reduce guesswork and support clearer communication."
+      ],
+      "items": [
+        {
+          "title": "More accurate diagnosis",
+          "body": [
+            "Cone beam CT imaging provides detailed 3D views that help the team evaluate anatomy, identify concerns, and plan treatment with greater confidence."
+          ]
+        },
+        {
+          "title": "Focused field of view",
+          "body": [
+            "The scanner can focus on the specific area of concern, which helps limit radiation exposure while still capturing the needed detail."
+          ]
+        },
+        {
+          "title": "Clear treatment planning",
+          "body": [
+            "Three-dimensional images make it easier to understand bone, teeth, nerves, sinuses, and other anatomy involved in treatment."
+          ]
+        },
+        {
+          "title": "Referring doctor collaboration",
+          "body": [
+            "Images can be shared with your referring doctor so the full care team can collaborate on diagnosis and treatment planning."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Treatment planning",
+      "h2": "3D imaging supports many oral surgery decisions.",
+      "paragraphs": [
+        "The scan can help evaluate anatomy before treatment and may reduce the need for multiple visits by giving the team more complete information in the office."
+      ],
+      "chips": [
+        "Dental implant planning",
+        "Wisdom tooth evaluation",
+        "Bone grafting assessment",
+        "Sinus and nerve location review",
+        "Oral pathology or surgical planning"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Patient understanding",
+        "h2": "Seeing the anatomy can make the plan easier to understand.",
+        "paragraphs": [
+          "Three-dimensional visualization helps the team explain the particulars of your case and answer questions with more clarity."
+        ]
+      },
+      {
+        "eyebrow": "Care collaboration",
+        "h2": "Images can be shared with your referring doctor.",
+        "paragraphs": [
+          "When appropriate, 3D images can be shared quickly with your referring dentist or doctor so the care team can coordinate treatment together."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Precise planning",
+      "h2": "Start with a clearer picture.",
+      "paragraphs": [
+        "We use 3D imaging to better understand your anatomy, explain your options, and plan oral surgery with confidence."
+      ]
+    }
+  },
+  "about-bone-grafting": {
+    "description": "Learn how dental bone grafting replaces lost jawbone, supports implant planning, and helps restore function and facial structure.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "About bone grafting.",
+      "lede": "Bone grafting is a way to replace or rebuild missing jawbone. It can restore the foundation needed for implants, improve oral function, and help preserve natural facial support.",
+      "photo": "teamConversation"
+    },
+    "intro": {
+      "eyebrow": "Bone grafting overview",
+      "h2": "Lost jawbone can often be rebuilt with modern grafting techniques.",
+      "paragraphs": [
+        "Teeth help stimulate and maintain the bone around them. When teeth are missing for a long period of time, the jawbone can shrink, leaving less height, width, or quality for future tooth replacement.",
+        "Bone grafting places graft material where support is needed. Over time, the grafted area can become a stronger foundation for dental implants or other restorative planning.",
+        "The size and location of the defect determine whether the procedure is a focused site graft or a more advanced reconstruction."
+      ],
+      "note": {
+        "label": "Planning starts with imaging",
+        "text": "Detailed imaging helps the surgeon evaluate bone volume, choose the right grafting approach, and explain how the graft fits into the full treatment timeline."
+      }
+    },
+    "cards": {
+      "eyebrow": "Grafting materials",
+      "h2": "Different graft sources can support different treatment needs.",
+      "sub": [
+        "Grafting material acts as a scaffold for healing. Depending on the amount of bone needed, it may come from your own body, a tissue bank, or another carefully selected grafting material."
+      ],
+      "items": [
+        {
+          "title": "Autogenous bone",
+          "body": [
+            "In some cases, bone can be taken from another area of your own body and transferred to the area that needs rebuilding."
+          ]
+        },
+        {
+          "title": "Tissue-bank bone",
+          "body": [
+            "Processed donor bone can provide a framework for your body to gradually replace and remodel with new bone during healing."
+          ]
+        },
+        {
+          "title": "Synthetic or specialty materials",
+          "body": [
+            "Some grafting plans use advanced materials designed to support new bone formation and protect the shape of the grafted site."
+          ]
+        },
+        {
+          "title": "Guided regeneration",
+          "body": [
+            "A protective membrane may be placed beneath the gum tissue to help shield the graft and encourage bone to grow in the right space."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Treatment goals",
+      "h2": "The goal is a healthier foundation, not just more bone.",
+      "paragraphs": [
+        "Bone grafting can improve the quality and quantity of bone available for restoration while helping preserve oral function and appearance."
+      ],
+      "chips": [
+        "Restore jawbone height and width",
+        "Improve dental implant options",
+        "Support function and facial structure",
+        "Repair defects from trauma or disease"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Minor grafting",
+        "h2": "Many grafts focus on a specific implant site.",
+        "paragraphs": [
+          "Smaller grafts are often used to repair an extraction site or rebuild a localized area before implant placement. Healing time varies by the amount of bone needed and the final restoration plan."
+        ]
+      },
+      {
+        "eyebrow": "Major grafting",
+        "h2": "Larger defects require a more detailed surgical plan.",
+        "paragraphs": [
+          "More extensive grafting may be needed after trauma, tumor surgery, or congenital defects. These procedures are planned carefully around the size of the defect and the healthiest donor or grafting source."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Rebuild the foundation",
+      "h2": "Find out whether grafting is part of your plan.",
+      "paragraphs": [
+        "Our team will review your imaging, explain the condition of your jawbone, and map out the next step with clarity."
+      ]
+    }
+  },
+  "after-extraction-of-wisdom-teeth": {
+    "description": "Post-operative guidance after wisdom teeth extraction, including bleeding, pain, swelling, activity, dry socket, sinus precautions, infection, and when to call.",
+    "hero": {
+      "eyebrow": "Wisdom teeth",
+      "h1": "After wisdom tooth extraction.",
+      "lede": "Recovery is smoother when you know what to expect. These instructions cover bleeding, swelling, activity, dry socket, infection, sinus precautions, and when to call our office.",
+      "photo": "coordinator"
+    },
+    "intro": {
+      "eyebrow": "Post-operative care",
+      "h2": "The first few days are about comfort, clot protection, and rest.",
+      "paragraphs": [
+        "Wisdom tooth removal may be performed with local anesthesia, nitrous oxide, or general anesthesia. These options and surgical risks are reviewed before treatment.",
+        "After surgery, you will rest under supervision until you are ready to go home. Your post-operative kit may include instructions, medication, antibiotics, and a follow-up appointment.",
+        "Follow the written instructions closely, especially during the first few days. This helps protect the healing blood clot and keeps recovery as comfortable as possible."
+      ],
+      "note": {
+        "label": "Most patients improve in 3 to 5 days",
+        "text": "Recovery varies, but many patients feel they are over the hump and on the way to recovery within several days."
+      }
+    },
+    "cards": {
+      "eyebrow": "What you may feel",
+      "h2": "Bleeding, soreness, swelling, and stiffness can be normal early on.",
+      "sub": [
+        "Every patient reacts differently. The goal is to control swelling, protect the clot, rest, and let your body begin healing before returning to a demanding schedule."
+      ],
+      "items": [
+        {
+          "title": "Bleeding and gauze",
+          "body": [
+            "After teeth are removed, the gums are sutured and gauze is placed to help control bleeding. Bite down gently as directed, and expect minor bleeding during the first day."
+          ]
+        },
+        {
+          "title": "Pain and swelling",
+          "body": [
+            "Pain can range from mild discomfort to stronger soreness. Swelling usually peaks on the second day and should begin improving on the third day."
+          ]
+        },
+        {
+          "title": "Ice and heat",
+          "body": [
+            "Use ice through the first day to limit swelling. Moist heat on days two and three can help relax stiff jaw muscles and improve opening."
+          ]
+        },
+        {
+          "title": "Rest and activity",
+          "body": [
+            "Plan to rest for a few days before returning to a busy social, academic, or athletic schedule. Most patients feel over the hump in three to five days."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Possible concerns",
+      "h2": "Know which changes deserve a call.",
+      "paragraphs": [
+        "As with any surgery, unexpected healing events can happen. Contact the office if pain worsens, swelling does not improve, numbness or tingling persists, or you suspect infection or dry socket."
+      ],
+      "chips": [
+        "Dry socket",
+        "Infection",
+        "Sinus communication",
+        "Temporary numbness or tingling",
+        "Jaw stiffness",
+        "Facial bruising or oozing"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Dry socket",
+        "h2": "Deep aching pain can start several days later.",
+        "paragraphs": [
+          "Dry socket occurs when the blood clot is lost too early. It is more common in the lower jaw and may cause deep, dull pain that radiates toward the ear or chin. Treatment may include medicated dressing."
+        ]
+      },
+      {
+        "eyebrow": "Sinus and nerve awareness",
+        "h2": "Some rare risks need special instructions.",
+        "paragraphs": [
+          "Upper wisdom teeth sit near the sinuses, and lower wisdom teeth can be near sensory nerves. If you notice sinus pressure changes, numbness, or tingling after surgery, call the office for guidance."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "We are here to help",
+      "h2": "Call with recovery questions.",
+      "paragraphs": [
+        "If you are unsure whether what you are feeling is normal, our team is here to help you through recovery."
+      ]
+    }
+  },
+  "after-implant-placement": {
+    "description": "Answers to common questions after dental implant placement, including temporary teeth, healing, cleaning, restoration timing, and implant maintenance.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "After implant placement.",
+      "lede": "Healing after dental implant surgery is easier when you know what to expect. These answers explain temporary teeth, recovery concerns, restoration timing, cleaning, maintenance, and care coordination.",
+      "photo": "coordinator"
+    },
+    "intro": {
+      "eyebrow": "After surgery",
+      "h2": "Practical answers for the healing and restoration phase.",
+      "paragraphs": [
+        "The period after implant placement can involve temporary teeth, healing visits, restorative planning, and routine maintenance. Your treatment sequence depends on the number of teeth being replaced, bone healing, implant stability, and your final restoration.",
+        "Pain medication and antibiotics may be prescribed to support an easier recovery. If you notice post-operative numbness, unusual tingling, or signs of infection, contact the office so your care can be managed appropriately.",
+        "Every implant case is different, so your surgeon and dentist will review the most appropriate timeline for your replacement teeth."
+      ],
+      "note": {
+        "label": "Call with questions",
+        "text": "If something feels different than expected after surgery, it is always better to call. Early communication helps us guide your recovery."
+      }
+    },
+    "cards": {
+      "eyebrow": "Common questions",
+      "h2": "What patients ask most after implant placement.",
+      "sub": [
+        "These questions cover the early healing period, long-term expectations, and when the final restorative work begins."
+      ],
+      "items": [
+        {
+          "title": "What can I use for teeth while implants heal?",
+          "body": [
+            "Temporary removable teeth, a temporary bridge, or a modified denture may be available while implants heal. In some cases, temporary transitional implants or immediate loading can provide non-removable teeth during healing."
+          ]
+        },
+        {
+          "title": "What problems can happen after surgery?",
+          "body": [
+            "Most patients do not experience severe pain, and medication may be prescribed to support recovery. Infection, adjacent tooth injury, or altered nerve sensation are uncommon but possible concerns that should be reported promptly."
+          ]
+        },
+        {
+          "title": "How long do implants last?",
+          "body": [
+            "Dental implants usually last a long time. Long-term studies show strong success rates, though an implant that fails to heal or becomes loose may need removal and replacement after healing."
+          ]
+        },
+        {
+          "title": "When are replacement teeth attached?",
+          "body": [
+            "Replacement teeth are usually attached once the jawbone has healed firmly around the implant. Depending on your case, restoration may begin immediately, shortly after placement, or after a longer healing phase."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Cleaning and maintenance",
+      "h2": "Implant-supported teeth need regular care, just like natural teeth.",
+      "paragraphs": [
+        "Cleaning, hygiene visits, and maintenance help protect your implant restoration. Components can wear over time, so repairs, relines, screw tightening, clip replacement, or adjustments may eventually be needed."
+      ],
+      "chips": [
+        "Brush and clean implant-supported teeth regularly",
+        "Use floss or recommended cleaning aids",
+        "Visit your dentist for hygiene and maintenance",
+        "Expect periodic repairs or adjustments over time",
+        "Keep all scheduled surgical and restorative visits"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Care team",
+        "h2": "Will one doctor do everything?",
+        "paragraphs": [
+          "Usually, your oral surgeon places the implant and performs related surgical care, while your general dentist provides temporary and permanent replacement teeth. Both doctors help plan your treatment."
+        ]
+      },
+      {
+        "eyebrow": "Cost planning",
+        "h2": "Costs depend on the full treatment plan.",
+        "paragraphs": [
+          "Estimates may include diagnostic work, surgical templates, implants, abutments, crowns, dentures, temporary restorations, and periodic maintenance. Insurance coverage can also vary."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Reclaim confidence",
+      "h2": "Have a question after implant placement?",
+      "paragraphs": [
+        "Our team is here to help you understand healing, temporary teeth, restoration timing, and the next steps in your implant treatment."
+      ]
+    }
+  },
+  "anesthesia": {
+    "description": "Learn about oral surgery anesthesia options at Capital Oral Surgery, including local anesthesia, nitrous oxide, IV sedation, office-based general anesthesia, and hospital-based anesthesia.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Anesthesia.",
+      "lede": "Our oral surgeons are trained in multiple anesthesia methods for wisdom teeth removal, tooth extractions, dental implants, and other oral surgery procedures. The right option depends on your treatment and comfort level.",
+      "photo": "gasCylinder"
+    },
+    "intro": {
+      "eyebrow": "Safety and comfort",
+      "h2": "Anesthesia is chosen around the procedure, your health, and your anxiety level.",
+      "paragraphs": [
+        "Anesthesia helps oral surgery feel safer and more comfortable. Some patients need only local anesthetic, while others benefit from nitrous oxide, IV sedation, office-based general anesthesia, or a hospital setting.",
+        "The method chosen depends on the nature of the procedure, the level of apprehension, and any medical factors that may affect the safest way to provide care.",
+        "If you have concerns about the anesthesia planned for your procedure, your consultation is the right time to talk through those questions with the doctor."
+      ],
+      "note": {
+        "label": "First priority",
+        "text": "Patient comfort and safety guide every anesthesia recommendation, from simple local numbing to deeper sedation for more involved surgery."
+      }
+    },
+    "cards": {
+      "eyebrow": "Anesthesia options",
+      "h2": "Different levels of anesthesia support different oral surgery needs.",
+      "sub": [
+        "Many procedures use local anesthetic as the foundation, with additional sedation options added when comfort, anxiety, or procedure complexity call for it."
+      ],
+      "items": [
+        {
+          "title": "Local anesthetic",
+          "body": [
+            "The patient remains fully conscious while the treatment area is numbed. Local anesthetic is used in oral surgery procedures and may be combined with other anesthesia options."
+          ]
+        },
+        {
+          "title": "Nitrous oxide with local anesthetic",
+          "body": [
+            "A mixture of nitrous oxide and oxygen is delivered through a nasal breathing mask. Patients remain conscious, relaxed, and in control."
+          ]
+        },
+        {
+          "title": "Office-based IV or general anesthesia",
+          "body": [
+            "Medication is given through an IV so the patient is deeply relaxed or asleep and unaware of the procedure while vital signs are closely monitored."
+          ]
+        },
+        {
+          "title": "Hospital or surgery center anesthesia",
+          "body": [
+            "For extensive procedures or certain medical conditions, anesthesia may be administered by an anesthesiologist in a hospital or surgery center setting."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Choosing the method",
+      "h2": "The safest option is personalized to the patient and procedure.",
+      "paragraphs": [
+        "General anesthesia may be chosen for implant placement, wisdom teeth removal, or anxiety, and may be necessary when infection makes local anesthesia less predictable."
+      ],
+      "chips": [
+        "Type and length of procedure",
+        "Patient anxiety or apprehension",
+        "Medical history and medications",
+        "Presence of infection",
+        "Need for extensive reconstruction"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "IV sedation",
+        "h2": "Twilight sedation helps you feel calm and relaxed.",
+        "paragraphs": [
+          "IV sedation is administered through a small needle in the arm or hand. Patients are very relaxed and may drift in and out of sleep, with little memory of the procedure."
+        ]
+      },
+      {
+        "eyebrow": "Monitoring and training",
+        "h2": "Office anesthesia requires licensing and emergency readiness.",
+        "paragraphs": [
+          "Oral surgeons complete hospital-based anesthesia training and must meet state requirements for monitoring equipment, emergency preparedness, and continuing education."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Comfortable oral surgery",
+      "h2": "Talk through anesthesia before treatment.",
+      "paragraphs": [
+        "We will explain your anesthesia options, answer questions, and help choose the level of care that fits your procedure and comfort."
+      ]
+    }
+  },
+  "bone-grafting": {
+    "description": "Learn how major and minor bone grafting can restore jawbone volume for dental implants, function, and facial support in Topeka, KS.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Bone grafting.",
+      "lede": "Bone grafting helps rebuild jawbone where it has thinned, softened, or resorbed. Restoring that foundation can make dental implants possible and help protect long-term function and facial support.",
+      "photo": "scanDetail"
+    },
+    "intro": {
+      "eyebrow": "Major & minor bone grafting",
+      "h2": "Healthy jawbone creates the foundation for strong replacement teeth.",
+      "paragraphs": [
+        "Missing teeth can allow the jawbone to atrophy over time. As bone volume changes, there may be less support for dental implants, and the surrounding teeth and facial structure can also be affected.",
+        "Bone grafting gives the team a way to build bone where it is needed. That added support can help make implants the right length and width possible while improving function and appearance.",
+        "Some grafting needs are minor and focused on a future implant site. Larger defects from injury, tumor surgery, or developmental concerns may require more extensive reconstruction."
+      ],
+      "note": {
+        "label": "Why timing matters",
+        "text": "Rebuilding bone before implant placement can preserve more treatment options and reduce the chance that tooth replacement becomes more complicated later."
+      }
+    },
+    "cards": {
+      "eyebrow": "When grafting helps",
+      "h2": "Bone can be restored in areas that need more support.",
+      "sub": [
+        "Your treatment plan depends on the location of the missing tooth, the amount of remaining bone, the cause of bone loss, and the type of restoration being planned."
+      ],
+      "items": [
+        {
+          "title": "Missing teeth",
+          "body": [
+            "When teeth are missing for a period of time, the jawbone can shrink or resorb. This can affect implant options, tooth position, and facial support."
+          ]
+        },
+        {
+          "title": "Previous extractions",
+          "body": [
+            "Extraction sites may not always heal with enough height, width, or density for future implant placement. Grafting can rebuild the area before treatment."
+          ]
+        },
+        {
+          "title": "Gum disease or injury",
+          "body": [
+            "Bone loss from periodontal disease, trauma, or other defects may need reconstruction before the jaw can support a stable restoration."
+          ]
+        },
+        {
+          "title": "Upper back jawbone",
+          "body": [
+            "Sinus grafting can restore bone in the posterior upper jaw when the sinus is close to the area where an implant needs to be placed."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Grafting materials",
+      "h2": "The graft source is matched to the size and location of the defect.",
+      "paragraphs": [
+        "Bone may come from a tissue bank or, for some larger repairs, from another area of your own body. Protective membranes may also be placed under the gum to help guide new bone growth as the area heals."
+      ],
+      "chips": [
+        "Tissue-bank grafting material",
+        "Bone from another area of your own body",
+        "Sinus bone grafting for the upper jaw",
+        "Protective membranes for guided regeneration"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Guided regeneration",
+        "h2": "Membranes can help protect the graft as bone forms.",
+        "paragraphs": [
+          "In some cases, a dissolvable membrane is placed beneath the gum tissue. This helps shield the grafted area and supports guided bone or tissue regeneration during healing."
+        ]
+      },
+      {
+        "eyebrow": "Major bone grafting",
+        "h2": "Larger jaw defects may need a more advanced repair.",
+        "paragraphs": [
+          "Major grafts can repair defects related to trauma, tumor surgery, or congenital concerns. These cases may use the patient's own bone and are often performed in an operating room setting."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "We are here to help",
+      "h2": "Start with a grafting consultation.",
+      "paragraphs": [
+        "We will review imaging, explain your bone volume, and walk through the grafting options that make sense for your treatment goals."
+      ]
+    }
+  },
+  "bone-grafting-for-implants": {
+    "description": "Learn why bone grafting may be needed before dental implant placement, including socket grafting, ridge grafting, and sinus grafting in Topeka, KS.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "Bone grafting for implants.",
+      "lede": "Dental implants need healthy bone for long-term support. When bone volume is limited after extraction, long-term tooth loss, or sinus changes, bone grafting can rebuild the foundation needed for implant placement.",
+      "photo": "conversation"
+    },
+    "intro": {
+      "eyebrow": "Implant foundation",
+      "h2": "Do you have enough bone for dental implants?",
+      "paragraphs": [
+        "After tooth extraction, thick socket walls often fill naturally with bone in two to three months. When socket walls are thin, especially near the front teeth, healing can be less predictable.",
+        "In those situations, bone grafting may be placed at the time of extraction to help your body fill the empty socket with bone. This helps maintain the width and volume needed for implant placement several months later.",
+        "Bone grafting can also rebuild areas where teeth were removed years ago and the ridge has become too thin to support an implant safely."
+      ],
+      "note": {
+        "label": "Timing matters",
+        "text": "Preserving bone at the time of extraction can simplify future implant planning and may reduce the need for more complex reconstruction later."
+      }
+    },
+    "cards": {
+      "eyebrow": "Grafting scenarios",
+      "h2": "Different bone concerns call for different grafting plans.",
+      "sub": [
+        "Bone grafting is usually a relatively comfortable office procedure. Many different grafting materials are available, including your own bone when that is the best option."
+      ],
+      "items": [
+        {
+          "title": "Socket grafting",
+          "body": [
+            "When socket walls are thin after extraction, grafting material may be placed at the time the tooth is removed to help the body fill the space with bone."
+          ]
+        },
+        {
+          "title": "Thin ridge grafting",
+          "body": [
+            "If a tooth was removed years ago and the bony ridge has become very thin, grafting can rebuild width and volume before implant placement."
+          ]
+        },
+        {
+          "title": "Sinus grafting",
+          "body": [
+            "When upper back teeth have been missing for a long time, the sinus may sit low near the implant site. Bone can be added to restore height for implants of proper length."
+          ]
+        },
+        {
+          "title": "Implant-site preparation",
+          "body": [
+            "Some grafts heal before implant placement, while others may be completed at the same time as implant surgery depending on anatomy and treatment goals."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Benefits",
+      "h2": "Bone grafting restores options for implant placement.",
+      "paragraphs": [
+        "The purpose of grafting is to create enough healthy bone height, width, and volume for an implant to be placed with better support and long-term stability."
+      ],
+      "chips": [
+        "Maintains socket width and volume",
+        "Improves implant placement options",
+        "Rebuilds thin jawbone areas",
+        "Restores bone height near the sinus",
+        "Supports long-term implant stability"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Thin ridge grafting",
+        "h2": "Older extraction sites may need rebuilding.",
+        "paragraphs": [
+          "If the bony ridge is extremely thin, grafting material can be placed beside the existing bone and allowed to heal for up to six months before the ridge is re-entered and the implant is placed."
+        ]
+      },
+      {
+        "eyebrow": "Sinus grafting",
+        "h2": "Upper back teeth can need added bone height.",
+        "paragraphs": [
+          "If the sinus sits low into the tooth-bearing area, the sinus membrane can be gently elevated and bone added to restore enough height for implants of adequate length."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Reclaim confidence",
+      "h2": "Find out whether grafting is needed.",
+      "paragraphs": [
+        "We will review your imaging, bone volume, and implant goals to determine whether bone grafting should be part of your treatment plan."
+      ]
+    }
+  },
+  "cost-of-dental-implants": {
+    "description": "Understand what affects dental implant cost, including longevity, jawbone health, quality of life, surgical steps, restorations, insurance, and financing.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "Cost of dental implants.",
+      "lede": "Dental implant cost depends on your anatomy, the number of teeth being replaced, whether grafting is needed, and the restoration plan. The best estimate comes after a consultation built around your specific case.",
+      "photo": "planning"
+    },
+    "intro": {
+      "eyebrow": "Considering cost",
+      "h2": "The lowest initial price is not always the lowest long-term cost.",
+      "paragraphs": [
+        "Dental implants have been available for decades, but they can still feel unfamiliar when patients compare quotes. A fair comparison should look beyond the first appointment or the first invoice.",
+        "Dentures and bridges may be less expensive initially, but they can require repair or replacement over time. Implants, when properly placed and cared for, are designed as a long-term tooth replacement.",
+        "Cost also reflects the health value of preserving jawbone, restoring chewing function, and reducing the daily inconvenience that can come with removable appliances."
+      ],
+      "note": {
+        "label": "Accurate estimates are personal",
+        "text": "The only way to receive a specific price for your case is through a consultation, imaging, and a treatment plan based on your anatomy and goals."
+      }
+    },
+    "cards": {
+      "eyebrow": "Value factors",
+      "h2": "Implant cost is tied to health, function, and durability.",
+      "sub": [
+        "The right treatment decision balances immediate cost with longevity, jawbone preservation, appearance, quality of life, and future dental maintenance."
+      ],
+      "items": [
+        {
+          "title": "Longevity",
+          "body": [
+            "Dentures and bridges may cost less at first, but they often need repair or replacement every five to ten years. Properly placed and cared-for implants can last much longer."
+          ]
+        },
+        {
+          "title": "Jaw bone health",
+          "body": [
+            "When a tooth is missing, jawbone can deteriorate beneath the surface. Implants integrate with bone, helping preserve strength, facial structure, and future oral health."
+          ]
+        },
+        {
+          "title": "Quality of life",
+          "body": [
+            "Dental implants are the closest replacement to natural teeth. They can make it easier to eat healthy foods and avoid the daily hassles that can come with removable dentures."
+          ]
+        },
+        {
+          "title": "Long-term investment",
+          "body": [
+            "Implants are an investment in health, function, appearance, and confidence. A stable set of teeth can support nutrition and preserve facial contours over time."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Comparing quotes",
+      "h2": "Make sure each quote includes the same treatment steps.",
+      "paragraphs": [
+        "Dental implant treatment can involve multiple steps and sometimes multiple professionals. When comparing quotes, confirm what is included so you are comparing the same scope of care."
+      ],
+      "chips": [
+        "Exams and office visits",
+        "Tooth or root extraction",
+        "Bone grafting when needed",
+        "Titanium implant placement",
+        "Crown or restoration placement",
+        "X-rays and post-operative care"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Insurance",
+        "h2": "Coverage can vary widely.",
+        "paragraphs": [
+          "Start by checking with your dental insurance carrier to learn what portion, if any, of implant treatment is covered. Many plans treat implant care differently from other dental services."
+        ]
+      },
+      {
+        "eyebrow": "Financing",
+        "h2": "Payment options may help make care manageable.",
+        "paragraphs": [
+          "Health care credit companies may offer no-interest or low-interest loans for medical and dental procedures, including dental implants. Our team can help you understand available options."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Schedule your consultation",
+      "h2": "Get a cost estimate for your case.",
+      "paragraphs": [
+        "We will review your needs, imaging, and treatment options so you can understand the investment involved before moving forward."
+      ]
+    }
+  },
+  "dental-implants-faq": {
+    "description": "Answers to common dental implant questions about longevity, recovery, pain, bone grafting, treatment timing, cost, and choosing an oral surgery team.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "Dental implants FAQ.",
+      "lede": "Dental implant treatment raises good questions about comfort, timing, healing, cost, and long-term success. These answers help you understand what to expect before your consultation.",
+      "photo": "reception"
+    },
+    "intro": {
+      "eyebrow": "Frequently asked questions",
+      "h2": "Clear answers help you feel ready for implant treatment.",
+      "paragraphs": [
+        "Our oral surgeons use current technology, careful planning, and high quality materials to support precise implant placement and natural looking results.",
+        "Many doctors refer complex dental implant cases to our office because implant care requires training, judgment, and experience. We want you to understand your options before making a decision.",
+        "A consultation is still the best way to answer questions specific to your health, jawbone, number of missing teeth, timeline, and budget."
+      ],
+      "note": {
+        "label": "Why choose a specialist?",
+        "text": "Implant placement can become complex when bone loss, multiple missing teeth, or medical considerations are involved. A specialist team can plan for precision, comfort, and long-term stability."
+      }
+    },
+    "cards": {
+      "eyebrow": "Patient questions",
+      "h2": "The questions patients ask most before implant surgery.",
+      "sub": [
+        "These answers cover longevity, work recovery, pain, swelling, and when grafting may be needed before implant treatment."
+      ],
+      "items": [
+        {
+          "title": "How long do dental implants last?",
+          "body": [
+            "Titanium implants are designed to integrate with the jawbone and can last a very long time. The visible restorations, such as crowns or fixed dentures, may eventually need repair or replacement."
+          ]
+        },
+        {
+          "title": "Will I miss work?",
+          "body": [
+            "Some patients return to work the next day after a single tooth implant. Patients receiving multiple implants may rest at home for two or three days before returning to normal activity."
+          ]
+        },
+        {
+          "title": "Do dental implants hurt?",
+          "body": [
+            "The area is numbed with local anesthetic, and sedation may be used to ease anxiety. Mild pain and swelling during the first few days are commonly managed with over-the-counter medication, ice, and head elevation."
+          ]
+        },
+        {
+          "title": "Will I need bone grafts?",
+          "body": [
+            "It depends on your jawbone health. If there is not enough width, height, or density to support implants, bone grafting may be recommended to strengthen and reshape the jawbone."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Treatment timing",
+      "h2": "The total timeline depends on surgery, healing, and restoration.",
+      "paragraphs": [
+        "Implant surgery can be quick for one tooth and longer for multiple implants. After surgery, the jawbone and gums usually need time to heal before permanent restorations are placed."
+      ],
+      "chips": [
+        "Single implant surgery can take as little as 30 minutes",
+        "Multiple implants may take several hours",
+        "Typical healing before restoration is three to four months",
+        "Immediate implants may reduce the wait to six to eight weeks",
+        "Cost and treatment time vary by patient"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Cost considerations",
+        "h2": "Are there downsides to dental implants?",
+        "paragraphs": [
+          "Dental implants can be more expensive than other tooth replacement options, and insurance coverage varies. They also require healing time before the final restoration is attached."
+        ]
+      },
+      {
+        "eyebrow": "Consultation",
+        "h2": "Your exact answer depends on your case.",
+        "paragraphs": [
+          "Your jawbone health, number of missing teeth, medical history, and restorative goals all affect the recommendation. A consultation helps clarify timing, grafting needs, cost, and next steps."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Reclaim confidence",
+      "h2": "Bring us your implant questions.",
+      "paragraphs": [
+        "We will review your goals, explain your options, and help you decide whether dental implants are the right solution for your smile."
+      ]
+    }
+  },
+  "full-mouth-dental-implants": {
+    "description": "Explore full mouth dental implant options for missing upper or lower teeth, including implant-retained dentures, bar attachment dentures, screw-retained dentures, and individual implants.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "Full mouth dental implants.",
+      "lede": "When most or all teeth are missing, dental implants can support a more stable, comfortable replacement than traditional dentures alone. Our team helps you compare removable and fixed full-arch options with clarity.",
+      "photo": "team"
+    },
+    "intro": {
+      "eyebrow": "Full-arch replacement",
+      "h2": "If dentures are not enough, implants can create a stronger foundation.",
+      "paragraphs": [
+        "Many patients can wear an upper denture comfortably, but lower dentures can be more difficult to keep stable while eating and speaking. Implant-supported options are available when all lower teeth are missing.",
+        "Full mouth implant treatment is not one single solution. The right plan depends on your jaw size and shape, the amount of available bone, whether you prefer a removable or fixed restoration, and how much maintenance you are comfortable managing.",
+        "Your consultation is the place to compare these choices carefully, review imaging, and understand which option can give you the best blend of stability, cleanability, comfort, and long-term support."
+      ],
+      "note": {
+        "label": "Removable vs fixed",
+        "text": "Some implant-supported dentures are removable for cleaning. Others are secured to implants and removed only during maintenance visits. Both can be excellent options when matched to the right patient."
+      }
+    },
+    "cards": {
+      "eyebrow": "Lower jaw options",
+      "h2": "Four ways implants can support missing lower teeth.",
+      "sub": [
+        "The lower jaw often benefits greatly from implant support. These options range from improved denture stability to permanent teeth that stay in place except during maintenance care."
+      ],
+      "items": [
+        {
+          "title": "Ball attachment denture",
+          "body": [
+            "Two implants are placed in the lower jaw, and a denture is made to snap onto them. This can improve stability while chewing, though the denture can still move and may need periodic adjustments."
+          ]
+        },
+        {
+          "title": "Bar attachment denture",
+          "body": [
+            "Four to six implants are placed, then connected with a custom support bar after healing. The denture snaps firmly onto the bar, allowing very little movement while still being removable for cleaning."
+          ]
+        },
+        {
+          "title": "Screw-retained denture",
+          "body": [
+            "Five or more implants support a permanent denture that is secured to posts or a bar. It does not touch the gum tissue and is removed only during maintenance visits."
+          ]
+        },
+        {
+          "title": "Individual implants",
+          "body": [
+            "All missing teeth can be replaced individually so they most closely resemble natural teeth. This usually requires eight or more implants and may depend on jawbone size and shape."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Upper jaw options",
+      "h2": "Upper implants may need a different support plan.",
+      "paragraphs": [
+        "A similar range of treatment choices is available for missing upper teeth. Because upper jaw bone is often softer than lower jaw bone, more implants may be needed to support a new restoration."
+      ],
+      "chips": [
+        "Implant-retained upper denture",
+        "Individual upper implants",
+        "Palate-free denture design when possible",
+        "More implants may be needed for upper-jaw support"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Implant-retained upper denture",
+        "h2": "More natural taste and comfort may be possible.",
+        "paragraphs": [
+          "Depending on the number of implants placed, it may be possible to avoid covering the roof of your mouth with a complete denture. This can help with taste, temperature awareness, and a more natural feel."
+        ]
+      },
+      {
+        "eyebrow": "Individual upper implants",
+        "h2": "Fixed teeth can closely resemble natural teeth.",
+        "paragraphs": [
+          "Patients who want a non-removable restoration similar to natural teeth may need eight to ten individual implants, followed by abutments and new replacement crowns after healing."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Reclaim confidence",
+      "h2": "Find the right full-mouth plan.",
+      "paragraphs": [
+        "We will evaluate your jaw, review your goals, and help you understand which full mouth implant solution fits your anatomy, lifestyle, and long-term care needs."
+      ]
+    }
+  },
+  "immediate-implants": {
+    "description": "Learn when immediate dental implants may be placed after tooth extraction and how timing, healing, and restoration planning work in Topeka, KS.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "Immediate implants.",
+      "lede": "If a damaged tooth needs to be removed before implant treatment, immediate implant placement may shorten the overall process. Our surgeons evaluate the extraction site, bone support, and healing needs before recommending the safest timing.",
+      "photo": "welcome"
+    },
+    "intro": {
+      "eyebrow": "What immediate means",
+      "h2": "The implant can be placed right after extraction, but the crown timing varies.",
+      "paragraphs": [
+        "Dental implants can be a longer process, especially when teeth have been missing for some time. For many patients, restorations are added months after implant placement.",
+        "Immediate implant placement means the titanium implant is placed in the jawbone immediately after the damaged tooth is extracted. This can simplify treatment, support healing, and reduce the wait before the final restoration.",
+        "“Immediate” does not always mean a crown or overdenture is attached the same day. Some patients restore quickly, while many need several weeks of healing before the restoration is attached."
+      ],
+      "note": {
+        "label": "Candidate fit",
+        "text": "Immediate placement depends on the condition of the extraction site, jawbone strength, infection risk, and how well the implant can be stabilized at the time of surgery."
+      }
+    },
+    "cards": {
+      "eyebrow": "Restoration timing",
+      "h2": "Your restoration timeline is chosen after healing is evaluated.",
+      "sub": [
+        "Your surgeon works with your dentist or prosthodontist to determine when your restoration can be attached. The right timing depends on bone strength, recovery, implant stability, and your restorative plan."
+      ],
+      "items": [
+        {
+          "title": "Restoration within 48 hours",
+          "body": [
+            "Some patients may be candidates for a very early temporary or final restoration after implant placement, depending on bone strength, bite forces, and the treatment plan."
+          ]
+        },
+        {
+          "title": "Restoration within three months",
+          "body": [
+            "Many patients need a short healing window before their restoration is attached. This gives the implant site time to recover and allows your team to confirm stability."
+          ]
+        },
+        {
+          "title": "Traditional restoration timing",
+          "body": [
+            "Some cases still benefit from a three-to-six-month healing period before restoration. Your surgeon and dentist choose the timeline that best protects long-term results."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Benefits",
+      "h2": "Immediate implants can reduce the number of steps.",
+      "paragraphs": [
+        "When the anatomy and extraction site are favorable, immediate implants may simplify surgery, shorten recovery, reduce the amount of tissue and bone change, and improve patient satisfaction with the process."
+      ],
+      "chips": [
+        "Shorter wait between implant placement and restoration",
+        "Fewer surgeries for many patients",
+        "Faster overall recovery time",
+        "Less tissue and bone loss",
+        "Greater satisfaction with final results"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Healing checks",
+        "h2": "Progress is monitored before restoration.",
+        "paragraphs": [
+          "Your surgeon checks healing periodically to confirm when the implant is ready for a restoration. This protects the final result and helps avoid placing too much force on the implant too early."
+        ]
+      },
+      {
+        "eyebrow": "Recovery time",
+        "h2": "Faster does not mean rushed.",
+        "paragraphs": [
+          "Immediate implants can shorten the treatment timeline, but the final schedule should still respect the biology of healing and the strength of the implant site."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Reclaim confidence",
+      "h2": "Ask whether immediate placement fits your case.",
+      "paragraphs": [
+        "We will evaluate your extraction site, bone support, and restorative goals to determine whether immediate implants are a smart option."
+      ]
+    }
+  },
+  "impacted-wisdom-teeth": {
+    "description": "Learn what impacted wisdom teeth are, the types of impactions, and how consultation and x-rays help determine whether removal is recommended.",
+    "hero": {
+      "eyebrow": "Wisdom teeth",
+      "h1": "Impacted wisdom teeth.",
+      "lede": "Wisdom teeth become impacted when there is not enough space for them to erupt into a healthy position for chewing and cleaning. Imaging and exam findings help determine whether removal is recommended.",
+      "photo": "welcome"
+    },
+    "intro": {
+      "eyebrow": "What impaction means",
+      "h2": "Impacted teeth cannot erupt into a clean, functional position.",
+      "paragraphs": [
+        "Most people develop 32 permanent adult teeth, but many jaws do not have enough space for the four wisdom teeth. When inadequate space prevents eruption, these third molars are called impacted wisdom teeth.",
+        "An impacted wisdom tooth may be trapped by gum tissue, partially covered by bone, fully embedded in the jawbone, or positioned in a way that makes cleaning and removal more complex.",
+        "The concern is not only whether the tooth can be seen. It is whether it can erupt into the proper position for chewing, cleaning, and long-term health."
+      ],
+      "note": {
+        "label": "Consultation and x-rays",
+        "text": "A special x-ray of the mouth and jaws helps determine whether wisdom teeth are impacted, if there is room for eruption, and how difficult removal may be."
+      }
+    },
+    "cards": {
+      "eyebrow": "Types of impactions",
+      "h2": "The amount of gum and bone covering the tooth affects treatment.",
+      "sub": [
+        "Knowing the type of impaction helps your surgeon estimate complexity, explain risks, and decide whether removal is likely to benefit you."
+      ],
+      "items": [
+        {
+          "title": "Soft tissue impaction",
+          "body": [
+            "There is not enough room for gum tissue to retract around the tooth, which makes adequate cleaning difficult and can increase irritation or infection risk."
+          ]
+        },
+        {
+          "title": "Partial bony impaction",
+          "body": [
+            "The wisdom tooth has enough space to partially erupt, but it cannot function properly for chewing and often creates cleaning problems."
+          ]
+        },
+        {
+          "title": "Complete bony impaction",
+          "body": [
+            "There is no space for the tooth to erupt, so it remains embedded in the jawbone or requires more complex surgical techniques for removal."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Evaluation",
+      "h2": "Imaging helps turn uncertainty into a clear recommendation.",
+      "paragraphs": [
+        "During consultation, your surgeon reviews the position of the wisdom teeth and explains whether removal is recommended, how difficult it may be, and what anesthesia options make sense."
+      ],
+      "chips": [
+        "Review wisdom tooth position",
+        "Check available space for eruption",
+        "Evaluate cleaning access",
+        "Estimate removal complexity",
+        "Discuss whether removal is recommended"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Function",
+        "h2": "Partially erupted teeth may still not work properly.",
+        "paragraphs": [
+          "Even when a wisdom tooth is partly visible, it may not contribute to chewing in a useful way. Instead, it can create cleaning issues and increase risk around the neighboring tooth."
+        ]
+      },
+      {
+        "eyebrow": "Complexity",
+        "h2": "Position and jaw shape can affect removal.",
+        "paragraphs": [
+          "A wisdom tooth may sit at an unusual angle or be affected by the size and shape of the jawbone and nearby facial structures. These details guide the surgical plan."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Schedule a consultation",
+      "h2": "Find out whether removal makes sense.",
+      "paragraphs": [
+        "We will review your x-rays, explain the type of impaction, and help you understand the safest next step."
+      ]
+    }
+  },
+  "implant-dentures": {
+    "description": "Learn how implant-supported overdentures can replace missing teeth with improved denture stability, fewer implants, and renewed confidence.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "Implant dentures.",
+      "lede": "Implant-supported overdentures replace a full set of missing teeth with a restoration supported by dental implants. They can make dentures feel more secure, more comfortable, and easier to trust while eating and speaking.",
+      "photo": "patientComfort"
+    },
+    "intro": {
+      "eyebrow": "Implant-supported overdentures",
+      "h2": "A more stable way to replace a full set of teeth.",
+      "paragraphs": [
+        "Standard dentures are unsecured prostheses with real limitations. They can feel painful, inconvenient, or unstable, and they may make chewing favorite foods difficult.",
+        "Implant dentures use dental implants to support a full replacement bridge or denture. Fewer implants may be needed than some other full-arch approaches, which can reduce treatment time and cost.",
+        "Because the restoration is connected to implants, it can feel more stable in the bone and may reduce the need for bone grafting to increase bone volume in some patients."
+      ],
+      "note": {
+        "label": "A practical full-arch option",
+        "text": "Implant dentures are designed for patients who want better stability than conventional dentures while keeping treatment efficient, cleanable, and cost-conscious."
+      }
+    },
+    "cards": {
+      "eyebrow": "Treatment concept",
+      "h2": "The attachment system is chosen around your needs.",
+      "sub": [
+        "Implant-supported overdentures may stay connected with bar-and-clip attachment methods or abutment-based attachments. The right system is selected early based on anatomy, comfort, cleaning needs, stability, and the final restoration design."
+      ],
+      "items": [
+        {
+          "title": "Implants are placed",
+          "body": [
+            "A small number of dental implants are strategically positioned to support a full replacement arch. The treatment plan is customized to your anatomy and restorative goals."
+          ]
+        },
+        {
+          "title": "Attachments are selected",
+          "body": [
+            "Implant dentures can connect with bar-and-clip systems or abutment-based attachments such as ball, magnet, or resilient stud attachments. Your team chooses the best fit early in planning."
+          ]
+        },
+        {
+          "title": "Temporary teeth may be added",
+          "body": [
+            "In many cases, a temporary set of teeth can be placed on the same day as surgery, helping you return to everyday life while the implants begin healing."
+          ]
+        },
+        {
+          "title": "Final bridge or denture is restored",
+          "body": [
+            "After a short healing period, your dentist places the final restoration so you can chew, speak, and smile with greater comfort and confidence."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Advantages",
+      "h2": "Implant dentures can make everyday life feel easier again.",
+      "paragraphs": [
+        "With improved stability and fewer implants than some full-arch methods, implant-supported overdentures can help patients regain confidence while keeping care practical."
+      ],
+      "chips": [
+        "Cost-effective full-arch replacement",
+        "Fewer implants needed per jaw",
+        "Reduced need for bone grafting in some cases",
+        "Faster treatment and healing time",
+        "Documented clinical outcomes"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Same-day temporaries",
+        "h2": "Temporary teeth may be placed the day of surgery.",
+        "paragraphs": [
+          "In many cases, temporary teeth can be attached after implant placement. This helps you lead a more normal life during the first phase of healing before the final restoration is placed."
+        ]
+      },
+      {
+        "eyebrow": "Final restoration",
+        "h2": "Your dentist completes the final bridge or denture.",
+        "paragraphs": [
+          "After a short healing period, your dentist places the final restoration. The goal is improved quality of life, renewed confidence, and the ability to enjoy more of your favorite foods again."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Reclaim confidence",
+      "h2": "See if implant dentures fit your goals.",
+      "paragraphs": [
+        "We will evaluate your jaw, discuss attachment options, and help you understand whether implant-supported overdentures are a strong fit."
+      ]
+    }
+  },
+  "jaw-bone-health": {
+    "description": "Learn why jaw bone health matters, how teeth help preserve bone, and how bone grafting can support future tooth replacement options.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Jaw bone health.",
+      "lede": "Healthy jawbone supports your teeth, bite, facial structure, and future replacement options. When bone begins to shrink, bone grafting and implant planning can help restore a stronger foundation.",
+      "photo": "imaging"
+    },
+    "intro": {
+      "eyebrow": "Why bone health matters",
+      "h2": "The jawbone stays strongest when it has healthy teeth to support.",
+      "paragraphs": [
+        "Natural teeth are anchored in the jawbone. Every time you chew, the roots send small forces into the bone and help tell the body to keep that bone dense and useful.",
+        "When a tooth is lost, that stimulation disappears. Over time, the bone in that area can shrink or change shape, which may make future tooth replacement more complex.",
+        "Protecting jawbone health is one reason oral surgeons evaluate missing teeth, infection, gum disease, and implant options with care."
+      ],
+      "note": {
+        "label": "Early evaluation helps",
+        "text": "The sooner bone loss is identified, the more options there may be for preserving bone, rebuilding support, and planning a stable restoration."
+      }
+    },
+    "cards": {
+      "eyebrow": "What keeps bone strong",
+      "h2": "Bone health depends on stimulation, stability, and infection control.",
+      "sub": [
+        "Good planning looks at the full picture: tooth position, gum health, bite forces, missing teeth, and whether grafting is needed before an implant can be placed safely."
+      ],
+      "items": [
+        {
+          "title": "Tooth-root stimulation",
+          "body": [
+            "Natural tooth roots stimulate the surrounding jawbone during chewing. That stimulation helps the bone maintain its height, width, and density."
+          ]
+        },
+        {
+          "title": "Timely tooth replacement",
+          "body": [
+            "When a tooth is missing, the bone no longer receives the same signal to stay strong. Earlier evaluation can help preserve more replacement options."
+          ]
+        },
+        {
+          "title": "Healthy gums and support",
+          "body": [
+            "Periodontal disease can damage the structures that hold teeth in place, including the bone around them. Treating infection helps protect the jaw."
+          ]
+        },
+        {
+          "title": "Restorative planning",
+          "body": [
+            "Dental implants can help restore function while giving the jawbone helpful stimulation again, but they need enough healthy bone for support."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Bone loss risks",
+      "h2": "Several oral health problems can reduce jawbone volume.",
+      "paragraphs": [
+        "Bone loss is often gradual, which means patients may not notice it right away. Imaging helps show whether the jaw has enough support for the treatment being planned."
+      ],
+      "chips": [
+        "Missing teeth",
+        "Periodontal disease",
+        "Dental trauma",
+        "Infection",
+        "Poorly fitting dentures"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Bone grafting",
+        "h2": "Grafting can rebuild areas that have thinned.",
+        "paragraphs": [
+          "When bone has resorbed, grafting material can be placed to encourage new bone formation. The goal is to create healthier height, width, and density for future treatment."
+        ]
+      },
+      {
+        "eyebrow": "Dental implants",
+        "h2": "Implants can help restore healthy function.",
+        "paragraphs": [
+          "Dental implants can replace tooth roots and support crowns, bridges, or dentures. They are planned around the amount and quality of bone available."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Protect your options",
+      "h2": "Let us evaluate your jawbone health.",
+      "paragraphs": [
+        "We can review your imaging, explain what has changed, and recommend the next step for preserving or rebuilding support."
+      ]
+    }
+  },
+  "jaw-bone-loss-and-deterioration": {
+    "description": "Learn common causes of jaw bone loss and deterioration, including tooth extractions, periodontal disease, dentures, trauma, misalignment, infection, tumors, and sinus changes.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Jaw bone loss and deterioration.",
+      "lede": "Jawbone can shrink when it no longer receives healthy stimulation or when disease, trauma, or other conditions damage the supporting bone. Grafting can help restore support where bone has been lost.",
+      "photo": "team"
+    },
+    "intro": {
+      "eyebrow": "Reasons bone can change",
+      "h2": "Jawbone needs stimulation, healthy gums, and stable teeth to stay strong.",
+      "paragraphs": [
+        "Natural teeth are embedded in the jawbone and help stimulate the bone through normal chewing and biting. When that stimulation is removed, the body may begin to resorb bone in the area.",
+        "The rate and amount of bone loss varies from person to person, but a significant amount can occur during the first eighteen months after a tooth is extracted and may continue gradually over time.",
+        "Bone grafting may be recommended when deterioration limits function, denture stability, or the ability to place dental implants in a healthy position."
+      ],
+      "note": {
+        "label": "Tooth replacement matters",
+        "text": "Replacing missing teeth can help restore function and, when implants are appropriate, provide bone-stimulating support that removable appliances cannot always provide."
+      }
+    },
+    "cards": {
+      "eyebrow": "Common causes",
+      "h2": "Bone loss can begin after tooth loss, infection, or changes in bite force.",
+      "sub": [
+        "Understanding the cause helps the surgeon decide whether bone grafting, implant planning, infection treatment, or another procedure is the right next step."
+      ],
+      "items": [
+        {
+          "title": "Tooth extractions",
+          "body": [
+            "When an adult tooth is removed and not replaced, the alveolar bone no longer receives the stimulation it needs from chewing and biting. That bone can begin to resorb over time."
+          ]
+        },
+        {
+          "title": "Periodontal disease",
+          "body": [
+            "Ongoing gum infections can damage the tissues that support natural teeth, including the periodontal ligament and the bone that holds teeth in place."
+          ]
+        },
+        {
+          "title": "Dentures or bridgework",
+          "body": [
+            "Traditional dentures sit on top of the gums and do not directly stimulate the jawbone. Bridges also leave the bone beneath the missing tooth span without direct stimulation."
+          ]
+        },
+        {
+          "title": "Facial trauma",
+          "body": [
+            "A knocked-out tooth, jaw fracture, or tooth broken below the gum line can stop bone stimulation in that area and lead to deterioration if the site is not restored."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Additional causes",
+      "h2": "Some causes need more specialized evaluation.",
+      "paragraphs": [
+        "Trauma, infection, sinus changes, tumor treatment, and developmental differences can all affect jawbone volume. Imaging helps clarify the defect and the best reconstruction plan."
+      ],
+      "chips": [
+        "Misalignment or lack of opposing tooth contact",
+        "Osteomyelitis or other jawbone infection",
+        "Benign or malignant tumors",
+        "Developmental deformities",
+        "Sinus enlargement after upper molar loss"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Denture stability",
+        "h2": "Bone loss can make removable dentures harder to wear.",
+        "paragraphs": [
+          "As the jawbone resorbs, dentures may loosen and make eating or speaking less comfortable. Implant-supported options may help stimulate and preserve more bone in selected cases."
+        ]
+      },
+      {
+        "eyebrow": "Sinus changes",
+        "h2": "Upper molar loss can reduce implant-ready bone height.",
+        "paragraphs": [
+          "After upper molars are removed, the maxillary sinus can expand into the area where bone once supported teeth. A sinus lift may be recommended to rebuild height for implant placement."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Restore support",
+      "h2": "Talk with us about bone grafting options.",
+      "paragraphs": [
+        "We will evaluate the cause and amount of bone loss, then explain whether grafting, implants, or another approach fits your goals."
+      ]
+    }
+  },
+  "nitrous-oxide": {
+    "description": "Learn about nitrous oxide sedation, also known as laughing gas, including how it works, advantages, recovery, and when it may not be recommended.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Nitrous oxide.",
+      "lede": "Nitrous oxide, often called laughing gas, is a sweet-smelling, non-irritating gas used to help patients feel relaxed while remaining conscious and in control during treatment.",
+      "photo": "patientSupport"
+    },
+    "intro": {
+      "eyebrow": "Laughing gas",
+      "h2": "Nitrous oxide helps take the edge off while you stay awake.",
+      "paragraphs": [
+        "Nitrous oxide has been used as a primary means of sedation in dentistry for many years. It is breathed through a nasal mask as a mixture of nitrous oxide and oxygen.",
+        "Patients are able to breathe on their own and remain in control of bodily functions. Some patients feel calm and light, some may feel drowsy, and mild amnesia can occur.",
+        "The mixture includes oxygen, and the level of nitrous oxide can be adjusted during the appointment to match the desired relaxation level."
+      ],
+      "note": {
+        "label": "Quick recovery",
+        "text": "Nitrous oxide works rapidly and wears off quickly once the gas is stopped, which is one reason many patients appreciate it for lighter sedation needs."
+      }
+    },
+    "cards": {
+      "eyebrow": "Advantages",
+      "h2": "The experience is flexible, fast, and easy to adjust.",
+      "sub": [
+        "Nitrous oxide may be used for simple procedures or as part of a broader anesthesia plan, depending on the treatment and patient comfort."
+      ],
+      "items": [
+        {
+          "title": "Adjustable relaxation",
+          "body": [
+            "The depth of sedation can be increased or decreased during the visit, giving the team control over your comfort level."
+          ]
+        },
+        {
+          "title": "Rapid effect",
+          "body": [
+            "Nitrous oxide reaches the brain quickly, and its relaxing and pain-controlling effects can develop within just a few minutes."
+          ]
+        },
+        {
+          "title": "No lingering hangover",
+          "body": [
+            "The effects wear off quickly after the gas is stopped, so patients usually do not feel a lingering sedated effect afterward."
+          ]
+        },
+        {
+          "title": "Helpful for gagging",
+          "body": [
+            "Inhalation sedation can be very effective for minimizing gagging during dental or oral surgery treatment."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "When to discuss alternatives",
+      "h2": "Breathing conditions may change whether nitrous oxide is appropriate.",
+      "paragraphs": [
+        "Nitrous oxide is not recommended for patients diagnosed with chronic obstructive pulmonary disease. Other breathing or medical concerns should be reviewed before treatment."
+      ],
+      "chips": [
+        "COPD",
+        "Emphysema",
+        "Chest or breathing difficulties",
+        "Multiple sclerosis",
+        "A cold or congestion"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Five-minute trial",
+        "h2": "You can ask how it feels before committing.",
+        "paragraphs": [
+          "If you are unsure about nitrous oxide, ask whether a short trial is appropriate so you can experience the sensation before proceeding with this sedation method."
+        ]
+      },
+      {
+        "eyebrow": "Conscious sedation",
+        "h2": "You remain awake and responsive.",
+        "paragraphs": [
+          "Nitrous oxide is designed to relax you, not fully put you to sleep. You can still breathe independently and respond to instructions during the appointment."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Calm, conscious comfort",
+      "h2": "Ask if nitrous oxide fits your visit.",
+      "paragraphs": [
+        "We will review your health history, procedure, and comfort goals to decide whether nitrous oxide is a good option."
+      ]
+    }
+  },
+  "oral-pathology": {
+    "description": "Learn about oral pathology warning signs, oral cancer screening, biopsies for abnormal tissue, and when to contact an oral surgeon.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Oral pathology.",
+      "lede": "Changes in the lining of the mouth can be warning signs of infection, inflammation, benign growths, or oral cancer. Early evaluation helps clarify what is happening and what treatment may be needed.",
+      "photo": "reception"
+    },
+    "intro": {
+      "eyebrow": "Tissue changes",
+      "h2": "Healthy mouth tissue is usually smooth and coral pink.",
+      "paragraphs": [
+        "The inside of the mouth is lined with mucosa, a special type of skin that is normally smooth and coral pink. Any change in color, texture, thickness, or healing pattern can signal a pathological process.",
+        "The most serious concern is oral cancer, but not every change is cancerous. An exam and, when appropriate, a biopsy can help identify the cause and guide treatment.",
+        "Pain does not always occur with oral pathology. Suspicious lumps, sores, or tissue changes should be evaluated even if they are not painful."
+      ],
+      "note": {
+        "label": "Do not ignore changes",
+        "text": "Your mouth is one of the body's important warning systems. Contact us if a sore, lump, patch, or unexplained pain does not resolve."
+      }
+    },
+    "cards": {
+      "eyebrow": "Warning signs",
+      "h2": "Early evaluation matters when something looks or feels different.",
+      "sub": [
+        "These changes may appear on the lips, cheeks, palate, gum tissue around the teeth, tongue, face, or neck."
+      ],
+      "items": [
+        {
+          "title": "Red or white patches",
+          "body": [
+            "Reddish patches, called erythroplasia, or whitish patches, called leukoplakia, can be early warning signs inside the mouth."
+          ]
+        },
+        {
+          "title": "A sore that does not heal",
+          "body": [
+            "A sore that fails to heal, bleeds easily, or continues to return should be evaluated rather than watched indefinitely."
+          ]
+        },
+        {
+          "title": "Lumps or thickened tissue",
+          "body": [
+            "A lump, thickening, or abnormal texture in the lining of the mouth, face, or neck may need closer examination."
+          ]
+        },
+        {
+          "title": "Throat or swallowing changes",
+          "body": [
+            "Chronic sore throat, hoarseness, or difficulty chewing or swallowing can also be related to an oral pathology concern."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Monthly self-exam",
+      "h2": "A regular self-check can help you notice changes sooner.",
+      "paragraphs": [
+        "We recommend checking your mouth once a month for new patches, sores, lumps, thickened tissue, or changes that do not heal normally."
+      ],
+      "chips": [
+        "Lips",
+        "Cheeks",
+        "Palate",
+        "Gum tissue",
+        "Tongue",
+        "Face and neck"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Oral biopsy",
+        "h2": "A biopsy can identify abnormal tissue.",
+        "paragraphs": [
+          "Oral biopsies are performed for lesions, lumps, or other abnormal tissue to help determine what the tissue is and which treatment is appropriate."
+        ]
+      },
+      {
+        "eyebrow": "Unexplained pain",
+        "h2": "Pain without an obvious cause deserves attention.",
+        "paragraphs": [
+          "Oral cancer is not always painful, but unexplained facial or oral pain can still be a reason to schedule an evaluation."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Questions or concerns",
+      "h2": "Let us evaluate suspicious tissue changes.",
+      "paragraphs": [
+        "If you notice a sore, lump, patch, or unexplained pain, our team can examine the area and explain the next step."
+      ]
+    }
+  },
+  "pre-prosthetic-surgery": {
+    "description": "Learn how pre-prosthetic surgery prepares the mouth for a comfortable partial or complete denture by reshaping bone or gum tissue when needed.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Pre-prosthetic surgery.",
+      "lede": "Pre-prosthetic surgery prepares the mouth before a partial or complete denture is placed. Small adjustments to bone or gum tissue can help the prosthesis fit more comfortably and securely.",
+      "photo": "teamConversation"
+    },
+    "intro": {
+      "eyebrow": "Preparing for a prosthesis",
+      "h2": "A comfortable denture starts with a smooth, stable foundation.",
+      "paragraphs": [
+        "A denture rests directly on the bone ridge and gum tissue. If the underlying bone is sharp, uneven, too bulky, or irregular after tooth removal, the denture may not fit as comfortably as it should.",
+        "Pre-prosthetic surgery refers to the minor oral surgical procedures that prepare the mouth before a prosthesis is placed. The goal is to create the best possible shape and support for the final appliance.",
+        "The exact procedure depends on your anatomy, whether teeth need to be extracted, and the type of partial or complete denture being planned."
+      ],
+      "note": {
+        "label": "Personalized planning",
+        "text": "Your surgeon will review your specific needs during your appointment and coordinate the surgical plan around your prosthetic goals."
+      }
+    },
+    "cards": {
+      "eyebrow": "Common procedures",
+      "h2": "Small changes to bone or gum tissue can improve the final fit.",
+      "sub": [
+        "Some patients need one minor procedure, while others may need a combination of adjustments to prepare the mouth for a stable prosthesis."
+      ],
+      "items": [
+        {
+          "title": "Bone smoothing and reshaping",
+          "body": [
+            "Sharp or uneven bone can be smoothed so a denture rests more comfortably on the ridge."
+          ]
+        },
+        {
+          "title": "Removal of excess bone",
+          "body": [
+            "Areas of extra bone may need to be reduced before a partial or complete denture can fit properly."
+          ]
+        },
+        {
+          "title": "Bone ridge reduction",
+          "body": [
+            "The ridge that supports a denture can sometimes be reshaped to improve stability and comfort."
+          ]
+        },
+        {
+          "title": "Excess gum tissue care",
+          "body": [
+            "Extra soft tissue may be adjusted when it interferes with denture fit or long-term comfort."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Treatment goals",
+      "h2": "The goal is a prosthesis that feels stable and natural.",
+      "paragraphs": [
+        "Preparing the ridge and soft tissue can reduce pressure points and give your denture a more even surface to rest on."
+      ],
+      "chips": [
+        "Create a smoother denture foundation",
+        "Improve comfort while chewing or speaking",
+        "Reduce sore spots from sharp bone",
+        "Prepare the mouth for a better prosthetic fit"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "After tooth removal",
+        "h2": "Extraction sites may need smoothing before a denture is made.",
+        "paragraphs": [
+          "If a tooth needs to be extracted, the underlying bone may be uneven. Smoothing or reshaping that area can help the prosthesis sit more comfortably once healing is complete."
+        ]
+      },
+      {
+        "eyebrow": "Impacted teeth",
+        "h2": "Some treatment plans include exposing impacted teeth.",
+        "paragraphs": [
+          "In selected cases, exposing impacted teeth may be part of preparing the mouth for the broader restorative or orthodontic plan."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Plan the fit",
+      "h2": "Prepare your mouth for a better prosthesis.",
+      "paragraphs": [
+        "We will review your anatomy, discuss the planned appliance, and explain whether pre-prosthetic surgery can improve comfort and stability."
+      ]
+    }
+  },
+  "replacing-missing-teeth": {
+    "description": "Learn tooth replacement options for missing teeth, including dental implants, fixed bridges, partial dentures, flippers, and complete dentures in Topeka, KS.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "Replacing missing teeth.",
+      "lede": "Missing teeth can affect your bite, speech, eating choices, jaw comfort, and long-term oral health. Our team helps you compare replacement options clearly, so you can choose care that protects your smile and your confidence.",
+      "photo": "welcomeConversation"
+    },
+    "intro": {
+      "eyebrow": "Why replacement matters",
+      "h2": "Missing teeth affect more than appearance.",
+      "paragraphs": [
+        "Your teeth affect your whole body. When they are healthy, you are healthier too. A missing tooth can change your bite, speech, and food choices. As you rely more on remaining teeth, they can wear out early, become damaged, or become lost.",
+        "Tooth loss can also contribute to headaches and jaw pain. Over time, the jawbone that once supported a missing tooth begins to shrink, making future replacement more complex.",
+        "Dental implants act much like natural teeth. They help safeguard bone structure, oral health, and appearance while giving your dentist and implant surgeon flexible options for tooth replacement."
+      ],
+      "note": {
+        "label": "Why timing matters",
+        "text": "Supporting jawbone can begin to shrink after tooth loss. Early evaluation helps preserve more options and can make future tooth replacement less complex."
+      }
+    },
+    "cards": {
+      "eyebrow": "Tooth replacement options",
+      "h2": "Compare temporary, removable, and long-lasting solutions.",
+      "sub": [
+        "There are several ways to replace missing teeth. A good candidate may be missing one tooth, several teeth, or feel unhappy with dentures. Age is not the deciding factor; health history, smoking, diabetes, radiation therapy, and jawbone anatomy can all affect planning."
+      ],
+      "items": [
+        {
+          "title": "Fixed bridge",
+          "body": [
+            "A fixed bridge is a connected set of replacement teeth. It is cemented into position using the teeth beside the empty space for support, which usually means those neighboring teeth must be reshaped before the bridge is attached."
+          ]
+        },
+        {
+          "title": "Flipper",
+          "body": [
+            "A flipper is a removable plastic tooth with a plastic retainer. It can be a temporary and inexpensive option, but it is more fragile than other forms of tooth replacement."
+          ]
+        },
+        {
+          "title": "Metal partial",
+          "body": [
+            "A removable partial denture is made with metal and plastic and held in place with wire clips. It can be removed and reinserted by the patient when needed."
+          ]
+        },
+        {
+          "title": "Denture",
+          "body": [
+            "Complete dentures are a common solution for people missing all teeth in one or both jaws. Some patients adapt well to dentures, while others find them uncomfortable because of jaw size and shape."
+          ]
+        },
+        {
+          "title": "Dental implants",
+          "body": [
+            "Dental implants are a comfortable, long-lasting solution. They form a strong foundation for replacement teeth, help keep the jaw healthy, and can support individual crowns or secure specialized dentures."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Why implants stand apart",
+      "h2": "Stable replacement without compromising healthy teeth.",
+      "paragraphs": [
+        "Traditional bridges may require reshaping healthy neighboring teeth, and removable dentures or partials can slip or feel inconvenient. Implants are designed to preserve the jaw, support a natural-feeling restoration, and provide lasting stability for many patients."
+      ],
+      "chips": [
+        "Preserve jawbone health",
+        "Protect neighboring teeth",
+        "Support crowns or dentures",
+        "Feel stable and comfortable"
+      ]
+    },
+    "pair": [],
+    "cta": {
+      "eyebrow": "Reclaim confidence",
+      "h2": "Start with a consultation.",
+      "paragraphs": [
+        "We will evaluate your needs, review imaging, and walk you through the options that make sense for your mouth, timeline, and goals."
+      ]
+    }
+  },
+  "ridge-augmentation": {
+    "description": "Learn how ridge augmentation rebuilds the natural contour of the gums and jaw after tooth extraction or bone loss, often before dental implant placement.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Ridge augmentation.",
+      "lede": "Ridge augmentation helps recreate the natural contour of the gums and jaw after tooth extraction or bone loss. It can be an important step when the jaw needs more support for a future dental implant.",
+      "photo": "patientSupport"
+    },
+    "intro": {
+      "eyebrow": "Rebuilding natural contour",
+      "h2": "A ridge augmentation restores the shape of the jaw after bone loss.",
+      "paragraphs": [
+        "The alveolar ridge is the part of the jawbone that surrounds the roots of the teeth. When a tooth is removed, a socket is left behind in that ridge.",
+        "In many cases, the socket fills naturally with bone and tissue. In others, the bone around the socket can break down or lose its previous height and width.",
+        "Rebuilding that original contour is not always medically necessary, but it may be important for dental implant placement or for restoring a more natural appearance of the gums and jaw."
+      ],
+      "note": {
+        "label": "Implant planning",
+        "text": "Dental implants need enough healthy bone for support. Ridge augmentation can rebuild the bone needed to accommodate an implant in a stronger, more natural position."
+      }
+    },
+    "cards": {
+      "eyebrow": "How it works",
+      "h2": "The procedure preserves or rebuilds the socket before implant planning.",
+      "sub": [
+        "Ridge augmentation is often performed immediately after a tooth is removed, which can help avoid the need for a second grafting procedure later."
+      ],
+      "items": [
+        {
+          "title": "Tooth removal leaves a socket",
+          "body": [
+            "After a tooth is removed, an empty socket remains in the alveolar ridge, the part of the jawbone that surrounds tooth roots."
+          ]
+        },
+        {
+          "title": "Bone may not fully hold its shape",
+          "body": [
+            "Many sockets heal on their own, but if the surrounding bone breaks down or cannot heal predictably, the height and width of the ridge may continue to deteriorate."
+          ]
+        },
+        {
+          "title": "Graft material rebuilds support",
+          "body": [
+            "Bone graft material can be placed in the socket to help recreate the natural contour of the jaw and gum tissue."
+          ]
+        },
+        {
+          "title": "The ridge is prepared for implants",
+          "body": [
+            "Once the grafted socket has healed, the alveolar ridge can be evaluated and prepared for dental implant placement when appropriate."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Why it helps",
+      "h2": "Better ridge shape can make future restoration more predictable.",
+      "paragraphs": [
+        "By supporting the socket as it heals, ridge augmentation can preserve more of the natural jaw shape and create a better foundation for future tooth replacement."
+      ],
+      "chips": [
+        "Rebuilds ridge height and width",
+        "Improves implant placement options",
+        "Helps restore natural gum contour",
+        "May reduce need for later grafting"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Graft placement",
+        "h2": "Bone graft material is placed in the tooth socket.",
+        "paragraphs": [
+          "After graft material is placed, the gum tissue is positioned over the socket and secured with sutures. A space-maintaining product may be used to support new bone growth."
+        ]
+      },
+      {
+        "eyebrow": "Comfort options",
+        "h2": "Ridge augmentation is usually completed in the office.",
+        "paragraphs": [
+          "This procedure is typically performed with local anesthesia. Some patients may also choose sedative medication for additional comfort."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Preserve the ridge",
+      "h2": "Plan the socket before bone is lost.",
+      "paragraphs": [
+        "We can evaluate the extraction site, discuss whether grafting is needed, and help protect your options for future implant placement."
+      ]
+    }
+  },
+  "single-tooth-implant": {
+    "description": "Learn how single tooth dental implants are placed, what healing looks like, and when implants may be recommended at Capital Oral Surgery in Topeka, KS.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "Single tooth implant.",
+      "lede": "A single dental implant can replace one missing tooth with a stable, natural-feeling foundation. Our surgeons plan each placement carefully, focusing on comfort, precision, healing, and long-term support for your final crown.",
+      "photo": "consultation"
+    },
+    "intro": {
+      "eyebrow": "Implant placement",
+      "h2": "Precise treatment, planned around your comfort.",
+      "paragraphs": [
+        "Placing one dental implant often takes 30 to 60 minutes, though each patient’s timing and number of appointments can vary. Your surgeon brings careful attention to the details of your case before and during treatment.",
+        "Before surgery, comfort options such as IV sedation or nitrous oxide may be reviewed with you. A local anesthetic is also used to numb the implant site.",
+        "When you are comfortable, the surgeon gently opens the gum tissue, prepares the bone with specialized instruments, and places the titanium implant. Depending on healing needs, the implant may be visible or covered by gum tissue during the early phase."
+      ],
+      "note": {
+        "label": "Appointment timing",
+        "text": "Single implant placement is usually a focused visit, but complete treatment includes planning, healing checks, and coordination with your dentist for the final crown."
+      }
+    },
+    "cards": {
+      "eyebrow": "What to expect",
+      "h2": "A straightforward sequence from planning to restoration.",
+      "sub": [
+        "Implant treatment is a collaboration between your oral surgeon and restorative dentist. The surgeon places the implant and monitors healing; your dentist completes the visible replacement tooth."
+      ],
+      "items": [
+        {
+          "title": "Planning",
+          "body": [
+            "Your surgeon reviews your health history, imaging, bone anatomy, and comfort options before surgery. Antibiotics, IV sedation, nitrous oxide, and local anesthesia may be discussed at your consultation."
+          ]
+        },
+        {
+          "title": "Numbing and comfort",
+          "body": [
+            "A local anesthetic is used to numb the area where the implant will be placed. The goal is a calm, precise visit with your comfort clearly planned before treatment begins."
+          ]
+        },
+        {
+          "title": "Implant placement",
+          "body": [
+            "Once you are comfortable, the surgeon makes a small incision in the gum tissue, prepares the space with specialized instruments, and gently places the titanium implant into the bone."
+          ]
+        },
+        {
+          "title": "Healing",
+          "body": [
+            "In some cases the top of the implant remains visible through the gum. In other cases, it is better for early healing to have the implant covered by the gum tissue."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Healing and follow-up",
+      "h2": "Healing time is personal, so follow-up matters.",
+      "paragraphs": [
+        "Healing varies from person to person based on bone quality and quantity. After the first healing phase, your surgeon may place an abutment or healing cap during a brief follow-up visit so gum tissue can mature and the implant can be accessed for restoration."
+      ],
+      "chips": [
+        "Tooth loss",
+        "Healed bone",
+        "Implant placed",
+        "Healing",
+        "Implant restored"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Placement timing",
+        "h2": "When are implants placed?",
+        "paragraphs": [
+          "Implants are often placed several months after extraction. In some cases, an implant can be placed immediately after a tooth is removed, though infection or bone concerns may make immediate placement a poor fit."
+        ]
+      },
+      {
+        "eyebrow": "Implant count",
+        "h2": "How many implants do I need?",
+        "paragraphs": [
+          "Most often, one implant is placed for each missing tooth. Larger back teeth may need a different plan because they naturally have multiple roots, and additional options exist when most or all teeth are missing."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Reclaim confidence",
+      "h2": "Start with a consultation.",
+      "paragraphs": [
+        "We will evaluate your needs, review imaging, and explain whether a single tooth implant is the right path for your smile."
+      ]
+    }
+  },
+  "sinus-lift": {
+    "description": "Learn how a sinus lift adds bone to the upper back jaw when the sinus is too close for dental implant placement.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Sinus lift.",
+      "lede": "A sinus lift adds bone to the upper back jaw when the maxillary sinus sits too close to the area where a dental implant needs support.",
+      "photo": "planning"
+    },
+    "intro": {
+      "eyebrow": "Upper jaw bone grafting",
+      "h2": "Sinus position can limit implant-ready bone in the upper back jaw.",
+      "paragraphs": [
+        "The maxillary sinuses sit above the upper back teeth. When upper molars or premolars are removed, the sinus may expand downward while the supporting jawbone shrinks.",
+        "This can leave too little bone height for a dental implant. A sinus lift, also called sinus augmentation, creates space for graft material beneath the sinus membrane.",
+        "After healing, the grafted area can provide more stable support for implant placement and long-term restoration."
+      ],
+      "note": {
+        "label": "Why timing matters",
+        "text": "The longer upper back teeth are missing, the more likely sinus changes and bone loss may affect implant planning."
+      }
+    },
+    "cards": {
+      "eyebrow": "How it works",
+      "h2": "The sinus membrane is lifted so new bone can form beneath it.",
+      "sub": [
+        "The exact approach depends on your anatomy, the amount of bone present, and whether implant placement is planned at the same visit or after the graft has healed."
+      ],
+      "items": [
+        {
+          "title": "Evaluate bone height",
+          "body": [
+            "Imaging shows how much bone remains between the upper jaw and the maxillary sinus where a future implant may be placed."
+          ]
+        },
+        {
+          "title": "Access the sinus area",
+          "body": [
+            "The surgeon creates a small opening in the upper jaw near the missing molar or premolar site to reach the sinus membrane safely."
+          ]
+        },
+        {
+          "title": "Lift the membrane",
+          "body": [
+            "The sinus membrane is gently elevated to create space between the sinus floor and the jawbone."
+          ]
+        },
+        {
+          "title": "Place bone graft material",
+          "body": [
+            "Bone graft material is added into that space so the area can heal with more height and support for future implant placement."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Why it helps",
+      "h2": "Added bone height can make implant treatment possible.",
+      "paragraphs": [
+        "A sinus lift helps restore the vertical bone support needed in the upper back jaw, where natural bone is often limited after long-term tooth loss."
+      ],
+      "chips": [
+        "Adds bone height in the upper back jaw",
+        "Improves implant placement options",
+        "Restores support after long-term molar loss",
+        "Helps create a stronger implant foundation"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Healing timeline",
+        "h2": "The graft needs time to become a stronger foundation.",
+        "paragraphs": [
+          "Depending on the amount of bone needed, the graft may heal before an implant is placed, or the implant may be placed at the same appointment when anatomy allows."
+        ]
+      },
+      {
+        "eyebrow": "Careful planning",
+        "h2": "Imaging helps protect the sinus and guide graft placement.",
+        "paragraphs": [
+          "Detailed planning allows the surgeon to evaluate sinus anatomy, bone height, and the safest way to rebuild support for your restoration."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Rebuild upper jaw support",
+      "h2": "Find out whether a sinus lift is needed.",
+      "paragraphs": [
+        "We will review your imaging and explain whether sinus augmentation belongs in your implant treatment plan."
+      ]
+    }
+  },
+  "socket-preservation": {
+    "description": "Learn how socket preservation uses bone grafting after tooth extraction to help maintain jawbone shape and support future dental implant options.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Socket preservation.",
+      "lede": "Socket preservation is a bone grafting procedure performed after tooth extraction to help maintain the shape of the jaw and protect future tooth replacement options.",
+      "photo": "consultation"
+    },
+    "intro": {
+      "eyebrow": "Preserving bone after extraction",
+      "h2": "The best time to protect the socket is often when the tooth is removed.",
+      "paragraphs": [
+        "When a tooth is extracted, the empty socket can begin to shrink as the body remodels the bone. This may reduce the height and width available for a future dental implant.",
+        "Socket preservation places grafting material into the extraction site to help the area heal with more stable bone volume and contour.",
+        "Preserving the socket does not guarantee that no future grafting will be needed, but it can make implant planning more predictable and may simplify treatment later."
+      ],
+      "note": {
+        "label": "Why timing matters",
+        "text": "Once the socket has collapsed or narrowed, rebuilding the ridge can become more involved. Grafting at extraction can help preserve the foundation before that change occurs."
+      }
+    },
+    "cards": {
+      "eyebrow": "How it works",
+      "h2": "The graft supports the socket while your body heals.",
+      "sub": [
+        "The details depend on the tooth location, the condition of the socket walls, and whether implant placement is planned soon or after additional healing."
+      ],
+      "items": [
+        {
+          "title": "Remove the tooth carefully",
+          "body": [
+            "The tooth is removed while protecting as much surrounding socket bone and gum tissue as possible."
+          ]
+        },
+        {
+          "title": "Place graft material",
+          "body": [
+            "Bone graft material is placed into the empty socket to support the area where the tooth root used to be."
+          ]
+        },
+        {
+          "title": "Protect the graft",
+          "body": [
+            "The grafted site may be covered with a membrane or secured with sutures to help stabilize the area as healing begins."
+          ]
+        },
+        {
+          "title": "Plan the restoration",
+          "body": [
+            "After healing, the preserved socket can be evaluated for implant placement or another tooth replacement option."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Why it helps",
+      "h2": "Preserving the socket can protect future replacement options.",
+      "paragraphs": [
+        "Maintaining ridge shape after extraction helps the surgeon plan a more stable, natural-feeling tooth replacement when the time is right."
+      ],
+      "chips": [
+        "Helps maintain socket width and height",
+        "Reduces ridge collapse after extraction",
+        "Supports future dental implant planning",
+        "Can reduce the need for later grafting"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Implant planning",
+        "h2": "A preserved socket may be easier to restore.",
+        "paragraphs": [
+          "Dental implants need enough healthy bone for support. Socket preservation helps maintain the bone volume needed to evaluate implant placement after healing."
+        ]
+      },
+      {
+        "eyebrow": "Healing expectations",
+        "h2": "The graft becomes part of a longer treatment plan.",
+        "paragraphs": [
+          "After socket preservation, the area needs time to heal before the next restorative step. Your surgeon will explain the expected timeline based on your anatomy and goals."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Preserve the foundation",
+      "h2": "Ask about grafting before extraction.",
+      "paragraphs": [
+        "We can evaluate the tooth, review your future replacement options, and explain whether socket preservation should be part of your plan."
+      ]
+    }
+  },
+  "tmj": {
+    "description": "Learn about TMJ disorders, common symptoms, causes, self-care, splint therapy, bite correction, and when surgery may be considered.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "TMJ disorders.",
+      "lede": "TMJ disorders affect the jaw joints and chewing muscles. Pain, clicking, locking, bite changes, or trouble opening can often be improved with a thoughtful mix of self-care and professional treatment.",
+      "photo": "welcomeConversation"
+    },
+    "intro": {
+      "eyebrow": "Jaw joint health",
+      "h2": "TMJ problems happen when the joints and chewing muscles stop working together comfortably.",
+      "paragraphs": [
+        "TMJ stands for temporomandibular joint, the right and left joints that connect the jaw to the skull. When these joints, muscles, ligaments, or cartilage disks are strained, symptoms can show up as pain, clicking, grating, or limited opening.",
+        "TMJ disorders can develop from clenching or grinding, injury, arthritis, joint disease, bite changes, or a disk that slips out of position.",
+        "Early evaluation matters because some TMJ problems can become more serious over time. Treatment is usually gradual and works best when self-care and professional care are combined."
+      ],
+      "note": {
+        "label": "Treatment takes time",
+        "text": "No single treatment resolves every TMJ disorder. The first goal is often to calm muscle spasm, reduce inflammation, and improve daily jaw comfort."
+      }
+    },
+    "cards": {
+      "eyebrow": "Do you have a TMJ disorder?",
+      "h2": "Jaw pain, clicking, stiffness, and bite changes are useful clues.",
+      "sub": [
+        "The more symptoms you recognize, the more helpful it may be to have the joint, bite, and chewing muscles evaluated."
+      ],
+      "items": [
+        {
+          "title": "Pain or stiffness",
+          "body": [
+            "Sore jaw muscles, frequent headaches, neck aches, or pain that worsens with clenching can be signs of TMJ strain."
+          ]
+        },
+        {
+          "title": "Clicking or locking",
+          "body": [
+            "The jaw may click, pop, grate, catch, or lock when opening, closing, eating, or yawning."
+          ]
+        },
+        {
+          "title": "Clenching or grinding",
+          "body": [
+            "Grinding and clenching can tighten the jaw muscles, stress the joints, and contribute to worn, sensitive, loose, or broken teeth."
+          ]
+        },
+        {
+          "title": "Bite changes",
+          "body": [
+            "Teeth may meet differently over time, or it may become harder to bite or tear food with the front teeth."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Self-care and support",
+      "h2": "Simple habits can reduce strain while treatment takes effect.",
+      "paragraphs": [
+        "Treatment may include medication, anti-inflammatory support, injections, physical therapy, stress management, or an appliance depending on the diagnosis."
+      ],
+      "chips": [
+        "Rest your jaw",
+        "Keep teeth apart when not eating or swallowing",
+        "Choose soft foods",
+        "Use ice and heat as directed",
+        "Practice jaw exercises and good posture"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Splints and night guards",
+        "h2": "Appliances can relax muscles and protect the joint.",
+        "paragraphs": [
+          "A clear plastic splint or night guard fits over the teeth to help keep them apart, reduce clenching or grinding, protect tooth wear, and lower muscle tension."
+        ]
+      },
+      {
+        "eyebrow": "Bite correction or surgery",
+        "h2": "More involved care is reserved for specific cases.",
+        "paragraphs": [
+          "If TMJ problems affect how teeth fit together, bite adjustment, orthodontics, restorative work, or jaw reconstruction may be discussed. Surgery is usually reserved for severe cases that do not respond to appliance therapy or involve significant joint problems."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Healthier jaw function",
+      "h2": "Start with a TMJ evaluation.",
+      "paragraphs": [
+        "We will listen to your symptoms, evaluate your jaw function, and explain which treatment options may help you feel more comfortable."
+      ]
+    }
+  },
+  "tooth-extractions": {
+    "description": "Learn why a tooth may need extraction, what to expect during removal, sectioning, replacement planning, and after-care guidance.",
+    "hero": {
+      "eyebrow": "Procedures",
+      "h1": "Tooth extractions.",
+      "lede": "When a tooth cannot be predictably restored, extraction may protect your overall oral health. We also review alternatives and replacement options so you understand the full plan, not just the procedure.",
+      "photo": "patientComfort"
+    },
+    "intro": {
+      "eyebrow": "When removal is needed",
+      "h2": "Extraction is sometimes the healthiest path forward.",
+      "paragraphs": [
+        "A tooth may need to be removed for many reasons, including severe decay, advanced periodontal disease, fracture, poor positioning, impaction, or orthodontic preparation.",
+        "Removing a tooth can affect chewing, jaw joint comfort, and the position of nearby teeth. That is why the team discusses alternatives to extraction and replacement options whenever they are appropriate.",
+        "The goal is to remove the problem tooth comfortably while protecting your long-term bite, bone, and restorative plan."
+      ],
+      "note": {
+        "label": "Replacement planning matters",
+        "text": "In many cases, planning for replacement before extraction helps reduce future shifting, chewing changes, and bone loss."
+      }
+    },
+    "cards": {
+      "eyebrow": "Common reasons",
+      "h2": "Teeth are removed when they cannot stay healthy or functional.",
+      "sub": [
+        "Your surgeon will evaluate the tooth, surrounding bone, gum tissue, and overall treatment goals before recommending extraction."
+      ],
+      "items": [
+        {
+          "title": "Severe decay",
+          "body": [
+            "A tooth may need to be removed when decay has damaged it beyond predictable repair."
+          ]
+        },
+        {
+          "title": "Advanced periodontal disease",
+          "body": [
+            "Gum disease can weaken the bone and tissues that hold a tooth in place, making extraction the healthiest option."
+          ]
+        },
+        {
+          "title": "Broken or unrestorable teeth",
+          "body": [
+            "Teeth that fracture deeply or cannot be restored with a crown or filling may need removal."
+          ]
+        },
+        {
+          "title": "Impacted or poorly positioned teeth",
+          "body": [
+            "Some teeth are removed because they are trapped, poorly aligned, or need to come out before orthodontic treatment."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "The extraction process",
+      "h2": "You should feel pressure, not sharp pain.",
+      "paragraphs": [
+        "Local anesthetic is used to numb the tooth, jawbone, and gums around the area. During removal, pressure is common because the tooth is gently moved to widen the socket. If you feel pain at any point, tell the team right away."
+      ],
+      "chips": [
+        "Local anesthetic numbs the tooth, jawbone, and gums",
+        "Pressure is expected, but pain should not be",
+        "Some teeth are sectioned into smaller pieces",
+        "Replacement options are reviewed when needed"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Sectioning a tooth",
+        "h2": "Some teeth are removed in smaller sections.",
+        "paragraphs": [
+          "Sectioning is common when a tooth is firmly anchored, has curved roots, or the socket cannot expand enough for straightforward removal. The tooth is divided and removed one section at a time."
+        ]
+      },
+      {
+        "eyebrow": "After extraction",
+        "h2": "Home care protects the healing socket.",
+        "paragraphs": [
+          "Follow your post-operative instructions closely. Rest, protect the blood clot, avoid disturbing the socket, and call if pain, bleeding, swelling, or other symptoms feel unusual."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Comfort and clarity",
+      "h2": "We will walk you through the plan.",
+      "paragraphs": [
+        "If extraction is needed, we will explain what to expect, how to care for the site, and what replacement options may make sense."
+      ]
+    }
+  },
+  "wisdom-teeth-removal": {
+    "description": "Learn about wisdom teeth evaluation, removal, anesthesia, recovery, cost, and common concerns at Capital Oral Surgery in Topeka, KS.",
+    "hero": {
+      "eyebrow": "Wisdom teeth",
+      "h1": "Wisdom teeth removal.",
+      "lede": "Wisdom teeth are often evaluated in the teenage years so potential problems can be identified early. Our surgeons use imaging, examination, and anesthesia planning to make removal as safe and comfortable as possible.",
+      "photo": "conversation"
+    },
+    "intro": {
+      "eyebrow": "Oral examination",
+      "h2": "Early evaluation helps prevent future wisdom tooth problems.",
+      "paragraphs": [
+        "With an oral examination and x-rays, our doctors can evaluate the position of your wisdom teeth and predict whether present or future problems are likely.",
+        "Studies have shown that early evaluation and treatment can lead to a better outcome. Patients are often first evaluated in their mid-teenage years by a dentist, orthodontist, or oral and maxillofacial surgeon.",
+        "All outpatient wisdom tooth surgery is performed with appropriate anesthesia to maximize comfort. Our doctors are trained, licensed, and experienced in providing anesthesia options for oral surgery patients."
+      ],
+      "note": {
+        "label": "Best timing",
+        "text": "Many patients heal faster and more predictably when wisdom teeth are treated in the teenage years or early twenties, before roots fully mature and jawbone becomes denser."
+      }
+    },
+    "cards": {
+      "eyebrow": "Why remove wisdom teeth",
+      "h2": "Limited space can create several long-term concerns.",
+      "sub": [
+        "If there is not enough room for third molars to fully erupt, impacted wisdom teeth can cause problems with gum tissue, neighboring teeth, jaw bone, and future dental stability."
+      ],
+      "items": [
+        {
+          "title": "Infection",
+          "body": [
+            "When there is not enough room for full eruption, gum tissue around a wisdom tooth can become irritated or infected, causing recurrent pain, swelling, and difficulty chewing or swallowing."
+          ]
+        },
+        {
+          "title": "Cyst formation",
+          "body": [
+            "Cysts can develop around impacted wisdom teeth and gradually damage nearby jawbone or teeth. These problems are often harder to treat when removal is delayed."
+          ]
+        },
+        {
+          "title": "Crowding",
+          "body": [
+            "Impacted wisdom teeth may contribute to crowding, especially around the lower front teeth after braces or during early adulthood."
+          ]
+        },
+        {
+          "title": "Adjacent tooth damage",
+          "body": [
+            "If a wisdom tooth is difficult to clean around, the second molar in front of it can be affected by gum disease, bone loss, or decay."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Day of surgery",
+      "h2": "Sedation and monitoring help make the visit calm.",
+      "paragraphs": [
+        "Most patients prefer to be unaware of the experience and choose sedation. At consultation, anesthesia options are reviewed, and the team explains how to prepare for the appointment."
+      ],
+      "chips": [
+        "Anesthesia options reviewed at consultation",
+        "Adult escort needed for the appointment and rest of day",
+        "Typical procedure time is about 30 to 60 minutes",
+        "Most patients are in the office about 90 minutes",
+        "Modern monitoring and sterilization protocols"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Before surgery",
+        "h2": "Fasting instructions matter for anesthesia safety.",
+        "paragraphs": [
+          "On the day of surgery, it is important to follow food and drink instructions closely. Having anything in your stomach can increase the risk of anesthetic complications, including nausea and vomiting."
+        ]
+      },
+      {
+        "eyebrow": "Recovery",
+        "h2": "Most post-op changes improve within several days.",
+        "paragraphs": [
+          "Dissolving stitches, gum swelling, and a pulling sensation can be normal. Clear liquids are usually recommended first, with your diet increasing gradually as your body permits."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Schedule a consultation",
+      "h2": "Have questions before wisdom teeth removal?",
+      "paragraphs": [
+        "We will review your x-rays, discuss anesthesia options, answer your questions, and explain cost and insurance expectations before surgery."
+      ]
+    }
+  },
+  "zygomatic-implants": {
+    "description": "Learn how zygomatic implants can provide fixed teeth for patients with severe upper jaw bone loss, often without bone grafting or sinus lift procedures.",
+    "hero": {
+      "eyebrow": "Dental implants",
+      "h1": "Zygomatic implants.",
+      "lede": "Zygomatic implants are designed for patients with severe upper-jaw bone loss who have been told they are not candidates for conventional implants or that dentures are their only option.",
+      "photo": "imaging"
+    },
+    "intro": {
+      "eyebrow": "Severe bone loss",
+      "h2": "A teeth replacement option when upper-jaw bone is limited.",
+      "paragraphs": [
+        "Patients with moderate, advanced, or extreme resorption in the upper jaw may not have enough bone to support conventional dental implants. Zygomatic implants are an alternative to traditional implants and bone grafting in these cases.",
+        "Instead of relying only on upper-jaw bone, zygomatic implants attach to the zygoma, or cheekbone. This thick, solid bone can provide stable support for a non-removable replacement appliance.",
+        "Because this approach can avoid bone grafting and the lengthy healing period that often follows grafting, implants may be placed immediately for patients who qualify."
+      ],
+      "note": {
+        "label": "Bone graft alternative",
+        "text": "Zygomatic implants are often considered when bone grafting, sinus lift, or conventional implant treatment would be too limited, lengthy, or unpredictable for the upper jaw."
+      }
+    },
+    "cards": {
+      "eyebrow": "Planning and placement",
+      "h2": "3D planning guides precise placement in the cheekbone.",
+      "sub": [
+        "Zygomatic implant placement requires careful planning, advanced imaging, and specialized surgical training. The goal is to create strong support for fixed teeth while avoiding unnecessary grafting whenever possible."
+      ],
+      "items": [
+        {
+          "title": "Consultation and imaging",
+          "body": [
+            "Your team gathers detailed information with advanced technology, including CBCT imaging and 3D planning, so each implant can be positioned with precision."
+          ]
+        },
+        {
+          "title": "Pre-surgical planning",
+          "body": [
+            "The scans help your surgeon understand bone quality, sinus anatomy, restoration needs, and whether traditional implants will be combined with zygomatic implants."
+          ]
+        },
+        {
+          "title": "Implant placement",
+          "body": [
+            "Long implant screws are anchored in the zygoma, the strong cheekbone near the sinus. Often, two zygomatic implants are used with two to four traditional implants in the front jaw."
+          ]
+        },
+        {
+          "title": "Single-surgery treatment",
+          "body": [
+            "If teeth need to be removed first, extractions may be completed during the same surgery before zygomatic implant placement."
+          ]
+        }
+      ]
+    },
+    "panel": {
+      "eyebrow": "Benefits",
+      "h2": "A fixed solution without the usual grafting timeline.",
+      "paragraphs": [
+        "For the right patient, zygomatic implants can provide fully functional teeth, reduce the need for grafting, and streamline treatment into a shorter, more comfortable path."
+      ],
+      "chips": [
+        "Fixed teeth can often be loaded immediately",
+        "No bone grafting for many patients",
+        "No sinus lift in many cases",
+        "Comfort through IV sedation",
+        "Quick treatment and recovery time",
+        "Single-surgery potential"
+      ]
+    },
+    "pair": [
+      {
+        "eyebrow": "Training and experience",
+        "h2": "This treatment requires specialized expertise.",
+        "paragraphs": [
+          "The surgical skill involved in placing zygomatic implants requires extensive training and experience. Our doctors have formal training in zygomatic placement and plan each case carefully."
+        ]
+      },
+      {
+        "eyebrow": "Comfort and recovery",
+        "h2": "Most patients are surprised by recovery.",
+        "paragraphs": [
+          "IV sedation and anti-inflammatory medications help support comfort. Any discomfort is often similar to bone grafting recovery, with mild bruising and pain usually managed with over-the-counter medications."
+        ]
+      }
+    ],
+    "cta": {
+      "eyebrow": "Reclaim confidence",
+      "h2": "Find out if zygomatic implants are possible.",
+      "paragraphs": [
+        "We will review your imaging, bone condition, and goals to determine whether zygomatic implants can restore function and confidence."
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+---
+import { OFFICE_PHONE } from "../../lib/site";
+
+interface Button { label: string; href: string }
+interface Props {
+  tone: "cream" | "sand";
+  eyebrow: string;
+  /** Heading HTML. */
+  heading: string;
+  text?: string;
+  primary?: Button;
+  secondary?: Button;
+}
+const {
+  tone,
+  eyebrow,
+  heading,
+  text,
+  primary = { label: "Request Appointment", href: "/contact-us/#contact-form" },
+  secondary = { label: `Call ${OFFICE_PHONE.display}`, href: OFFICE_PHONE.href },
+} = Astro.props;
+---
+
+<section class:list={["pr-sec flush", `pr-${tone}`]} aria-label="Schedule a consultation">
+  <div class="pr-wrap">
+    <div class="pr-band" data-rv>
+      <div>
+        <p class="pr-eb">{eyebrow}</p>
+        <h2 set:html={heading} />
+        {text && <p>{text}</p>}
+        <slot />
+      </div>
+      <div class="btns">
+        <a class="pr-btn t" href={primary.href}>{primary.label}</a>
+        <a class="pr-btn o" href={secondary.href}>{secondary.label}</a>
+      </div>
+    </div>
+  </div>
+</section>

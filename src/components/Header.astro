@@ -6,7 +6,7 @@ interface Props {
   homepage?: boolean;
 }
 const { homepage = false } = Astro.props;
-const menuLabel = (label: string) => homepage ? label.replace(/(\S)\s(Of|For|And|The|To|In|On|With)\b/g, (_, before, word) => `${before} ${word.toLowerCase()}`) : label;
+const menuLabel = (label: string) => label.replace(/(\S)\s(Of|For|And|The|To|In|On|With)\b/g, (_, before, word) => `${before} ${word.toLowerCase()}`);
 
 const navLinks = [
   { label: "Our Practice", href: "/#about" },
@@ -212,7 +212,7 @@ const patientResourceLinks = [
 
     <div class="hidden items-center xl:flex">
       <a
-        href={homepage ? "/#appointment" : "/contact-us/"}
+        href={homepage ? "/#appointment" : "/contact-us/#contact-form"}
         class="inline-flex h-11 items-center rounded-md bg-surface px-5 text-sm font-bold text-primary transition-colors hover:bg-aqua-pale"
       >
         Request Appointment
@@ -381,7 +381,7 @@ const patientResourceLinks = [
           </nav>
           <div class="mt-8">
             <a
-              href={homepage ? "/#appointment" : "/contact-us/"}
+              href={homepage ? "/#appointment" : "/contact-us/#contact-form"}
               class="inline-flex w-full justify-center rounded-md bg-secondary px-5 py-3 text-sm font-bold text-surface sm:w-auto"
             >
               Request Appointment

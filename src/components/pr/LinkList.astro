@@ -1,0 +1,20 @@
+---
+interface Props {
+  items: { title: string; text?: string; href?: string }[];
+  arrow?: string;
+  columns?: 1 | 2;
+}
+const { items, arrow = "→", columns = 1 } = Astro.props;
+---
+
+<ul class:list={["pr-list", { one: columns === 1 }]} data-rv>
+  {items.map(({ title, text, href }) => (
+    <li>
+      {href ? (
+        <a href={href}><span><h3>{title}</h3>{text && <p>{text}</p>}</span><i aria-hidden="true">{arrow}</i></a>
+      ) : (
+        <div class="pr-list-row"><span><h3>{title}</h3>{text && <p>{text}</p>}</span></div>
+      )}
+    </li>
+  ))}
+</ul>

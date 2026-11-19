@@ -1,228 +1,107 @@
 ---
-import { Image } from "astro:assets";
-import { practicePhotos } from "../data/practicePhotos";
-const interiorPhoto = practicePhotos.entrance;
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 import AppointmentRequestForm from "../components/AppointmentRequestForm.astro";
-import { OFFICE_PHONE } from "../lib/site";
+import Hero from "../components/pr/Hero.astro";
+import Section from "../components/pr/Section.astro";
+import Photo from "../components/pr/Photo.astro";
+import LinkList from "../components/pr/LinkList.astro";
+import { sitePhotos } from "../data/sitePhotos";
+import { breadcrumbSchema } from "../lib/schema";
+import { OFFICE_PHONE, PRACTICE, SERVICE_AREA_LINE } from "../lib/site";
 
-const title = "Contact Us | Topeka, KS | Capital Oral Surgery";
+const title = "Contact Us | Capital Oral Surgery, Topeka, KS";
 const description =
-  "Contact Capital Oral Surgery and Dental Implants in Topeka, KS. Request an appointment, call the office, or find directions to 2445 SW Wanamaker Rd #101.";
-
-const contactMethods = [
-  {
-    label: "Call",
-    title: OFFICE_PHONE.display,
-    href: OFFICE_PHONE.href,
-    body: "Speak with our Topeka office team about scheduling, referrals, and visit details.",
-  },
-  {
-    label: "Visit",
-    title: "2445 SW Wanamaker Rd #101",
-    href: "https://www.google.com/maps/search/?api=1&query=2445%20SW%20Wanamaker%20Rd%20%23101%2C%20Topeka%2C%20KS%2066614",
-    body: "Find us near SW Wanamaker Road in Topeka, Kansas 66614.",
-  },
-  {
-    label: "Hours",
-    title: "Mon-Fri, 8am-5pm",
-    href: "#contact-form",
-    body: "Send a request anytime and our team will follow up during office hours.",
-  },
+  "Contact Capital Oral Surgery and Dental Implants in Topeka, KS. Request an appointment, call the office, or find directions to 2445 SW Wanamaker Rd, Suite 101.";
+const path = "/contact-us/";
+const crumbs = [{ name: "Home", href: "/" }, { name: "Contact us" }];
+const next = [
+  { title: "Your first visit", text: "What to bring and what to expect at your consultation.", href: "/first-visit/" },
+  { title: "Payment plans", text: "Insurance, monthly financing with Cherry and in-office options.", href: "/payment-plans/" },
+  { title: "Surgical instructions", text: "Before and after care for sedation, implants, wisdom teeth and extractions.", href: "/surgical-instructions/" },
+  { title: "Referring doctors", text: "Send a referral online or call our office.", href: "/refer-a-patient/" },
 ];
+const schema = [breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Contact us", href: path }])];
 ---
 
-<Layout title={title} description={description} ogImage="/og.png" canonical="https://capitaloralsurgerytopeka.com/contact-us/">
+<Layout title={title} description={description} schema={schema}>
   <Header />
-  <main id="main-content" tabindex="-1" class="interior-main interior-contact">
-    <section class="interior-hero relative overflow-hidden bg-midnight text-surface" aria-labelledby="contact-heading">
-      <div
-        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[minmax(0,610px)_minmax(380px,500px)] lg:py-16"
-      >
-        <div class="interior-hero-copy relative z-10" data-reveal>
-          <p class="text-xs font-bold tracking-[.34em] text-secondary">
-            Contact Capital Oral Surgery
-          </p>
-          <h1
-            id="contact-heading"
-            class="serif mt-5 max-w-[760px] text-5xl leading-[0.96] text-surface sm:text-6xl lg:text-[76px]"
-          >
-            Let's make your next step clear.
-          </h1>
-          <p class="mt-7 max-w-[600px] text-lg leading-8 text-surface/75 sm:text-xl">
-            There are many ways to communicate with our office. Choose the method
-            most convenient for you, or send a request and our team will help you
-            plan the right visit.
-          </p>
-          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#contact-form"
-              class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90 sm:min-w-[223px]"
-            >
-              Send Request
-            </a>
-            <a
-              href={OFFICE_PHONE.href}
-              class="inline-flex h-14 items-center justify-center rounded-md border border-surface/40 px-7 font-bold text-surface transition-colors hover:bg-surface/10 sm:min-w-[216px]"
-            >
-              Call {OFFICE_PHONE.display}
-            </a>
-          </div>
-        </div>
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow="Contact us"
+      title="Contact <span>our office.</span>"
+      lede="There are many ways to communicate with our office. Choose the method most convenient for you, or send a request and our team will help you plan the right visit."
+      photo={sitePhotos.entrance}
+      primary={{ label: "Send a request ↓", href: "#contact-form" }}
+    />
 
-        <div
-          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <div
-            class="absolute -bottom-3 left-3 right-3 top-3 rounded-lg border border-secondary"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
-            <Image
-              src={interiorPhoto.src}
-              widths={[600, 900, 1400]}
-              sizes="(min-width: 900px) 46vw, 100vw"
-              format="webp"
-              alt={interiorPhoto.alt}
-              class="h-full w-full object-cover"
-              style={`object-position: ${interiorPhoto.position}`}
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-          <div
-            class="relative z-10 mt-5 rounded-lg bg-surface p-5 text-foreground shadow-xl sm:w-[260px] lg:absolute lg:-left-8 lg:bottom-[-3.25rem] lg:mt-0"
-          >
-            <p class="text-xs font-bold tracking-[.28em] text-secondary">
-              Topeka office
-            </p>
-            <p class="mt-3 text-sm leading-6 text-muted">
-              2445 SW Wanamaker Rd #101<br />
-              Topeka, KS 66614
-            </p>
-          </div>
+    <Section tone="cream" label="Ways to reach us" id="reach-us">
+      <div class="ct-reach">
+        <div data-rv>
+          <span class="pr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg></span>
+          <small>Call</small>
+          <h2><a href={OFFICE_PHONE.href}>{OFFICE_PHONE.display}</a></h2>
+          <p>Speak with our Topeka office team about scheduling, referrals, and visit details.</p>
+          <a class="pr-link" href={OFFICE_PHONE.href}>Call the office →</a>
+        </div>
+        <div data-rv style="--rv-delay:80ms">
+          <span class="pr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg></span>
+          <small>Visit</small>
+          <h2>{PRACTICE.street}<br />{PRACTICE.city}, {PRACTICE.region} {PRACTICE.postalCode}</h2>
+          <p>Find us near SW Wanamaker Road in Topeka, Kansas 66614.</p>
+          <a class="pr-link" href={PRACTICE.mapsUrl} target="_blank" rel="noopener noreferrer">Get directions →</a>
+        </div>
+        <div data-rv style="--rv-delay:160ms">
+          <span class="pr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span>
+          <small>Hours</small>
+          <h2>{PRACTICE.hoursDays}<br />{PRACTICE.hoursTime}</h2>
+          <p>Send a request anytime and our team will follow up during office hours.</p>
+          <a class="pr-link" href="#contact-form">Send a request ↓</a>
         </div>
       </div>
-    </section>
+    </Section>
 
-    <section class="bg-background px-5 py-16 text-foreground md:py-20">
-      <div class="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
-        {
-          contactMethods.map(({ label, title, href, body }, index) => (
-            <a
-              href={href}
-              target={label === "Visit" ? "_blank" : undefined}
-              rel={label === "Visit" ? "noopener noreferrer" : undefined}
-              class="group rounded-lg border border-line bg-surface p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-secondary hover:shadow-lg focus:outline-none focus-visible:border-secondary focus-visible:ring-2 focus-visible:ring-secondary/30"
-              data-reveal
-              style={`--reveal-delay: ${index * 80}ms`}
-            >
-              <p class="text-xs font-bold tracking-[.28em] text-secondary">
-                {label}
-              </p>
-              <h2 class="serif mt-4 text-2xl font-bold leading-tight text-foreground">
-                {title}
-              </h2>
-              <p class="mt-4 text-sm leading-6 text-muted">{body}</p>
-              <span class="mt-6 inline-flex text-sm font-bold text-secondary transition-colors group-hover:text-foreground">
-                {label === "Visit" ? "Get directions" : label === "Call" ? "Call office" : "Start form"}
-              </span>
-            </a>
-          ))
-        }
+    <Section tone="sand" label="Request an appointment" id="contact-form" wrapClass="ct-form">
+      <div>
+        <p class="pr-eb">Request appointment</p>
+        <h2 class="pr-h2 sm"><span>Tell us</span> how we can help.</h2>
+        <p class="pr-p">Share a few details and our team will reach out to confirm next steps. This is an appointment request, not a confirmed booking. Please avoid sending sensitive medical information through this form.</p>
+        <ol class="ct-next">
+          <li><div><b>We review your request</b><span>Our team follows up during office hours.</span></div></li>
+          <li><div><b>We contact you</b><span>To confirm next steps.</span></div></li>
+          <li><div><b>Your appointment is confirmed</b><span>After our team contacts you.</span></div></li>
+        </ol>
+        <dl class="ct-facts">
+          <div><dt>Mailing address</dt><dd>{PRACTICE.street}, {PRACTICE.city}, {PRACTICE.region} {PRACTICE.postalCode}</dd></div>
+          <div><dt>Telephone</dt><dd><a href={OFFICE_PHONE.href}>{OFFICE_PHONE.display}</a></dd></div>
+          <div><dt>Serving</dt><dd>{SERVICE_AREA_LINE.replace("Serving ", "")}</dd></div>
+        </dl>
       </div>
-    </section>
-
-    <section class="brand-cyan-band px-5 py-20 md:py-24" aria-labelledby="form-heading">
-      <div
-        class="mx-auto grid max-w-[1160px] gap-12 lg:grid-cols-[minmax(0,440px)_minmax(0,620px)] lg:gap-16"
-      >
-        <div data-reveal>
-          <p class="text-xs font-bold tracking-[.34em] text-secondary">
-            Request appointment
-          </p>
-          <h2 id="form-heading" class="serif mt-4 text-4xl leading-tight sm:text-5xl">
-            Tell us how we can help.
-          </h2>
-          <p class="mt-6 text-base leading-7 text-muted">
-            Share a few details and our team will reach out to confirm next steps.
-            This is an appointment request, not a confirmed booking.
-            Please avoid sending sensitive medical information through this form.
-          </p>
-
-          <div class="mt-9 rounded-lg border border-secondary/20 bg-surface p-6 shadow-sm">
-            <p class="text-xs font-bold tracking-[.28em] text-secondary">
-              Quick details
-            </p>
-            <dl class="mt-5 grid gap-4 text-sm leading-6 text-muted">
-              <div>
-                <dt class="font-bold text-foreground">Mailing address</dt>
-                <dd>2445 SW Wanamaker Rd #101, Topeka, KS 66614</dd>
-              </div>
-              <div>
-                <dt class="font-bold text-foreground">Telephone</dt>
-                <dd><a href={OFFICE_PHONE.href} class="hover:text-secondary">{OFFICE_PHONE.display}</a></dd>
-              </div>
-              <div>
-                <dt class="font-bold text-foreground">Serving</dt>
-                <dd>Topeka, Lawrence, Manhattan, Emporia, Salina, Kansas City, and nearby communities.</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-
-        <div id="contact-form" class="min-w-0 scroll-mt-28">
-          <AppointmentRequestForm />
-        </div>
+      <div class="ct-card">
+        <AppointmentRequestForm />
       </div>
-    </section>
+    </Section>
 
-    <section class="bg-surface px-5 py-16 text-foreground md:py-20" aria-labelledby="directions-heading">
-      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,440px)_minmax(0,1fr)] lg:items-center">
-        <div data-reveal>
-          <p class="text-xs font-bold tracking-[.34em] text-secondary">
-            Online map & driving directions
-          </p>
-          <h2 id="directions-heading" class="serif mt-4 text-4xl leading-tight sm:text-5xl">
-            Plan your visit to our Topeka office.
-          </h2>
-          <p class="mt-6 text-base leading-7 text-muted">
-            If this is your first time visiting, use the map link for directions,
-            travel time, and distance. For any additional information, call us at
-            <a href={OFFICE_PHONE.href} class="font-bold text-foreground hover:text-secondary">{OFFICE_PHONE.display}</a>.
-          </p>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=2445%20SW%20Wanamaker%20Rd%20%23101%2C%20Topeka%2C%20KS%2066614"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-8 inline-flex h-14 items-center justify-center rounded-md bg-midnight px-7 font-bold text-surface transition-colors hover:bg-foreground"
-          >
-            Open Directions
-          </a>
-        </div>
-
-        <div
-          class="overflow-hidden rounded-lg border border-line bg-background shadow-sm"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3099.721180211223!2d-95.76551622335283!3d39.02167337169778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87befd2776a2cc61%3A0xb03ac6f0e82600dc!2sCapital%20Oral%20Surgery%20and%20Dental%20Implants!5e0!3m2!1sen!2sus!4v1782234458445!5m2!1sen!2sus"
-            title="Map to Capital Oral Surgery and Dental Implants"
-            class="h-[360px] w-full border-0 md:h-[450px]"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+    <Section tone="cream" label="Find us" id="directions" wrapClass="ct-map">
+      <div data-rv>
+        <p class="pr-eb">Online map &amp; driving directions</p>
+        <h2 class="pr-h2 sm"><span>Plan your visit</span> to our Topeka office.</h2>
+        <p class="pr-p">If this is your first time visiting, use the map link for directions, travel time, and distance. For any additional information, call us at <a href={OFFICE_PHONE.href}>{OFFICE_PHONE.display}</a>.</p>
+        <a class="pr-link" style="margin-top:24px" href={PRACTICE.mapsUrl} target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
       </div>
-    </section>
+      <iframe src={PRACTICE.mapsEmbed} title="Map to Capital Oral Surgery and Dental Implants in Topeka" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-rv="right"></iframe>
+    </Section>
+
+    <Section tone="sand" label="Before your visit">
+      <p class="pr-eb" data-rv>Before your visit</p>
+      <h2 class="pr-h2" data-rv><span>Helpful</span><br />next steps.</h2>
+      <div class="pr-ex">
+        <Photo photo={sitePhotos.frontDesk} left reveal="left" />
+        <LinkList items={next} />
+      </div>
+    </Section>
   </main>
-  <Footer />
+  <SiteFooter />
 </Layout>

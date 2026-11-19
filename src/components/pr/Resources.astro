@@ -1,0 +1,26 @@
+---
+import Section from "./Section.astro";
+import Photo from "./Photo.astro";
+import LinkList from "./LinkList.astro";
+import type { SitePhoto } from "../../data/sitePhotos";
+
+interface Props { tone: "cream" | "sand"; current: string; photo: SitePhoto }
+const { tone, current, photo } = Astro.props;
+const links = [
+  { href: "/first-visit/", title: "Your first visit", text: "What to bring and what to expect at your consultation." },
+  { href: "/surgical-instructions/", title: "Surgical instructions", text: "Before and after care for sedation, implants, wisdom teeth and extractions." },
+  { href: "/payment-plans/", title: "Payment plans", text: "Insurance, monthly financing with Cherry and in-office options." },
+  { href: "/dental-anxiety-and-phobia/", title: "Dental anxiety and phobia", text: "How we help nervous patients feel at ease." },
+  { href: "/why-choose-our-practice/", title: "Why choose our practice", text: "What patients can expect from our team." },
+  { href: "/contact-us/", title: "Contact us", text: "Hours, directions and how to reach our office." },
+].filter((link) => link.href !== current).slice(0, 5);
+---
+
+<Section tone={tone} label="Patient resources">
+  <p class="pr-eb" data-rv>Patient resources</p>
+  <h2 class="pr-h2" data-rv><span>More for</span><br />our patients.</h2>
+  <div class="pr-ex">
+    <Photo photo={photo} left reveal="left" />
+    <LinkList items={links} />
+  </div>
+</Section>

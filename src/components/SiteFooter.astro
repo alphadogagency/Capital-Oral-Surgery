@@ -1,0 +1,54 @@
+---
+import { OFFICE_PHONE, PRACTICE, SERVICE_AREA_LINE } from "../lib/site";
+
+// Shared footer for every page after the homepage. Same design and facts as
+// the published homepage footer.
+const columns = [
+  { title: "Procedures", links: [["Dental implants", "/services/replacing-missing-teeth/"], ["Wisdom teeth removal", "/services/wisdom-teeth-removal/"], ["Bone grafting", "/services/bone-grafting/"], ["Tooth extractions", "/services/tooth-extractions/"], ["3D imaging", "/services/3d-imaging/"], ["Anesthesia", "/services/anesthesia/"]] },
+  { title: "Patients", links: [["Your first visit", "/first-visit/"], ["Surgical instructions", "/surgical-instructions/"], ["Payment plans", "/payment-plans/"], ["Dental anxiety", "/dental-anxiety-and-phobia/"], ["Implant FAQ", "/services/dental-implants-faq/"]] },
+  { title: "Practice", links: [["Dr. Patrick Lucaci", "/doctors/patrick-lucaci/"], ["Dr. Owen Lonergan", "/doctors/owen-lonergan/"], ["Why choose us", "/why-choose-our-practice/"], ["Refer a patient", "/refer-a-patient/"], ["Contact us", "/contact-us/"]] },
+];
+---
+
+<footer class="cap-ft">
+  <div class="ft-wrap">
+    <div class="ft-top">
+      <div>
+        <a href="/" aria-label="Capital Oral Surgery home">
+          <img src="/images/logo-light.png" alt="Capital Oral Surgery and Dental Implants" width="1207" height="399" loading="lazy" />
+        </a>
+        <p>A genuine passion for patient care allows us to provide optimal experiences and results every day.</p>
+      </div>
+      <div class="ft-btns">
+        <a class="ft-btn t" href="/contact-us/#contact-form">Request Appointment</a>
+        <a class="ft-btn o" href={OFFICE_PHONE.href}>Call {OFFICE_PHONE.display}</a>
+      </div>
+    </div>
+    <div class="ft-grid">
+      <div>
+        <div>
+          <h3>Office</h3>
+          <address>
+            {PRACTICE.street}<br />{PRACTICE.city}, {PRACTICE.region} {PRACTICE.postalCode}<br />
+            <a href={OFFICE_PHONE.href}>{OFFICE_PHONE.display}</a>
+          </address>
+          <a class="ft-dir" href={PRACTICE.mapsUrl} target="_blank" rel="noopener noreferrer">Get directions →</a>
+        </div>
+        <div>
+          <h3 class="ft-gap">Hours</h3>
+          {PRACTICE.hoursDays}<br />{PRACTICE.hoursTime}
+        </div>
+      </div>
+      {columns.map((column) => (
+        <div>
+          <h3>{column.title}</h3>
+          <ul>{column.links.map(([label, href]) => <li><a href={href}>{label}</a></li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <p class="ft-area">{SERVICE_AREA_LINE}</p>
+    <div class="ft-legal">
+      <span>© {new Date().getFullYear()} Capital Oral Surgery &amp; Dental Implants. All rights reserved.</span>
+    </div>
+  </div>
+</footer>

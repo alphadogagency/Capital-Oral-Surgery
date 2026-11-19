@@ -1,284 +1,149 @@
 ---
-import { Image } from "astro:assets";
-import { practicePhotos } from "../../data/practicePhotos";
-const interiorPhoto = practicePhotos.welcomeConversation;
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import ServiceSidebar from "../../components/ServiceSidebar.astro";
-import { OFFICE_PHONE } from "../../lib/site";
+import SiteFooter from "../../components/SiteFooter.astro";
+import Hero from "../../components/pr/Hero.astro";
+import Section from "../../components/pr/Section.astro";
+import Photo from "../../components/pr/Photo.astro";
+import Faq from "../../components/pr/Faq.astro";
+import TeamCards from "../../components/pr/TeamCards.astro";
+import Band from "../../components/pr/Band.astro";
+import LinkList from "../../components/pr/LinkList.astro";
+import procedures from "../../data/procedures.json";
+import { sitePhotos } from "../../data/sitePhotos";
+import { procedureLinks, procedureTitles } from "../../data/procedureMeta";
+import { breadcrumbSchema, medicalPageSchema } from "../../lib/schema";
 
-const title =
-  "Replacing Missing Teeth | Dental Implants in Topeka, KS | Capital Oral Surgery";
-const description =
-  "Learn tooth replacement options for missing teeth, including dental implants, fixed bridges, partial dentures, flippers, and complete dentures in Topeka, KS.";
+// Dental implants hub. Hand-built layout; the wording is the practice's
+// existing page copy from procedures.json.
+const slug = "replacing-missing-teeth";
+const page = procedures[slug];
+const faqSource = procedures["dental-implants-faq"];
+const path = `/services/${slug}/`;
+const crumbs = [
+  { name: "Home", href: "/" },
+  { name: "Procedures", href: "/#procedures" },
+  { name: "Replacing missing teeth" },
+];
 
-const currentHref = "/services/replacing-missing-teeth/";
+const optionType: Record<string, string> = {
+  "Fixed bridge": "Fixed",
+  Flipper: "Removable",
+  "Metal partial": "Removable",
+  Denture: "Removable",
+};
+const options = page.cards.items.filter((item) => item.title !== "Dental implants");
+const implants = page.cards.items.find((item) => item.title === "Dental implants")!;
 
-const replacementOptions = [
-  {
-    number: "01",
-    title: "Fixed bridge",
-    body: "A fixed bridge is a connected set of replacement teeth. It is cemented into position using the teeth beside the empty space for support, which usually means those neighboring teeth must be reshaped before the bridge is attached.",
-  },
-  {
-    number: "02",
-    title: "Flipper",
-    body: "A flipper is a removable plastic tooth with a plastic retainer. It can be a temporary and inexpensive option, but it is more fragile than other forms of tooth replacement.",
-  },
-  {
-    number: "03",
-    title: "Metal partial",
-    body: "A removable partial denture is made with metal and plastic and held in place with wire clips. It can be removed and reinserted by the patient when needed.",
-  },
-  {
-    number: "04",
-    title: "Denture",
-    body: "Complete dentures are a common solution for people missing all teeth in one or both jaws. Some patients adapt well to dentures, while others find them uncomfortable because of jaw size and shape.",
-  },
-  {
-    number: "05",
-    title: "Dental implants",
-    body: "Dental implants are a comfortable, long-lasting solution. They form a strong foundation for replacement teeth, help keep the jaw healthy, and can support individual crowns or secure specialized dentures.",
-  },
+const implantPages = ["single-tooth-implant", "full-mouth-dental-implants", "immediate-implants", "implant-dentures", "zygomatic-implants", "bone-grafting-for-implants"];
+const explore = implantPages.map((other) => ({ title: procedureLinks[other].name, text: procedureLinks[other].line, href: `/services/${other}/` }));
+const planning = ["after-implant-placement", "cost-of-dental-implants", "dental-implants-faq"];
+
+// Answers come from the existing Dental Implants FAQ page.
+const timing = faqSource.panel.chips;
+const downside = faqSource.pair[0];
+const faq = [
+  ...faqSource.cards.items.map((item) => ({ q: item.title, a: item.body.join(" ") })),
+  { q: "How long does treatment take?", a: `${timing[0]}. ${timing[1]}. ${timing[2]}. ${timing[3]}.` },
+  { q: downside.h2, a: downside.paragraphs.join(" ") },
+];
+
+const schema = [
+  breadcrumbSchema(crumbs.map((crumb, index) => (index === crumbs.length - 1 ? { ...crumb, href: path } : crumb))),
+  medicalPageSchema({ path, name: "Replacing missing teeth with dental implants", description: page.description, procedure: "Dental implants" }),
 ];
 ---
 
-<Layout title={title} description={description} ogImage="/og.png">
+<Layout title={procedureTitles[slug]} description={page.description} schema={schema}>
   <Header />
-  <main id="main-content" tabindex="-1" class="interior-main interior-service">
-    <section class="interior-hero bg-midnight text-surface" aria-labelledby="service-heading">
-      <div
-        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-10 px-5 py-14 lg:gap-14 xl:grid-cols-[minmax(0,610px)_minmax(360px,500px)] xl:justify-between xl:px-0"
-      >
-        <div class="interior-hero-copy" data-reveal>
-          <a
-            href="/#procedures"
-            class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
-          >
-            ← Services
-          </a>
-          <p class="mt-10 text-xs font-bold tracking-[.34em] text-secondary">
-            Dental implants
-          </p>
-          <h1
-            id="service-heading"
-            class="serif mt-5 max-w-[720px] text-5xl leading-[0.96] text-surface sm:text-6xl xl:text-[72px]"
-          >
-            Replacing missing teeth.
-          </h1>
-          <p class="mt-7 max-w-[590px] text-lg leading-8 text-surface/75 sm:text-xl">
-            Missing teeth can affect your bite, speech, eating choices, jaw comfort,
-            and long-term oral health. Our team helps you compare replacement options
-            clearly, so you can choose care that protects your smile and your confidence.
-          </p>
-          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="/#appointment"
-              class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90 sm:min-w-[223px]"
-            >
-              Request Appointment
-            </a>
-            <a
-              href={OFFICE_PHONE.href}
-              class="inline-flex h-14 items-center justify-center rounded-md border border-surface/40 px-7 font-bold text-surface transition-colors hover:bg-surface/10 sm:min-w-[216px]"
-            >
-              Call {OFFICE_PHONE.display}
-            </a>
-          </div>
-        </div>
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow={page.hero.eyebrow}
+      title="Replacing <span>missing teeth.</span>"
+      lede={page.hero.lede}
+      photo={sitePhotos.welcomeConversation}
+    />
 
-        <div
-          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <div
-            class="absolute -bottom-3 left-3 right-[-12px] top-3 rounded-lg border border-secondary"
-            aria-hidden="true"
-          >
+    <Section tone="cream" label="Overview" id="overview">
+      <div class="pr-why">
+        <div data-rv>
+          <p class="pr-eb">{page.intro.eyebrow}</p>
+          <h2 class="pr-h2"><span>Missing teeth affect</span><br />more than appearance.</h2>
+          {page.intro.paragraphs.map((paragraph) => <p class="pr-p">{paragraph}</p>)}
+          {page.intro.note && <div class="pr-note"><b>{page.intro.note.label}</b><span>{page.intro.note.text}</span></div>}
+        </div>
+        <Photo photo={sitePhotos.teamWithPatient} reveal="right" />
+      </div>
+    </Section>
+
+    <Section tone="sand" label="Tooth replacement options">
+      <p class="pr-eb" data-rv>{page.cards.eyebrow}</p>
+      <h2 class="pr-h2" data-rv><span>Compare temporary, removable,</span><br />and long-lasting solutions.</h2>
+      {page.cards.sub.map((paragraph) => <p class="pr-p pr-sub" data-rv>{paragraph}</p>)}
+      <div class="pr-rows" data-rv>
+        {options.map((item) => (
+          <div>
+            <h3>{item.title}</h3>
+            <div>{item.body.map((paragraph) => <p>{paragraph}</p>)}</div>
+            <small>{optionType[item.title]}</small>
           </div>
-          <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
-            <Image
-              src={interiorPhoto.src}
-              widths={[600, 900, 1400]}
-              sizes="(min-width: 900px) 46vw, 100vw"
-              format="webp"
-              alt={interiorPhoto.alt}
-              class="h-full w-full object-cover"
-              style={`object-position: ${interiorPhoto.position}`}
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
+        ))}
+        <a class="pr-row-imp" href="#implant-types">
+          <h3>{implants.title}</h3>
+          <div>{implants.body.map((paragraph) => <p>{paragraph}</p>)}</div>
+          <small>Fixed · See implant types ↓</small>
+        </a>
+      </div>
+    </Section>
+
+    <Section tone="cream" label="Types of dental implants" id="implant-types">
+      <p class="pr-eb" data-rv>Types of dental implants</p>
+      <h2 class="pr-h2" data-rv><span>Which implant</span><br />is right for you?</h2>
+      <div class="pr-ex">
+        <Photo photo={sitePhotos.brightRoom} left reveal="left" />
+        <div>
+          <LinkList items={explore} />
+          <p class="pr-hero-note">
+            Planning ahead: {planning.map((other, index) => (
+              <Fragment>{index > 0 && " · "}<a href={`/services/${other}/`}>{procedureLinks[other].name}</a></Fragment>
+            ))}
+          </p>
         </div>
       </div>
-    </section>
+    </Section>
 
-    <section class="bg-background py-20 text-foreground lg:py-24">
-      <div
-        class="interior-service-shell mx-auto grid max-w-[920px] gap-10 px-5 min-[1400px]:max-w-[1400px] min-[1400px]:grid-cols-[220px_minmax(0,840px)_220px] min-[1400px]:items-start min-[1400px]:gap-8 min-[1700px]:max-w-[1640px] min-[1700px]:grid-cols-[280px_minmax(0,920px)_280px] min-[1700px]:gap-12"
-      >
-        <ServiceSidebar groupLabel="Dental implants" currentHref={currentHref} />
-
-        <div class="interior-service-content grid gap-20 lg:gap-24 min-[1400px]:col-start-2">
-          <section
-            class="pb-2 lg:pb-0"
-            aria-labelledby="missing-teeth-matter-heading"
-          >
-            <div class="max-w-5xl" data-reveal>
-              <p class="text-xs font-bold tracking-[.34em] text-secondary">
-                Why replacement matters
-              </p>
-              <h2
-                id="missing-teeth-matter-heading"
-                class="serif mt-4 text-4xl leading-tight sm:text-5xl"
-              >
-                Missing teeth affect more than appearance.
-              </h2>
-              <div class="mt-7 space-y-6 text-base leading-8 text-muted">
-                <p>
-                  Your teeth affect your whole body. When they are healthy, you are
-                  healthier too. A missing tooth can change your bite, speech, and food
-                  choices. As you rely more on remaining teeth, they can wear out early,
-                  become damaged, or become lost.
-                </p>
-                <p>
-                  Tooth loss can also contribute to headaches and jaw pain. Over time,
-                  the jawbone that once supported a missing tooth begins to shrink,
-                  making future replacement more complex.
-                </p>
-                <p>
-                  Dental implants act much like natural teeth. They help safeguard
-                  bone structure, oral health, and appearance while giving your dentist
-                  and implant surgeon flexible options for tooth replacement.
-                </p>
-              </div>
-
-              <div class="mt-8 rounded-lg border border-line bg-surface p-7 shadow-sm sm:p-8">
-                <p class="text-xs font-bold tracking-[.28em] text-secondary">
-                  Why timing matters
-                </p>
-                <p class="mt-3 text-base leading-7 text-muted">
-                  Supporting jawbone can begin to shrink after tooth loss. Early
-                  evaluation helps preserve more options and can make future tooth
-                  replacement less complex.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section class="pt-4 lg:pt-2" aria-labelledby="options-heading">
-            <div class="max-w-3xl" data-reveal>
-              <p class="text-xs font-bold tracking-[.34em] text-secondary">
-                Tooth replacement options
-              </p>
-              <h2
-                id="options-heading"
-                class="serif mt-4 text-4xl leading-tight sm:text-5xl"
-              >
-                Compare temporary, removable, and long-lasting solutions.
-              </h2>
-              <p class="mt-6 text-base leading-7 text-muted">
-                There are several ways to replace missing teeth. A good candidate may
-                be missing one tooth, several teeth, or feel unhappy with dentures. Age
-                is not the deciding factor; health history, smoking, diabetes, radiation
-                therapy, and jawbone anatomy can all affect planning.
-              </p>
-            </div>
-
-            <div class="mt-12 grid gap-6 lg:grid-cols-2 lg:gap-7">
-              {
-                replacementOptions.map(({ number, title, body }, index) => (
-                  <article
-                    class={`rounded-lg border border-line bg-surface p-7 shadow-sm sm:p-8 ${
-                      title === "Dental implants" ? "lg:col-span-2" : ""
-                    }`}
-                    data-reveal
-                    style={`--reveal-delay: ${(index % 2) * 80}ms`}
-                  >
-                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-surface">
-                      {number}
-                    </div>
-                    <h3 class="serif mt-6 text-2xl font-bold text-foreground">
-                      {title}
-                    </h3>
-                    <p class="mt-4 text-base leading-7 text-muted">{body}</p>
-                  </article>
-                ))
-              }
-            </div>
-          </section>
-
-          <section
-            class="mt-0 grid gap-10 rounded-lg bg-aqua-soft p-8 sm:p-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-center lg:p-12"
-            aria-labelledby="implants-heading"
-            data-reveal
-          >
-            <div>
-              <p class="text-xs font-bold tracking-[.34em] text-secondary">
-                Why implants stand apart
-              </p>
-              <h2
-                id="implants-heading"
-                class="serif mt-4 text-4xl leading-tight sm:text-5xl"
-              >
-                Stable replacement without compromising healthy teeth.
-              </h2>
-              <p class="mt-6 text-base leading-7 text-muted">
-                Traditional bridges may require reshaping healthy neighboring teeth,
-                and removable dentures or partials can slip or feel inconvenient.
-                Implants are designed to preserve the jaw, support a natural-feeling
-                restoration, and provide lasting stability for many patients.
-              </p>
-            </div>
-            <div class="grid gap-3 text-sm font-bold text-foreground">
-              <p class="rounded-md bg-surface px-4 py-3">Preserve jawbone health</p>
-              <p class="rounded-md bg-surface px-4 py-3">Protect neighboring teeth</p>
-              <p class="rounded-md bg-surface px-4 py-3">Support crowns or dentures</p>
-              <p class="rounded-md bg-surface px-4 py-3">Feel stable and comfortable</p>
-            </div>
-          </section>
-
-          <section class="mt-0 rounded-lg service-cyan-cta px-8 py-12 sm:px-10 lg:px-12 lg:py-14">
-            <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
-              <div data-reveal>
-                <p class="text-xs font-bold tracking-[.34em] text-secondary">
-                  Reclaim confidence
-                </p>
-                <h2 class="serif mt-4 text-4xl leading-tight sm:text-5xl">
-                  Start with a consultation.
-                </h2>
-                <p class="mt-5 max-w-[660px] text-base leading-7 text-surface/75">
-                  We will evaluate your needs, review imaging, and walk you through the
-                  options that make sense for your mouth, timeline, and goals.
-                </p>
-              </div>
-              <div
-                class="flex flex-col gap-3 sm:flex-row lg:flex-col"
-                data-reveal
-                style="--reveal-delay: 120ms"
-              >
-                <a
-                  href="/#appointment"
-                  class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90"
-                >
-                  Request Appointment
-                </a>
-                <a
-                  href={OFFICE_PHONE.href}
-                  class="inline-flex h-14 items-center justify-center rounded-md border border-surface/40 px-7 font-bold text-surface transition-colors hover:bg-surface/10"
-                >
-                  Call {OFFICE_PHONE.display}
-                </a>
-              </div>
-            </div>
-          </section>
+    <Section tone="sand" label={page.panel.eyebrow}>
+      <div class="pr-why">
+        <Photo photo={sitePhotos.surgicalChair} left reveal="left" />
+        <div data-rv>
+          <p class="pr-eb">{page.panel.eyebrow}</p>
+          <h2 class="pr-h2"><span>Stable replacement</span><br />without compromising healthy teeth.</h2>
+          {page.panel.paragraphs.map((paragraph) => <p class="pr-p">{paragraph}</p>)}
+          <ul class="pr-checks">
+            {page.panel.chips.map((chip) => (
+              <li><span class="pr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" /></svg></span>{chip}</li>
+            ))}
+          </ul>
         </div>
-
       </div>
-    </section>
+    </Section>
+
+    <Section tone="cream" label="Your surgical team">
+      <TeamCards heading="<span>Planned and placed</span><br>by our surgeons." imagingNote="Detailed 3D views for implant planning" />
+    </Section>
+
+    <Section tone="sand" label="Frequently asked questions" wrapClass="pr-faqwrap">
+      <div data-rv>
+        <p class="pr-eb">Patient questions</p>
+        <h2 class="pr-h2 sm"><span>Questions patients</span><br />ask most.</h2>
+        <p class="pr-p">{faqSource.pair[1].paragraphs[0]}</p>
+        <a class="pr-link" style="margin-top:24px" href="/services/dental-implants-faq/">All implant questions →</a>
+      </div>
+      <Faq items={faq} />
+    </Section>
+
+    <Band tone="sand" eyebrow={page.cta.eyebrow} heading="<span>Start with</span><br>a consultation." text={page.cta.paragraphs.join(" ")} />
   </main>
-  <Footer />
+  <SiteFooter />
 </Layout>

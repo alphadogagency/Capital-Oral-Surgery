@@ -1,201 +1,118 @@
 ---
-import { Image } from "astro:assets";
-import { practicePhotos } from "../data/practicePhotos";
-const interiorPhoto = practicePhotos.preparation;
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import Hero from "../components/pr/Hero.astro";
+import Section from "../components/pr/Section.astro";
+import Photo from "../components/pr/Photo.astro";
+import Faq from "../components/pr/Faq.astro";
+import TeamCards from "../components/pr/TeamCards.astro";
+import Resources from "../components/pr/Resources.astro";
+import Band from "../components/pr/Band.astro";
+import { sitePhotos } from "../data/sitePhotos";
+import { breadcrumbSchema } from "../lib/schema";
 import { OFFICE_PHONE } from "../lib/site";
 
-const title =
-  "Dental Anxiety & Phobia | Capital Oral Surgery and Dental Implants, Topeka KS";
+const title = "Dental Anxiety & Phobia | Capital Oral Surgery, Topeka, KS";
 const description =
   "Whatever your individual level of anxiety may be, our office is committed to making sure that your visit is as comfortable, quick and easy as possible.";
-
-const anxietySolutions = [
-  {
-    label: "Communication:",
-    description:
-      "Informing us as to what you are afraid of is a great place to start. Often we can quell a fear simply by giving you correct or updated information. We will always keep you informed before, during and after your procedure, making sure that you understand what is going on and why we are doing it.",
-  },
-  {
-    label: "Calming Techniques:",
-    description:
-      "Many patients find it helpful to practice controlled breathing or to find distraction inside the room.",
-  },
-  {
-    label: "Listening to Music:",
-    description:
-      "With most procedures, the use of personal headphones and music is allowed. This is a great way to keep calm and pass the time while in the chair.",
-  },
-  {
-    label: "Oral Sedation:",
-    description:
-      "Depending on the nature of your procedure, various types of sedation may be available to you including oral sedation.",
-  },
-  {
-    label: "Taking Breaks:",
-    description:
-      "Let us know if you would like to take a short break during your treatment by signaling with your left hand.",
-  },
+const path = "/dental-anxiety-and-phobia/";
+const crumbs = [{ name: "Home", href: "/" }, { name: "Patient resources" }, { name: "Dental anxiety and phobia" }];
+const methods = [
+  ["Communication", "Informing us as to what you are afraid of is a great place to start. Often we can quell a fear simply by giving you correct or updated information. We will always keep you informed before, during and after your procedure, making sure that you understand what is going on and why we are doing it."],
+  ["Calming Techniques", "Many patients find it helpful to practice controlled breathing or to find distraction inside the room."],
+  ["Listening to Music", "With most procedures, the use of personal headphones and music is allowed. This is a great way to keep calm and pass the time while in the chair."],
+  ["Taking Breaks", "Let us know if you would like to take a short break during your treatment by signaling with your left hand."],
 ];
+// Answers restate what this page already says.
+const faq = [
+  { q: "Should I tell you that I am nervous?", a: "Yes, please. Informing us as to what you are afraid of is a great place to start. Often we can quell a fear simply by giving you correct or updated information." },
+  { q: "Can I be sedated for my procedure?", a: "Depending on the nature of your procedure, various types of sedation may be available to you including oral sedation." },
+  { q: "Can I listen to music during treatment?", a: "With most procedures, the use of personal headphones and music is allowed. This is a great way to keep calm and pass the time while in the chair." },
+  { q: "What if I need a break during treatment?", a: "Let us know if you would like to take a short break during your treatment by signaling with your left hand." },
+];
+const schema = [breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Dental anxiety and phobia", href: path }])];
 ---
 
-<Layout title={title} description={description} ogImage="/og.png">
+<Layout title={title} description={description} schema={schema}>
   <Header />
-  <main id="main-content" tabindex="-1" class="interior-main interior-resource">
-    <section class="interior-hero bg-midnight text-surface" aria-labelledby="dental-anxiety-heading">
-      <div
-        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-10 px-5 py-14 lg:gap-14 xl:grid-cols-[minmax(0,610px)_minmax(360px,500px)] xl:justify-between xl:px-0"
-      >
-        <div class="interior-hero-copy" data-reveal>
-          <a
-            href="/"
-            class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
-          >
-            ← Home
-          </a>
-          <p class="mt-10 text-xs font-bold tracking-[.34em] text-secondary">
-            Patient Resources
-          </p>
-          <h1
-            id="dental-anxiety-heading"
-            class="serif mt-5 max-w-[760px] text-5xl leading-[0.96] text-surface sm:text-6xl xl:text-[72px]"
-          >
-            Solutions for Overcoming Dental Fear
-          </h1>
-          <p class="mt-7 max-w-[610px] text-lg font-bold leading-8 text-surface sm:text-xl">
-            Capital Oral Surgery and Dental Implants can help you get the care you need.
-          </p>
-        </div>
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow="Patient resources"
+      title="Overcoming <span>dental fear.</span>"
+      lede="Capital Oral Surgery and Dental Implants can help you get the care you need."
+      photo={sitePhotos.preparation}
+    />
 
-        <div
-          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <div
-            class="absolute -bottom-3 left-3 right-[-12px] top-3 rounded-lg border border-secondary"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
-            <Image
-              src={interiorPhoto.src}
-              widths={[600, 900, 1400]}
-              sizes="(min-width: 900px) 46vw, 100vw"
-              format="webp"
-              alt={interiorPhoto.alt}
-              class="h-full w-full object-cover"
-              style={`object-position: ${interiorPhoto.position}`}
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-background py-20 text-foreground lg:py-24">
-      <div class="mx-auto grid max-w-[920px] gap-16 px-5 lg:gap-20">
-        <section aria-labelledby="not-uncommon-heading" data-reveal>
-          <h2
-            id="not-uncommon-heading"
-            class="serif text-4xl leading-tight sm:text-5xl"
-          >
-            Dental Anxiety is Not Uncommon
-          </h2>
-          <p class="mt-7 text-base leading-8 text-muted">
-            In fact, some studies show that up to 75% of Americans experience some level of dental related fear and 20% avoid dental care because of it. If you have a fear of dental work, we want you to know that making you feel comfortable and safe at our office is our first priority.
-          </p>
-        </section>
-
-        <section
-          class="rounded-lg border border-line bg-surface p-7 shadow-sm sm:p-10 lg:p-12"
-          aria-labelledby="anxiety-phobia-heading"
-          data-reveal
-        >
-          <h2
-            id="anxiety-phobia-heading"
-            class="serif text-4xl leading-tight sm:text-5xl"
-          >
-            Dental Anxiety vs. Dental Phobia
-          </h2>
-          <p class="mt-7 text-base leading-8 text-muted">
-            Dental anxieties and phobias present themselves in a wide variety of ways, and specific fears vary from person to person. <strong class="text-foreground">Dental anxiety</strong> may be mild to moderate, and often takes the form of a general sense of worry and apprehension when thinking about an upcoming procedure. <strong class="text-foreground">Dental phobia</strong> is a more intense experience, with patients feeling an overwhelming, irrational fear of dental work. This can sometimes cause them to avoid care all together.
-          </p>
-        </section>
-
-        <section aria-labelledby="help-heading" data-reveal>
-          <h2 id="help-heading" class="serif text-4xl leading-tight sm:text-5xl">
-            We Can Help!
-          </h2>
-          <p class="mt-7 text-base leading-8 text-muted">
-            Whatever your individual level of anxiety may be, our office is committed to making sure that your visit is as comfortable, quick and easy as possible. There are many solutions for dental anxiety, and we are ready to help.
-          </p>
-          <p class="mt-7 text-base leading-8 text-muted">
-            <strong class="text-foreground">Here are a few popular methods for easing anxiety in the dental office:</strong>
-          </p>
-
-          <ul class="mt-8 grid gap-5 md:grid-cols-2">
-            {
-              anxietySolutions.map(({ label, description }, index) => (
-                <li
-                  class="rounded-lg border border-line bg-surface p-7 shadow-sm sm:p-8"
-                  data-reveal
-                  style={`--reveal-delay: ${(index % 2) * 80}ms`}
-                >
-                  <h3 class="serif text-2xl font-bold leading-tight text-foreground">
-                    {label}
-                  </h3>
-                  <p class="mt-4 text-base leading-7 text-muted">{description}</p>
-                </li>
-              ))
-            }
+    <Section tone="cream" label="You are not alone" id="not-uncommon">
+      <div class="pr-why">
+        <div data-rv>
+          <p class="pr-eb">You are not alone</p>
+          <h2 class="pr-h2"><span>Dental anxiety</span> is not uncommon.</h2>
+          <p class="pr-p">In fact, some studies show that up to 75% of Americans experience some level of dental related fear and 20% avoid dental care because of it. If you have a fear of dental work, we want you to know that making you feel comfortable and safe at our office is our first priority.</p>
+          <ul class="pr-aff pr-stat">
+            <li><b>75%</b><span>of Americans experience some level of dental related fear, according to some studies</span></li>
+            <li><b>20%</b><span>avoid dental care because of it</span></li>
           </ul>
-        </section>
+        </div>
+        <Photo photo={sitePhotos.waitingSeating} reveal="right" />
       </div>
-    </section>
+    </Section>
 
-    <section
-      class="brand-cyan-band px-5 py-20 lg:py-24"
-      aria-labelledby="appointment-heading"
-    >
-      <div
-        class="mx-auto grid max-w-[920px] gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center"
-      >
-        <div data-reveal>
-          <p class="max-w-[650px] text-lg font-bold leading-8 text-surface">
-            Oral health is important for the health of your whole body. Don't let fear stand in your way of good dental care! We can help you get the care that you need.
-          </p>
-          <h2
-            id="appointment-heading"
-            class="serif mt-5 text-4xl leading-tight sm:text-5xl"
-          >
-            Call Today to Make an Appointment
-          </h2>
+    <Section tone="sand" label="Dental anxiety vs. dental phobia">
+      <p class="pr-eb" data-rv>Understanding the difference</p>
+      <h2 class="pr-h2" data-rv><span>Dental anxiety</span> vs. dental phobia.</h2>
+      <p class="pr-p pr-sub" data-rv>Dental anxieties and phobias present themselves in a wide variety of ways, and specific fears vary from person to person.</p>
+      <div class="pr-pair">
+        <div data-rv>
+          <p class="pr-eb">Dental anxiety</p>
+          <h3>Mild to moderate.</h3>
+          <p>Dental anxiety may be mild to moderate, and often takes the form of a general sense of worry and apprehension when thinking about an upcoming procedure.</p>
         </div>
-        <div
-          class="flex flex-col gap-3 sm:flex-row lg:flex-col"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <a
-            href={OFFICE_PHONE.href}
-            class="inline-flex h-14 items-center justify-center rounded-md border border-surface/40 px-7 font-bold text-surface transition-colors hover:bg-surface/10 sm:min-w-[216px]"
-          >
-            {OFFICE_PHONE.display}
-          </a>
-          <a
-            href="/contact-us/"
-            class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90 sm:min-w-[216px]"
-          >
-            Request an Appointment
-          </a>
+        <div data-rv style="--rv-delay:80ms">
+          <p class="pr-eb">Dental phobia</p>
+          <h3>More intense.</h3>
+          <p>Dental phobia is a more intense experience, with patients feeling an overwhelming, irrational fear of dental work. This can sometimes cause them to avoid care all together.</p>
         </div>
       </div>
-    </section>
+    </Section>
+
+    <Section tone="cream" label="Ways we help">
+      <p class="pr-eb" data-rv>We can help</p>
+      <h2 class="pr-h2" data-rv><span>Ways we help</span> you feel at ease.</h2>
+      <p class="pr-p pr-sub" data-rv>Whatever your individual level of anxiety may be, our office is committed to making sure that your visit is as comfortable, quick and easy as possible. There are many solutions for dental anxiety, and we are ready to help. Here are a few popular methods for easing anxiety in the dental office:</p>
+      <div class="pr-rows two" data-rv>
+        {methods.map(([label, text]) => <div><h3>{label}</h3><p>{text}</p></div>)}
+        <a class="pr-row-imp" href="/services/anesthesia/">
+          <h3>Oral Sedation</h3>
+          <p>Depending on the nature of your procedure, various types of sedation may be available to you including oral sedation.</p>
+          <small>Anesthesia options →</small>
+        </a>
+      </div>
+    </Section>
+
+    <Section tone="sand" label="Our surgeons">
+      <TeamCards eyebrow="Surgeons and technology" />
+    </Section>
+
+    <Section tone="cream" label="Frequently asked questions" wrapClass="pr-faqwrap">
+      <div data-rv>
+        <p class="pr-eb">Patient questions</p>
+        <h2 class="pr-h2 sm"><span>Questions patients</span><br />ask most.</h2>
+        <p class="pr-p">Call our office at <a href={OFFICE_PHONE.href}>{OFFICE_PHONE.display}</a> if you have a question that is not answered here.</p>
+      </div>
+      <Faq items={faq} />
+    </Section>
+
+    <Resources tone="sand" current={path} photo={sitePhotos.roomEquipment} />
+
+    <Band
+      tone="sand"
+      eyebrow="We can help"
+      heading="<span>Call today</span><br>to make an appointment."
+      text="Oral health is important for the health of your whole body. Don't let fear stand in your way of good dental care! We can help you get the care that you need."
+    />
   </main>
-  <Footer />
+  <SiteFooter />
 </Layout>

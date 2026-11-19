@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import { doctors } from "../../data/doctors";
+import { sitePhotos } from "../../data/sitePhotos";
+
+interface Props {
+  eyebrow?: string;
+  /** Heading HTML. */
+  heading?: string;
+  lede?: string;
+  imagingNote?: string;
+}
+const {
+  eyebrow = "Your surgical team",
+  heading = "<span>Two surgeons,</span><br>one team.",
+  lede = "Both of our surgeons hold dental and medical degrees and plan your treatment with 3D imaging, right here in our Topeka office.",
+  imagingNote = "Precise 3D images before treatment",
+} = Astro.props;
+const scanner = sitePhotos.coneBeamScanner;
+---
+
+<div class="pr-teamwrap">
+  <div data-rv>
+    <p class="pr-eb">{eyebrow}</p>
+    <h2 class="pr-h2 sm" set:html={heading} />
+    <p class="pr-p">{lede}</p>
+  </div>
+  <div class="pr-team trio">
+    {doctors.map((doctor, index) => (
+      <a class="pr-card" href={`/doctors/${doctor.slug}/`} data-rv style={`--rv-delay:${index * 80}ms`}>
+        <div class="ph"><img src={doctor.image} alt={doctor.imageAlt} width={doctor.imageWidth} height={doctor.imageHeight} loading="lazy" decoding="async" style="object-position:50% 18%" /></div>
+        <b>{doctor.name}</b>
+        <small>{doctor.credentials} · Oral and maxillofacial surgeon</small>
+        <span class="pr-link">View profile →</span>
+      </a>
+    ))}
+    <a class="pr-card" href="/services/3d-imaging/" data-rv style="--rv-delay:160ms">
+      <div class="ph"><Image src={scanner.src} alt={scanner.alt} widths={[320, 520, 760]} sizes="(max-width: 600px) 92vw, (max-width: 900px) 45vw, 20vw" loading="lazy" style={`object-position:${scanner.position}`} /></div>
+      <b>3D cone beam imaging</b>
+      <small>{imagingNote}</small>
+      <span class="pr-link">About 3D imaging →</span>
+    </a>
+  </div>
+</div>

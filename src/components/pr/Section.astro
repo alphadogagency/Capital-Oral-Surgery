@@ -1,0 +1,14 @@
+---
+interface Props {
+  tone: "cream" | "sand";
+  label: string;
+  id?: string;
+  flush?: boolean;
+  wrapClass?: string;
+}
+const { tone, label, id, flush = false, wrapClass = "" } = Astro.props;
+---
+
+<section class:list={["pr-sec", `pr-${tone}`, { flush }]} aria-label={label} id={id}>
+  <div class:list={["pr-wrap", wrapClass]}><slot /></div>
+</section>

@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import LinkList from "../components/pr/LinkList.astro";
+import { OFFICE_PHONE } from "../lib/site";
+
+const links = [
+  { title: "Procedures", text: "Dental implants, wisdom teeth, bone grafting and more.", href: "/#procedures" },
+  { title: "Our doctors", text: "Dr. Patrick Lucaci and Dr. Owen Lonergan.", href: "/#team" },
+  { title: "Your first visit", text: "What to bring and what to expect.", href: "/first-visit/" },
+  { title: "Contact us", text: "Hours, directions and appointment requests.", href: "/contact-us/" },
+];
+---
+
+<Layout title="Page Not Found | Capital Oral Surgery, Topeka, KS" description="The page you are looking for could not be found." noindex>
+  <Header />
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <section class="pr-hero" aria-labelledby="page-heading">
+      <div class="pr-wrap pr-404">
+        <div>
+          <p class="pr-eb">Error 404</p>
+          <h1 id="page-heading" style="max-width:none">We can't find <span>that page.</span></h1>
+          <p class="pr-hero-lede">The page may have moved or the address may be mistyped. These links will get you back on track.</p>
+          <div class="pr-hero-btns">
+            <a class="pr-btn g" href="/">Go to the homepage</a>
+            <a class="pr-btn line" href={OFFICE_PHONE.href}>Call {OFFICE_PHONE.display}</a>
+          </div>
+        </div>
+        <LinkList items={links} columns={2} />
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>

@@ -1,160 +1,135 @@
 ---
 import { Image } from "astro:assets";
-import { practicePhotos } from "../data/practicePhotos";
-const interiorPhoto = practicePhotos.team;
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { OFFICE_PHONE } from "../lib/site";
+import SiteFooter from "../components/SiteFooter.astro";
+import Hero from "../components/pr/Hero.astro";
+import Section from "../components/pr/Section.astro";
+import Resources from "../components/pr/Resources.astro";
+import Band from "../components/pr/Band.astro";
+import { doctors } from "../data/doctors";
+import { doctorProfiles } from "../data/doctorProfiles";
+import { sitePhotos } from "../data/sitePhotos";
+import { breadcrumbSchema } from "../lib/schema";
+import { PRACTICE } from "../lib/site";
 
-const title =
-  "Why Choose Our Practice | Capital Oral Surgery and Dental Implants, Topeka KS";
+const title = "Why Choose Our Practice | Capital Oral Surgery, Topeka, KS";
 const description =
   "Our Topeka oral surgery office provides top quality care to patients. Learn why patients choose us.";
+const path = "/why-choose-our-practice/";
+const crumbs = [{ name: "Home", href: "/" }, { name: "Patient resources" }, { name: "Why choose our practice" }];
 
-const practiceBenefits = [
-  {
-    title: "Care and Commitment",
-    body: "From the front office to the exam room, our practice is made up of professionals who take your oral health very seriously. Using state-of-the-art equipment designed with safety and efficiency in mind, we are able to offer top-notch care. As you walk through our office, you will notice that everything is clean, comfortable and thoroughly sterilized. Your safety and comfort are our priority.",
-  },
-  {
-    title: "Honesty and Affordability",
-    body: "We know that the cost of care can be confusing. In addition to offering a number of in-office payment options to fit your budget, we also give you up-front cost information on your treatment ahead of time. We are in network with a variety of insurance plans, and we offer various forms of dental financing with credit available in time frames that fit your needs. We are happy to help you navigate your dental insurance and alternative payment options.",
-  },
-  {
-    title: "Easy Access to Oral Surgery Care and Information",
-    body: "We know that your time is valuable to you, and that's why we offer extended office hours on select days, appointment reminders, and a quick turnaround time on calls and appointment requests. We are happy to answer any questions or concerns in the office, over the phone or via email.",
-  },
-  {
-    title: "Comprehensive Oral Surgery Care in One Location",
-    body: "At our practice, we are qualified to handle all aspects of your oral and maxillofacial care, so you are always surrounded by people that you trust. If we must refer out, we promise to send you to carefully vetted colleagues who apply the same professional principles in their office that we do in ours.",
-  },
-  {
-    title: "Comfort",
-    body: "We respect and understand that many patients experience dental anxiety. At our office, we do everything we can to make sure that your experience is as enjoyable as possible. By communicating clearly what you can expect during your treatment, we are often able to alleviate dental fear. We encourage you to bring headphones and music to listen to during your treatment and ask us about sedation options.",
-  },
-  {
-    title: "Personalized Service",
-    body: "At our practice, you aren't just a patient. We take an interest in you and your oral health needs. We think you'll find a friend in your oral surgeon during your visit!",
-  },
+// The practice's six reasons, word for word, each linked to the page that covers it.
+const reasons = [
+  { title: "Care and Commitment", body: "From the front office to the exam room, our practice is made up of professionals who take your oral health very seriously. Using state-of-the-art equipment designed with safety and efficiency in mind, we are able to offer top-notch care. As you walk through our office, you will notice that everything is clean, comfortable and thoroughly sterilized. Your safety and comfort are our priority.", href: "#technology", link: "Our technology ↓" },
+  { title: "Honesty and Affordability", body: "We know that the cost of care can be confusing. In addition to offering a number of in-office payment options to fit your budget, we also give you up-front cost information on your treatment ahead of time. We are in network with a variety of insurance plans, and we offer various forms of dental financing with credit available in time frames that fit your needs. We are happy to help you navigate your dental insurance and alternative payment options.", href: "/payment-plans/", link: "Payment plans →" },
+  { title: "Easy Access to Oral Surgery Care and Information", body: "We know that your time is valuable to you, and that's why we offer extended office hours on select days, appointment reminders, and a quick turnaround time on calls and appointment requests. We are happy to answer any questions or concerns in the office, over the phone or via email.", href: "/contact-us/", link: "Contact us →" },
+  { title: "Comprehensive Oral Surgery Care in One Location", body: "At our practice, we are qualified to handle all aspects of your oral and maxillofacial care, so you are always surrounded by people that you trust. If we must refer out, we promise to send you to carefully vetted colleagues who apply the same professional principles in their office that we do in ours.", href: "/#procedures", link: "Our procedures →" },
+  { title: "Comfort", body: "We respect and understand that many patients experience dental anxiety. At our office, we do everything we can to make sure that your experience is as enjoyable as possible. By communicating clearly what you can expect during your treatment, we are often able to alleviate dental fear. We encourage you to bring headphones and music to listen to during your treatment and ask us about sedation options.", href: "/dental-anxiety-and-phobia/", link: "Dental anxiety →" },
+  { title: "Personalized Service", body: "At our practice, you aren't just a patient. We take an interest in you and your oral health needs. We think you'll find a friend in your oral surgeon during your visit!", href: "/#team", link: "Meet our doctors →" },
 ];
+// Same wording as the approved homepage technology section.
+const technology = [
+  { photo: sitePhotos.coneBeamScanner, title: "3D cone beam imaging", text: "Cone beam CT imaging provides detailed 3D views that help the team evaluate anatomy, identify concerns, and plan treatment with greater confidence.", href: "/services/3d-imaging/", link: "About 3D imaging →" },
+  { photo: sitePhotos.equipmentCart, title: "Dental implant planning", text: "Three-dimensional images make it easier to understand bone, teeth, nerves, sinuses, and other anatomy involved in treatment.", href: "/services/replacing-missing-teeth/", link: "About dental implants →" },
+  { photo: sitePhotos.sedationEquipment, title: "Sedation options", text: "Anesthesia is chosen around the procedure, your health, and your anxiety level.", href: "/services/anesthesia/", link: "Anesthesia options →" },
+];
+const office = [
+  { photo: sitePhotos.buildingFront, caption: "Our building" },
+  { photo: sitePhotos.waitingRoom, caption: "Waiting room" },
+  { photo: sitePhotos.procedureRoom, caption: "Procedure room" },
+];
+const schema = [breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Why choose our practice", href: path }])];
 ---
 
-<Layout title={title} description={description} ogImage="/og.png">
+<Layout title={title} description={description} schema={schema}>
   <Header />
-  <main id="main-content" tabindex="-1" class="interior-main interior-resource">
-    <section class="interior-hero bg-midnight text-surface" aria-labelledby="why-choose-heading">
-      <div
-        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-10 px-5 py-14 lg:gap-14 xl:grid-cols-[minmax(0,610px)_minmax(360px,500px)] xl:justify-between xl:px-0"
-      >
-        <div class="interior-hero-copy" data-reveal>
-          <a
-            href="/"
-            class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
-          >
-            ← Home
-          </a>
-          <p class="mt-10 text-xs font-bold tracking-[.34em] text-secondary">
-            Patient Resources
-          </p>
-          <h1
-            id="why-choose-heading"
-            class="serif mt-5 max-w-[760px] text-5xl leading-[0.96] text-surface sm:text-6xl xl:text-[72px]"
-          >
-            Why Choose Our Practice?
-          </h1>
-          <p class="mt-7 max-w-[610px] text-lg leading-8 text-surface/75 sm:text-xl">
-            When it comes to picking an oral surgeon, we know that you have options. Personalized, gentle, comprehensive patient care is our number one priority.
-          </p>
-        </div>
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow="Patient resources"
+      title="Why choose <span>our practice?</span>"
+      lede="When it comes to picking an oral surgeon, we know that you have options. Personalized, gentle, comprehensive patient care is our number one priority."
+      photo={sitePhotos.team}
+    />
 
-        <div
-          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <div
-            class="absolute -bottom-3 left-3 right-[-12px] top-3 rounded-lg border border-secondary"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
-            <Image
-              src={interiorPhoto.src}
-              widths={[600, 900, 1400]}
-              sizes="(min-width: 900px) 46vw, 100vw"
-              format="webp"
-              alt={interiorPhoto.alt}
-              class="h-full w-full object-cover"
-              style={`object-position: ${interiorPhoto.position}`}
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
+    <Section tone="cream" label="Your surgeons" id="surgeons">
+      <div class="pr-wc">
+        <div data-rv>
+          <p class="pr-eb">Your surgeons</p>
+          <h2 class="pr-h2 sm"><span>Surgeons trained</span><br />in medicine and dentistry.</h2>
+          <p class="pr-p">Dr. Patrick Lucaci and Dr. Owen Lonergan are board-certified oral and maxillofacial surgeons, and both hold dental and medical degrees.</p>
+          <ul class="pr-aff pr-stat">
+            <li><b>2</b><span>Board-certified surgeons</span></li>
+            <li><b>20+</b><span>Years serving Topeka</span></li>
+          </ul>
+        </div>
+        <div class="pr-docs">
+          {doctors.map((doctor, index) => (
+            <a class="pr-doc" href={`/doctors/${doctor.slug}/`} data-rv style={`--rv-delay:${index * 80}ms`}>
+              <div class="ph"><img src={doctor.image} alt={`${doctor.name}, oral and maxillofacial surgeon in Topeka`} width={doctor.imageWidth} height={doctor.imageHeight} loading="lazy" decoding="async" style="object-position:50% 18%" /></div>
+              <b>{doctor.name}</b>
+              <small>{doctor.credentials}</small>
+              <ul>{doctorProfiles[doctor.slug].facts.map(([label, detail]) => <li><strong>{label}</strong><span>{detail}</span></li>)}</ul>
+              <span class="pr-link">View profile →</span>
+            </a>
+          ))}
         </div>
       </div>
-    </section>
+    </Section>
 
-    <section class="bg-background py-20 text-foreground lg:py-24">
-      <div class="mx-auto max-w-[1100px] px-5">
-        <p class="text-lg leading-8 text-muted" data-reveal>
-          <strong class="text-foreground">Here are just a few things that make our practice unique:</strong>
-        </p>
+    <Section tone="sand" label="What makes us different">
+      <p class="pr-eb" data-rv>What makes us different</p>
+      <h2 class="pr-h2" data-rv><span>Six things</span> that set us apart.</h2>
+      <p class="pr-p pr-sub" data-rv>Here are just a few things that make our practice unique:</p>
+      <div class="pr-rows pr-why6" data-rv>
+        {reasons.map((reason) => (
+          <a href={reason.href}><h3>{reason.title}</h3><p>{reason.body}</p><small>{reason.link}</small></a>
+        ))}
+      </div>
+    </Section>
 
-        <div class="mt-10 grid gap-6 md:grid-cols-2 lg:gap-7">
-          {
-            practiceBenefits.map(({ title, body }, index) => (
-              <article
-                class="rounded-lg border border-line bg-surface p-8 shadow-sm sm:p-9 lg:p-10"
-                data-reveal
-                style={`--reveal-delay: ${(index % 2) * 80}ms`}
-              >
-                <h2 class="serif text-3xl font-bold leading-tight text-foreground">
-                  {title}
-                </h2>
-                <p class="mt-5 text-base leading-8 text-muted">{body}</p>
-              </article>
-            ))
-          }
+    <Section tone="cream" label="Technology" id="technology">
+      <div class="pr-teamwrap">
+        <div data-rv>
+          <p class="pr-eb">Technology</p>
+          <h2 class="pr-h2 sm"><span>Modern technology,</span><br />planned around you.</h2>
+        </div>
+        <div class="pr-team">
+          {technology.map((item, index) => (
+            <a class="pr-card" href={item.href} data-rv style={`--rv-delay:${index * 80}ms`}>
+              <div class="ph"><Image src={item.photo.src} alt={item.photo.alt} widths={[320, 520, 760]} sizes="(max-width: 900px) 45vw, 20vw" loading="lazy" style={`object-position:${item.photo.position}`} /></div>
+              <h3>{item.title}</h3>
+              <small>{item.text}</small>
+              <span class="pr-link">{item.link}</span>
+            </a>
+          ))}
         </div>
       </div>
-    </section>
+    </Section>
 
-    <section
-      class="brand-cyan-band px-5 py-20 lg:py-24"
-      aria-labelledby="choice-cta-heading"
-    >
-      <div
-        class="mx-auto grid max-w-[920px] gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center"
-      >
-        <h2
-          id="choice-cta-heading"
-          class="serif text-4xl leading-tight sm:text-5xl"
-          data-reveal
-        >
-          Give us a call today! You'll be happy you chose us for your oral surgery needs!
-        </h2>
-        <div
-          class="flex flex-col gap-3 sm:flex-row lg:flex-col"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <a
-            href={OFFICE_PHONE.href}
-            class="inline-flex h-14 items-center justify-center rounded-md border border-surface/40 px-7 font-bold text-surface transition-colors hover:bg-surface/10 sm:min-w-[216px]"
-          >
-            {OFFICE_PHONE.display}
-          </a>
-          <a
-            href="/contact-us/"
-            class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90 sm:min-w-[216px]"
-          >
-            Request an Appointment
-          </a>
+    <Section tone="sand" label="Our office">
+      <div class="pr-teamwrap">
+        <div data-rv>
+          <p class="pr-eb">Our office</p>
+          <h2 class="pr-h2 sm"><span>Clean, comfortable</span><br />and easy to find.</h2>
+          <p class="pr-p">We are in Suite 101 at 2445 SW Wanamaker Rd in Topeka, KS 66614.</p>
+          <a class="pr-link" style="margin-top:24px" href={PRACTICE.mapsUrl} target="_blank" rel="noopener noreferrer">Get directions →</a>
+        </div>
+        <div class="pr-team">
+          {office.map((item, index) => (
+            <div class="pr-card" data-rv style={`--rv-delay:${index * 80}ms`}>
+              <div class="ph"><Image src={item.photo.src} alt={item.photo.alt} widths={[320, 520, 760]} sizes="(max-width: 900px) 45vw, 20vw" loading="lazy" style={`object-position:${item.photo.position}`} /></div>
+              <b>{item.caption}</b>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </Section>
+
+    <Resources tone="cream" current={path} photo={sitePhotos.hallway} />
+
+    <Band tone="cream" eyebrow="Schedule a consultation" heading="<span>Give us a call</span><br>today!" text="You'll be happy you chose us for your oral surgery needs!" />
   </main>
-  <Footer />
+  <SiteFooter />
 </Layout>

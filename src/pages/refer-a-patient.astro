@@ -1,140 +1,77 @@
 ---
-import { Image } from "astro:assets";
-import { practicePhotos } from "../data/practicePhotos";
-const interiorPhoto = practicePhotos.coordinator;
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import Hero from "../components/pr/Hero.astro";
+import Section from "../components/pr/Section.astro";
+import Photo from "../components/pr/Photo.astro";
+import TeamCards from "../components/pr/TeamCards.astro";
+import Band from "../components/pr/Band.astro";
+import { sitePhotos } from "../data/sitePhotos";
+import { breadcrumbSchema } from "../lib/schema";
 import { OFFICE_PHONE } from "../lib/site";
 
-const title =
-  "Referring Doctors | Capital Oral Surgery and Dental Implants, Topeka KS";
+const title = "Referring Doctors | Capital Oral Surgery, Topeka, KS";
 const description =
   "Refer patients to Capital Oral Surgery and Dental Implants in Topeka, KS for elective oral surgery procedures and emergency care.";
+const path = "/refer-a-patient/";
 const referralFormUrl = "/refer-a-patient/form/";
+const crumbs = [{ name: "Home", href: "/" }, { name: "Patient resources" }, { name: "Referring doctors" }];
+const schema = [breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Referring doctors", href: path }])];
 ---
 
-<Layout title={title} description={description} ogImage="/og.png">
+<Layout title={title} description={description} schema={schema}>
   <Header />
-  <main id="main-content" tabindex="-1" class="interior-main interior-resource">
-    <section class="interior-hero bg-midnight text-surface" aria-labelledby="referral-heading">
-      <div
-        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-10 px-5 py-14 lg:gap-14 xl:grid-cols-[minmax(0,610px)_minmax(360px,500px)] xl:justify-between xl:px-0"
-      >
-        <div class="interior-hero-copy" data-reveal>
-          <a
-            href="/"
-            class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
-          >
-            ← Home
-          </a>
-          <p class="mt-10 text-xs font-bold tracking-[.34em] text-secondary">
-            Patient Resources
-          </p>
-          <h1
-            id="referral-heading"
-            class="serif mt-5 max-w-[760px] text-5xl leading-[0.96] text-surface sm:text-6xl xl:text-[72px]"
-          >
-            Referring Doctors
-          </h1>
-          <p class="mt-7 max-w-[590px] text-lg leading-8 text-surface/75 sm:text-xl">
-            We welcome referrals from medical and dental colleagues for elective
-            procedures and emergency care. Our team values close collaboration and
-            timely communication with your office throughout each patient's care.
-          </p>
-          <div class="mt-9">
-            <a
-              href={referralFormUrl}
-              class="inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90 sm:min-w-[223px]"
-            >
-              Online Referral Form
-            </a>
-            <p class="mt-5 text-base leading-7 text-surface/75">
-              Doctors who prefer to call may reach our office at
-              <a
-                href={OFFICE_PHONE.href}
-                class="font-bold text-accent transition-colors hover:text-surface"
-              >
-                {OFFICE_PHONE.display}
-              </a>.
-            </p>
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow="For referring offices"
+      title="Referring <span>doctors.</span>"
+      lede="We welcome referrals from medical and dental colleagues for elective procedures and emergency care. Our team values close collaboration and timely communication with your office throughout each patient's care."
+      photo={sitePhotos.coordinator}
+      primary={{ label: "Online Referral Form", href: referralFormUrl }}
+    >
+      <p class="pr-hero-note">Doctors who prefer to call may reach our office at <a href={OFFICE_PHONE.href}>{OFFICE_PHONE.display}</a>.</p>
+    </Hero>
+
+    <Section tone="cream" label="Collaborative specialty care" id="collaboration">
+      <div class="pr-why">
+        <div data-rv>
+          <p class="pr-eb">Collaborative specialty care</p>
+          <h2 class="pr-h2"><span>A responsive extension</span> of your care team.</h2>
+          <p class="pr-p">Whether your patient needs a planned procedure or prompt evaluation for an urgent concern, we work closely with your office to coordinate the next step and support continuity of care.</p>
+          <p class="pr-p">We prioritize timely updates so you remain informed about the patient's evaluation, treatment plan, and follow-up needs.</p>
+          <div class="pr-note">
+            <b>Security and privacy</b>
+            <span>Patient data security and privacy are primary concerns. Please use our secure online referral form when sharing patient information with the practice.</span>
           </div>
+          <a class="pr-btn g" style="margin-top:28px" href={referralFormUrl}>Online Referral Form</a>
         </div>
-
-        <div
-          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <div
-            class="absolute -bottom-3 left-3 right-[-12px] top-3 rounded-lg border border-secondary"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
-            <Image
-              src={interiorPhoto.src}
-              widths={[600, 900, 1400]}
-              sizes="(min-width: 900px) 46vw, 100vw"
-              format="webp"
-              alt={interiorPhoto.alt}
-              class="h-full w-full object-cover"
-              style={`object-position: ${interiorPhoto.position}`}
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-        </div>
+        <Photo photo={sitePhotos.exterior} reveal="right" />
       </div>
-    </section>
+    </Section>
 
-    <section class="bg-background py-20 text-foreground lg:py-24">
-      <div class="mx-auto max-w-[920px] px-5">
-        <section aria-labelledby="collaboration-heading">
-          <div class="max-w-5xl" data-reveal>
-            <p class="text-xs font-bold tracking-[.34em] text-secondary">
-              Collaborative specialty care
-            </p>
-            <h2
-              id="collaboration-heading"
-              class="serif mt-4 text-4xl leading-tight sm:text-5xl"
-            >
-              A responsive extension of your care team.
-            </h2>
-            <div class="mt-7 space-y-6 text-base leading-8 text-muted">
-              <p>
-                Whether your patient needs a planned procedure or prompt evaluation for
-                an urgent concern, we work closely with your office to coordinate the
-                next step and support continuity of care.
-              </p>
-              <p>
-                We prioritize timely updates so you remain informed about the patient's
-                evaluation, treatment plan, and follow-up needs.
-              </p>
-            </div>
-
-            <div class="mt-8 rounded-lg border border-line bg-surface p-7 shadow-sm sm:p-8">
-              <p class="text-xs font-bold tracking-[.28em] text-secondary">
-                Security and privacy
-              </p>
-              <p class="mt-3 text-base leading-7 text-muted">
-                Patient data security and privacy are primary concerns. Please use our
-                secure online referral form when sharing patient information with the
-                practice.
-              </p>
-            </div>
-
-            <a
-              href={referralFormUrl}
-              class="mt-8 inline-flex h-14 items-center justify-center rounded-md bg-secondary px-7 font-bold text-surface transition-opacity hover:opacity-90"
-            >
-              Online Referral Form
-            </a>
-          </div>
-        </section>
+    <Section tone="sand" label="How referrals work">
+      <p class="pr-eb" data-rv>How referrals work</p>
+      <h2 class="pr-h2" data-rv><span>Three steps,</span> start to finish.</h2>
+      <div class="pr-rows" data-rv>
+        <div><h3>Send the referral</h3><p>Use our online referral form, or call our office at {OFFICE_PHONE.display}.</p><small>Step 1</small></div>
+        <div><h3>We see your patient</h3><p>For a planned procedure or prompt evaluation for an urgent concern.</p><small>Step 2</small></div>
+        <div><h3>You stay informed</h3><p>Timely updates about the patient's evaluation, treatment plan, and follow-up needs.</p><small>Step 3</small></div>
       </div>
-    </section>
+    </Section>
+
+    <Section tone="cream" label="Our surgeons">
+      <TeamCards eyebrow="Your surgeons" heading="<span>Who will see</span><br>your patient." />
+    </Section>
+
+    <Band
+      tone="cream"
+      eyebrow="For referring offices"
+      heading="<span>Refer</span><br>a patient."
+      text="Send a referral online or call our office to coordinate care."
+      primary={{ label: "Online Referral Form", href: referralFormUrl }}
+    />
   </main>
-  <Footer />
+  <SiteFooter />
 </Layout>

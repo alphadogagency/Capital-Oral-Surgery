@@ -1,114 +1,97 @@
 ---
-import { Image } from "astro:assets";
-import { practicePhotos } from "../data/practicePhotos";
-const interiorPhoto = practicePhotos.planning;
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import Hero from "../components/pr/Hero.astro";
+import Section from "../components/pr/Section.astro";
+import Faq from "../components/pr/Faq.astro";
+import Resources from "../components/pr/Resources.astro";
+import Band from "../components/pr/Band.astro";
+import { sitePhotos } from "../data/sitePhotos";
+import { breadcrumbSchema } from "../lib/schema";
+import { OFFICE_PHONE } from "../lib/site";
 
-const title =
-  "Payment Plans | Capital Oral Surgery and Dental Implants, Topeka KS";
+const title = "Payment Plans & Financing | Capital Oral Surgery, Topeka, KS";
 const description =
-  "Flexible payment plans through Cherry — buy now, pay monthly for oral surgery and dental implant treatment in Topeka, KS.";
+  "Flexible payment plans through Cherry: buy now, pay monthly for oral surgery and dental implant treatment in Topeka, KS.";
+const path = "/payment-plans/";
+const crumbs = [{ name: "Home", href: "/" }, { name: "Patient resources" }, { name: "Payment plans" }];
+// Answers restate the practice's existing copy (this page and Why Choose Our Practice).
+const faq = [
+  { q: "Do you accept dental insurance?", a: "Yes. We are in network with a variety of insurance plans, and we are happy to help you navigate your dental insurance and alternative payment options." },
+  { q: "Will I know the cost before treatment?", a: "Yes. We give you up-front cost information on your treatment ahead of time." },
+  { q: "How does financing with Cherry work?", a: "Cherry lets you pay for treatment in smaller, more manageable monthly installments. You can check if you qualify on this page." },
+  { q: "Do you offer other payment options?", a: "Yes. We offer a number of in-office payment options to fit your budget. Ask our front desk when you schedule your consultation." },
+];
+const schema = [breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Payment plans", href: path }])];
 ---
 
-<Layout title={title} description={description} ogImage="/og.png">
+<Layout title={title} description={description} schema={schema}>
   <Header />
-  <main id="main-content" tabindex="-1" class="interior-main interior-resource">
-    <section class="interior-hero bg-midnight text-surface" aria-labelledby="payment-plans-heading">
-      <div
-        class="interior-hero-grid mx-auto grid min-h-[calc(100dvh-76px)] max-w-7xl items-center gap-10 px-5 py-14 lg:gap-14 xl:grid-cols-[minmax(0,610px)_minmax(360px,500px)] xl:justify-between xl:px-0"
-      >
-        <div class="interior-hero-copy" data-reveal>
-          <a
-            href="/"
-            class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
-          >
-            ← Home
-          </a>
-          <p class="mt-10 text-xs font-bold tracking-[.34em] text-secondary">
-            Patient Resources
-          </p>
-          <h1
-            id="payment-plans-heading"
-            class="serif mt-5 max-w-[760px] text-5xl leading-[0.96] text-surface sm:text-6xl xl:text-[72px]"
-          >
-            Payment Plans
-          </h1>
-          <p class="mt-7 max-w-[590px] text-lg leading-8 text-surface/75 sm:text-xl">
-            Buy now, pay monthly. Let your money go further and take better control of
-            your cash flow by paying for treatment in smaller, more manageable monthly
-            installments. We offer flexible financing through Cherry.
-          </p>
-        </div>
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow="Patient resources"
+      title="Payment <span>plans.</span>"
+      lede="Buy now, pay monthly. Let your money go further and take better control of your cash flow by paying for treatment in smaller, more manageable monthly installments. We offer flexible financing through Cherry."
+      photo={sitePhotos.planning}
+      primary={{ label: "See if you qualify ↓", href: "#cherry" }}
+    />
 
-        <div
-          class="interior-hero-media relative mx-auto w-full max-w-[500px] lg:mx-0"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <div
-            class="absolute -bottom-3 left-3 right-[-12px] top-3 rounded-lg border border-secondary"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface/5">
-            <Image
-              src={interiorPhoto.src}
-              widths={[600, 900, 1400]}
-              sizes="(min-width: 900px) 46vw, 100vw"
-              format="webp"
-              alt={interiorPhoto.alt}
-              class="h-full w-full object-cover"
-              style={`object-position: ${interiorPhoto.position}`}
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </div>
-        </div>
+    <Section tone="cream" label="Ways to pay" id="ways-to-pay">
+      <p class="pr-eb" data-rv>Paying for care</p>
+      <h2 class="pr-h2" data-rv><span>Three ways</span> to pay for treatment.</h2>
+      <p class="pr-p pr-sub" data-rv>We know that the cost of care can be confusing. We give you up-front cost information on your treatment ahead of time.</p>
+      <div class="pr-rows two" data-rv>
+        <div><h3>Insurance</h3><p>We are in network with a variety of insurance plans. We are happy to help you navigate your dental insurance and alternative payment options.</p></div>
+        <div><h3>In-office options</h3><p>We offer a number of in-office payment options to fit your budget.</p></div>
+        <a class="pr-row-imp" href="#cherry">
+          <h3>Monthly payments</h3>
+          <p>Pay for treatment in smaller, more manageable monthly installments with flexible financing through Cherry.</p>
+          <small>See if you qualify ↓</small>
+        </a>
       </div>
-    </section>
+    </Section>
 
-    <section
-      class="bg-background px-5 py-20 text-foreground lg:py-24"
-      aria-label="Cherry financing options"
-    >
-      <div class="mx-auto max-w-7xl">
-        <div id="all"></div>
-
+    <section class="pr-sec pr-sand" id="cherry" aria-label="Cherry financing options">
+      <div class="pr-wrap" style="margin-bottom:40px">
+        <p class="pr-eb">Financing through Cherry</p>
+        <h2 class="pr-h2"><span>Pay monthly</span> with Cherry.</h2>
+      </div>
+      <div class="pr-wrap">
+        <div id="all" style="border-radius:20px;overflow:hidden"></div>
         <script is:inline>
-            (function (w, d, s, o, f, js, fjs) {
-                w[o] =
-                    w[o] ||
-                    function () {
-                        (w[o].q = w[o].q || []).push(arguments);
-                    };
-                (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
-                js.id = o;
-                js.src = f;
-                js.async = 1;
-                fjs.parentNode.insertBefore(js, fjs);
-            })(window, document, "script", "_hw", ' https://files.withcherry.com/widgets/widget.js');
-            _hw(
-                "init",
-                {
-                    debug: false,
-                    variables: {
-                        slug: 'capitaloralsurgerytopeka',
-                        name: 'Capital Oral Surgery and Dental Implants',
-                    },
-                    styles: {
-                        primaryColor: '#3E5A40',
-                        secondaryColor: '#C6AE82',
-                        fontFamily: 'Capital Work Sans',
-                    },
-                },
-                ["all", "hero", "howitworks", "testimony", "faq", "calculator"]
-            );
+          (function (w, d, s, o, f, js, fjs) {
+            w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments); };
+            (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+            js.id = o; js.src = f; js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+          })(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
+          _hw(
+            "init",
+            {
+              debug: false,
+              variables: { slug: "capitaloralsurgerytopeka", name: "Capital Oral Surgery and Dental Implants" },
+              styles: { primaryColor: "#3E5A40", secondaryColor: "#C6AE82", fontFamily: "Capital Work Sans" },
+            },
+            ["all", "hero", "howitworks", "faq", "calculator"]
+          );
         </script>
       </div>
     </section>
+
+    <Section tone="cream" label="Frequently asked questions" wrapClass="pr-faqwrap">
+      <div data-rv>
+        <p class="pr-eb">Patient questions</p>
+        <h2 class="pr-h2 sm"><span>Questions</span><br />about cost.</h2>
+        <p class="pr-p">Call our office at <a href={OFFICE_PHONE.href}>{OFFICE_PHONE.display}</a> if you have a question that is not answered here.</p>
+      </div>
+      <Faq items={faq} />
+    </Section>
+
+    <Resources tone="sand" current={path} photo={sitePhotos.frontDesk} />
+
+    <Band tone="sand" eyebrow="We can help" heading="<span>Questions</span><br>about cost?" text="We are happy to help you navigate your dental insurance and alternative payment options." />
   </main>
-  <Footer />
+  <SiteFooter />
 </Layout>

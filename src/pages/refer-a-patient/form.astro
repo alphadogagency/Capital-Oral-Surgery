@@ -1,13 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import Hero from "../../components/pr/Hero.astro";
+import { sitePhotos } from "../../data/sitePhotos";
+import { breadcrumbSchema } from "../../lib/schema";
 import ToggleGroup from "../../components/referral/ToggleGroup.astro";
 import ToothChart from "../../components/referral/ToothChart.astro";
 import { OFFICE_PHONE } from "../../lib/site";
 
-const title =
-  "Referral Form | Capital Oral Surgery and Dental Implants, Topeka KS";
+const title = "Patient Referral Form | Capital Oral Surgery, Topeka, KS";
+const crumbs = [{ name: "Home", href: "/" }, { name: "Referring doctors", href: "/refer-a-patient/" }, { name: "Referral form" }];
+const schema = [breadcrumbSchema([...crumbs.slice(0, 2), { name: "Referral form", href: "/refer-a-patient/form/" }])];
 const description =
   "Submit a secure patient referral to Capital Oral Surgery and Dental Implants in Topeka, KS.";
 
@@ -58,38 +62,26 @@ const radiographOptions = [
 ];
 ---
 
-<Layout title={title} description={description} ogImage="/og.png">
+<Layout title={title} description={description} schema={schema}>
   <Header />
-  <main id="main-content" tabindex="-1" class="interior-main interior-referral-form">
-    <section class="interior-hero bg-midnight px-5 py-16 text-surface lg:py-20" aria-labelledby="form-heading">
-      <div class="interior-hero-copy interior-hero-solo mx-auto max-w-7xl">
-        <a
-          href="/refer-a-patient/"
-          class="inline-flex text-sm font-bold text-accent transition-colors hover:text-surface"
-        >
-          ← Referring Doctors
-        </a>
-        <p class="mt-10 text-xs font-bold tracking-[.34em] text-secondary">
-          Patient Resources
-        </p>
-        <h1
-          id="form-heading"
-          class="serif mt-5 max-w-[850px] text-5xl leading-[0.96] text-surface sm:text-6xl lg:text-[72px]"
-        >
-          Refer a Patient
-        </h1>
-        <p class="mt-7 max-w-[720px] text-lg leading-8 text-surface/75 sm:text-xl">
-          Complete the form below to share a patient referral with our office. Patient
-          data security and privacy are primary concerns throughout this process.
-        </p>
-        <p class="mt-4 text-sm font-bold text-accent">* Required fields</p>
-      </div>
-    </section>
+  <main id="main-content" tabindex="-1" class="pr-main">
+    <Hero
+      crumbs={crumbs}
+      eyebrow="For referring offices"
+      title="Refer <span>a patient.</span>"
+      lede="Complete the form below to share a patient referral with our office. Patient data security and privacy are primary concerns throughout this process."
+      photo={sitePhotos.coordinator}
+      primary={{ label: "Start the form ↓", href: "#referral-form" }}
+    >
+      <p class="pr-hero-note">* Required fields</p>
+    </Hero>
 
-    <section class="bg-background px-5 py-16 text-foreground lg:py-24">
-      <div class="mx-auto max-w-[1160px]">
+    <section class="pr-sec pr-cream" aria-label="Referral form">
+      <div class="pr-wrap" style="max-width:1160px">
+       <div class="pr-formcard">
         <form
           id="referral-form"
+          class="pr-form"
           action="/api/referral"
           method="post"
           enctype="multipart/form-data"
@@ -531,10 +523,11 @@ const radiographOptions = [
             shortly.
           </h2>
         </div>
+       </div>
       </div>
     </section>
   </main>
-  <Footer />
+  <SiteFooter />
 
   <script>
     const referralForm = document.querySelector<HTMLFormElement>("#referral-form");

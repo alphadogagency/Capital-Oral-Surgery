@@ -9,12 +9,8 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  redirects: {
-    '/referring-doctors': {
-      status: 301,
-      destination: '/refer-a-patient/'
-    }
-  },
+  site: 'https://capitaloralsurgerytopeka.com',
+  trailingSlash: 'always',
 
   vite: {
     plugins: [tailwindcss(), sites()]
