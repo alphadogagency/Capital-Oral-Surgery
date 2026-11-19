@@ -1,0 +1,54 @@
+---
+import { OFFICE_PHONE } from "../lib/site";
+
+// One Jotform serves both appointment entry points. Notifications route to
+// Bryan during review; practice routing is managed in Jotform, not this page.
+const formUrl = "https://form.jotform.com/263225956976069";
+---
+
+<div class="appointment-request">
+  <iframe
+    id="JotFormIFrame-263225956976069"
+    title="Capital Oral Surgery appointment and contact request"
+    src={formUrl}
+    loading="lazy"
+    height="1500"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+  <p class="request-fallback">
+    <a href={formUrl} target="_blank" rel="noopener noreferrer">Open the request form in a new tab</a>
+    <span aria-hidden="true"> · </span>
+    <a href={OFFICE_PHONE.href}>Call {OFFICE_PHONE.display}</a>
+  </p>
+</div>
+
+<script is:inline src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+<script is:inline>
+  if (typeof window.jotformEmbedHandler === "function") {
+    window.jotformEmbedHandler(
+      "iframe[id='JotFormIFrame-263225956976069']",
+      "https://form.jotform.com/",
+    );
+    // Jotform shrinks the iframe for its confirmation page. Keep that result
+    // visible for someone who submitted from the bottom of the long form.
+    const frame = document.getElementById("JotFormIFrame-263225956976069");
+    if (frame && "ResizeObserver" in window) {
+      let previousHeight = frame.getBoundingClientRect().height;
+      new ResizeObserver(() => {
+        const height = frame.getBoundingClientRect().height;
+        if (height < previousHeight / 2 && document.activeElement === frame) {
+          frame.scrollIntoView({ block: "start", behavior: "instant" });
+        }
+        previousHeight = height;
+      }).observe(frame);
+    }
+  }
+</script>
+
+<style>
+  .appointment-request { min-width: 0; width: 100%; }
+  iframe { display: block; width: 100%; max-width: 100%; border: 0; border-radius: 24px; scroll-margin-top: 120px; }
+  .request-fallback { margin: 16px 0 0; text-align: center; font-size: 14px; line-height: 1.7; }
+  .request-fallback a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .request-fallback a:focus-visible { outline: 3px solid #3e5a40; outline-offset: 4px; border-radius: 2px; }
+</style>

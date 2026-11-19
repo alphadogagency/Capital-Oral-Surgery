@@ -5,6 +5,7 @@ const interiorPhoto = practicePhotos.entrance;
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import AppointmentRequestForm from "../components/AppointmentRequestForm.astro";
 import { OFFICE_PHONE } from "../lib/site";
 
 const title = "Contact Us | Topeka, KS | Capital Oral Surgery";
@@ -30,16 +31,6 @@ const contactMethods = [
     href: "#contact-form",
     body: "Send a request anytime and our team will follow up during office hours.",
   },
-];
-
-const visitReasons = [
-  "Dental implants",
-  "Wisdom teeth",
-  "Tooth extractions",
-  "Bone grafting",
-  "Oral pathology",
-  "Anesthesia questions",
-  "General question",
 ];
 ---
 
@@ -161,6 +152,7 @@ const visitReasons = [
           </h2>
           <p class="mt-6 text-base leading-7 text-muted">
             Share a few details and our team will reach out to confirm next steps.
+            This is an appointment request, not a confirmed booking.
             Please avoid sending sensitive medical information through this form.
           </p>
 
@@ -185,138 +177,9 @@ const visitReasons = [
           </div>
         </div>
 
-        <form
-          id="contact-form"
-          class="rounded-lg border border-line bg-surface p-6 shadow-xl sm:p-8"
-          action="#"
-          method="post"
-          data-reveal
-          style="--reveal-delay: 120ms"
-        >
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label class="text-sm font-bold text-foreground" for="first-name">
-                First name
-              </label>
-              <input
-                id="first-name"
-                name="firstName"
-                type="text"
-                autocomplete="given-name"
-                required
-                class="mt-2 h-12 w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground placeholder:text-placeholder focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
-              />
-            </div>
-
-            <div>
-              <label class="text-sm font-bold text-foreground" for="last-name">
-                Last name
-              </label>
-              <input
-                id="last-name"
-                name="lastName"
-                type="text"
-                autocomplete="family-name"
-                required
-                class="mt-2 h-12 w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground placeholder:text-placeholder focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
-              />
-            </div>
-          </div>
-
-          <div class="mt-4 grid gap-4 sm:grid-cols-2">
-            <div>
-              <label class="text-sm font-bold text-foreground" for="email">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                required
-                class="mt-2 h-12 w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground placeholder:text-placeholder focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
-              />
-            </div>
-
-            <div>
-              <label class="text-sm font-bold text-foreground" for="phone">
-                Phone
-              </label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                autocomplete="tel"
-                required
-                class="mt-2 h-12 w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground placeholder:text-placeholder focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
-              />
-            </div>
-          </div>
-
-          <div class="mt-4 grid gap-4 sm:grid-cols-2">
-            <div>
-              <label class="text-sm font-bold text-foreground" for="visit-reason">
-                Reason for visit
-              </label>
-              <select
-                id="visit-reason"
-                name="visitReason"
-                required
-                class="mt-2 h-12 w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
-              >
-                <option value="">Select a reason</option>
-                {visitReasons.map((reason) => <option value={reason}>{reason}</option>)}
-              </select>
-            </div>
-
-            <div>
-              <label class="text-sm font-bold text-foreground" for="preferred-contact">
-                Preferred contact
-              </label>
-              <select
-                id="preferred-contact"
-                name="preferredContact"
-                class="mt-2 h-12 w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
-              >
-                <option value="phone">Phone</option>
-                <option value="email">Email</option>
-                <option value="either">Either is fine</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="mt-4">
-            <label class="text-sm font-bold text-foreground" for="timeframe">
-              Preferred timeframe
-            </label>
-            <input
-              id="timeframe"
-              name="timeframe"
-              type="text"
-              placeholder="Example: mornings, next week, as soon as possible"
-              class="mt-2 h-12 w-full rounded-md border border-line bg-surface px-4 text-sm text-foreground placeholder:text-placeholder focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
-            />
-          </div>
-
-          <div class="mt-4">
-            <label class="text-sm font-bold text-foreground" for="message">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="How can we help?"
-              class="mt-2 min-h-[132px] w-full resize-y rounded-md border border-line bg-surface px-4 py-3 text-sm text-foreground placeholder:text-placeholder focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="mt-6 h-14 w-full rounded-md bg-secondary px-6 text-base font-bold text-surface transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40 focus-visible:ring-offset-2"
-          >
-            Send Request
-          </button>
-        </form>
+        <div id="contact-form" class="min-w-0 scroll-mt-28">
+          <AppointmentRequestForm />
+        </div>
       </div>
     </section>
 

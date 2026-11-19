@@ -1,5 +1,6 @@
 ---
 import { OFFICE_PHONE } from "../lib/site";
+import AppointmentRequestForm from "./AppointmentRequestForm.astro";
 ---
 
 <section
@@ -9,6 +10,7 @@ import { OFFICE_PHONE } from "../lib/site";
 >
   <div
     class="home-shell home-appointment-grid"
+    style="align-items: start !important"
   >
     <div class="home-section-copy" data-reveal>
       <p class="home-eyebrow">
@@ -20,7 +22,8 @@ import { OFFICE_PHONE } from "../lib/site";
         Let's get you<br /><span>scheduled.</span>
       </h2>
       <p class="mt-6 max-w-[540px] text-base leading-7 text-muted">
-        Call our team to schedule your appointment and find a time that works for you.
+        Send an appointment request or call our team to find a time that works for you.
+        Your appointment is confirmed after our team contacts you.
       </p>
 
       <dl class="mt-9 space-y-4 text-sm text-foreground">
@@ -39,14 +42,6 @@ import { OFFICE_PHONE } from "../lib/site";
       </dl>
     </div>
 
-    <div class="home-schedule-card" data-reveal>
-      <p class="home-eyebrow">Let’s talk</p>
-      <h3>Schedule your visit.</h3>
-      <p>Our team is here to help you take the next step.</p>
-      <a class="cap-btn green home-schedule-call" href="tel:+17855884244">
-        Call to Schedule <span aria-hidden="true">↗</span>
-      </a>
-      <p class="home-schedule-number">{OFFICE_PHONE.display}</p>
-    </div>
+    <AppointmentRequestForm />
   </div>
 </section>
